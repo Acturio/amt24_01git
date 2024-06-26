@@ -1,0 +1,79 @@
+# Introducción del curso
+
+## 1. Objetivos del Curso
+
+*En esta subsección, se menciona a grandes razgos el contenido del curso en general, por lo que todos los detalles se expondrán en sus respectivas secciones; no usaremos Git hasta la sección 2.*
+
+![](img/01_Intro/png-clipart-computer-icons-school-of-welcome-text-logo.png)
+
+-   Bienvenida.
+
+-   Git $\to$ Orientación al código (Administrador de versiones); te permite tener a dispocisión las versiones anteriores de cada proyecto en el que trabajes con el fin de tener una "Linea del tiempo de tu proyecto" que te permita ver que cambios se han realizado y como han alterado el funcionamiento del proyecto.
+
+-   De manera automática (a menos que se encuentre un conflicto)
+
+    -   Lee los archivos involucrados en el proyecto
+
+    -   Determina que cambios hubo en cada archivo subido
+
+    -   Une bloques de código de un mismo proyecto.
+
+-   Existen tecnicas para evitar conflictos, estas se verán dentro del curso.
+
+-   Ejemplos de conflicos y poqué suceden; un ejemplo común de un conflicto es que varios desarrolladores intendan hacer cambios distintos al mismo contendo, lo que hace que git no sepa cuales cambios guardar.
+
+-   El objetivo de este curso es que puedas:
+
+    -   Administrar y organizar tu equipo de trabajo
+
+    -   Plantear y alcanzar metas en conjunto
+
+    -   Tener una visión general del repositorio de trabajo
+
+-   No se utilizará interfáz gráfica, ya que la mayoría de las características más nuevas de git no han sido implementadas en gestores visuales, dado que estas son de uso más básico.
+
+-   Uso de la consola / terminal del sistema operativo; en caso de Windows se utilizarás Git Bash.
+
+-   **Consejo:** Tener una librería (archivo) de todos los archivos que veremos de git.
+
+## 2. ¿Cómo funciona el curso?
+
+-   Tareas practicas
+
+-   Material para ejercicios y prácticas
+
+## 3. ¿Cómo hacer preguntas?
+
+-   Uso de la plataforma (No aplica, pues en AMAT se hacen grupos de Whats App)
+
+-   Consultar Stack Overflow (Para preguntas puntuales)
+
+## 4. Instalaciones
+
+-   Material adjunto: Gist de Github (Más adelante se verá que es un gist y como se hacen)
+
+    [Material](https://gist.github.com/Klerith/90a612344dc2d4e4455ea810fdacbe69)
+
+-   Instalaciones recomendadas:
+
+    -   Visual Studio Code
+
+    -   Google Chrome
+
+    -   Git (Obligatoria)
+
+-   Extensiones usadas en el curso UDEMY para VSCode:
+
+    -   Activitus Bar
+
+    Temas e íconos de VSCode
+
+-   Instrucciones para instalar git
+
+    -   Documentación (Se recomienda no abrumarse en primera instancia, después de haber terminado el curso se estará más familiarizado con lo tŕeminos que se encuentran en la documentación)
+
+    -   Libro: Pro Git
+
+-   Para Windows: Git Bash (Terminal similar a linux o mac)
+
+-   verificación de instalación (Se requiere 2.10 o mayor para llevar el curso de manera satisfactoria).
