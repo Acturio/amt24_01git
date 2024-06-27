@@ -1,79 +1,65 @@
 # Introducción del curso
 
-## 1. Objetivos del Curso
+## Objetivos del Curso
 
-*En esta subsección, se menciona a grandes razgos el contenido del curso en general, por lo que todos los detalles se expondrán en sus respectivas secciones; no usaremos Git hasta la sección 2.*
+*En esta sección, se menciona a grandes razgos el contenido del curso en general, por lo que todos los detalles se expondrán en sus respectivas secciones; no usaremos Git hasta la sección 2.*
 
 ![](img/01_Intro/png-clipart-computer-icons-school-of-welcome-text-logo.png)
 
--   Bienvenida.
+Bienvenidos a este curso introductorio de Git, en este curso nos encaminaremos al dominio de una de las herramientas más útiles para todo desarrollador.
 
--   Git $\to$ Orientación al código (Administrador de versiones); te permite tener a dispocisión las versiones anteriores de cada proyecto en el que trabajes con el fin de tener una "Linea del tiempo de tu proyecto" que te permita ver que cambios se han realizado y como han alterado el funcionamiento del proyecto.
+Git es un sistema de conttrol de versioes,diseñado para manejar de todo, desde pequeños proyectos independientes hasta grandes y ambiciosos proyectos con rapidez y eficiencia. es una herramienta esencial para desarroladored de cualquier ámbito, permitiendo la colaboración y el seguimiento de cambios en el código de manera organizada.
 
--   De manera automática (a menos que se encuentre un conflicto)
+![](img/01_Intro/imagen-4-1024x388.png)
 
-    -   Lee los archivos involucrados en el proyecto
+Tiene una clara Orientación al código; te permite tener a dispocisión las versiones anteriores de cada proyecto en el que trabajes con el fin de tener una "Linea del tiempo" de tu proyecto que te permita ver los cambios que se han realizado a lo largo del tiempo.
 
-    -   Determina que cambios hubo en cada archivo subido
+Git, de manera automática (a menos que se encuentre un conflicto);
 
-    -   Une bloques de código de un mismo proyecto.
+-   Lee los archivos involucrados en el proyecto
 
--   Existen tecnicas para evitar conflictos, estas se verán dentro del curso.
+-   Determina que cambios hubo en cada archivo subido
 
--   Ejemplos de conflicos y poqué suceden; un ejemplo común de un conflicto es que varios desarrolladores intendan hacer cambios distintos al mismo contendo, lo que hace que git no sepa cuales cambios guardar.
+-   Une bloques de código de un mismo proyecto.
 
--   El objetivo de este curso es que puedas:
+Un conflicto es que varios desarrolladores intendan hacer cambios distintos al mismo contendo, lo que hace que git no sepa cuales cambios guardar.
 
-    -   Administrar y organizar tu equipo de trabajo
+![](img/01_Intro/conflicts-1.png)
 
-    -   Plantear y alcanzar metas en conjunto
+Existen tecnicas para evitar conflictos, estas se verán dentro del curso.
 
-    -   Tener una visión general del repositorio de trabajo
+El objetivo de este curso es que puedas:
 
--   No se utilizará interfáz gráfica, ya que la mayoría de las características más nuevas de git no han sido implementadas en gestores visuales, dado que estas son de uso más básico.
+-   Administrar y organizar tu equipo de trabajo
 
--   Uso de la consola / terminal del sistema operativo; en caso de Windows se utilizarás Git Bash.
+-   Plantear y alcanzar metas en conjunto
 
--   **Consejo:** Tener una librería (archivo) de todos los archivos que veremos de git.
+-   Tener una visión general del repositorio de trabajo
 
-## 2. ¿Cómo funciona el curso?
+En este curso no se utilizarán gestores con interfáz gráfica, ya que la mayoría de las características más nuevas de git no han sido implementadas en gestores visuales, dado que este tipo de gestores son de uso más básico. Por ello priorizaremos el uso de la consola / terminal del sistema operativo (En el caso de Windows se recomienda utilizar Git Bash) pero, para mayor comodidad, se hará uso de Visual Studio Code.
+
+![](img/01_Intro/visual-studio-code.jpg)
+
+**Consejo:** Tener una librería (archivo de todos los comandos que veamos), será muy útil para repasar el contenido que vayamos viendo lo que reforzará sus conocimientos adquiridos en el curso.
+
+## ¿Cómo funciona el curso?
+
+El curso se dará en sesiones sincrónicas de aproximadamente 4 horas de duración, a través de zoom, en las que se explican los temas y se presentan ejemplos claros de cada lección para reforzar los conocimientos adquiridos en estas sesiones, contamos con:
 
 -   Tareas practicas
 
 -   Material para ejercicios y prácticas
 
-## 3. ¿Cómo hacer preguntas?
+Para el curso se creará un grupo de WhatsApp en el que se encontrarán los instructores para que puedan expresar sus dudas o compartir material concerniente al curso, sobre todo fuera de las sesiones.
 
--   Uso de la plataforma (No aplica, pues en AMAT se hacen grupos de Whats App)
+## Instalaciones
 
--   Consultar Stack Overflow (Para preguntas puntuales)
+Antes de cualquier otra cosa debemos instalar tanto Git, como Visual Studio Code, para ello dejamos enlaces a las páginas oficiales de ambos programas.
 
-## 4. Instalaciones
+Enlaces:
 
--   Material adjunto: Gist de Github (Más adelante se verá que es un gist y como se hacen)
+-   [Git](https://git-scm.com/downloads)
 
-    [Material](https://gist.github.com/Klerith/90a612344dc2d4e4455ea810fdacbe69)
+-   [Visual Studio Code](https://code.visualstudio.com/download)
 
--   Instalaciones recomendadas:
-
-    -   Visual Studio Code
-
-    -   Google Chrome
-
-    -   Git (Obligatoria)
-
--   Extensiones usadas en el curso UDEMY para VSCode:
-
-    -   Activitus Bar
-
-    Temas e íconos de VSCode
-
--   Instrucciones para instalar git
-
-    -   Documentación (Se recomienda no abrumarse en primera instancia, después de haber terminado el curso se estará más familiarizado con lo tŕeminos que se encuentran en la documentación)
-
-    -   Libro: Pro Git
-
--   Para Windows: Git Bash (Terminal similar a linux o mac)
-
--   verificación de instalación (Se requiere 2.10 o mayor para llevar el curso de manera satisfactoria).
+Respecto a la documentación, no recommendamos que la lean sin los conocimientos básicos de git, tras haber terminado el curso estarán familiarizados con el mismo lenguaje, lo que les permitirá comprender mejor el contenido de la propia documentación.
