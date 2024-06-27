@@ -1,0 +1,155 @@
+# Fundamentos de Git
+
+A continuación, un par de recomendaciones para el resto del curso:
+
+-   Tomar nota de los comandos que se verán en el curso, así como de que hace y como funciona cada uno, de forma que ustedes mismos entiendan lo que hace un comando y en que casos se ocupa.
+
+-   Constantemente revisar su lista de comandos, esto para que vayan repasando y se familiaricen con los mismos, es recomendable hacerlo antes de cada sesión para tener esos conocimientos frescos.
+
+## Introducción a los fundamentos de Git
+
+Git es un sistema de control de versiones diseñado para gestionar proyectos de software y otros tipos de documentos de manera eficiente y colaborativa. Aquí están algunos conceptos fundamentales:
+
+-   **Repositorio**: Es un espacio donde Git almacena todos los archivos y carpetas que forman parte de tu proyecto.
+
+-   **Commit**: Es un registro de cambios en el repositorio. Cada commit tiene un mensaje que describe los cambios realizados.
+
+-   **Branch (Rama)**: Es una versión paralela del código principal. Se utilizan para desarrollar funcionalidades nuevas sin afectar el código principal hasta que estén listas.
+
+-   **Merge (Fusionar)**: Es el proceso de combinar cambios de una rama a otra. Por ejemplo, fusionar una rama de funcionalidad en la rama principal (como `main` o `master`).
+
+-   **Push (Subir)** y **Pull (Bajar)**: `Push` se refiere a enviar cambios locales al repositorio remoto, mientras que `Pull` es obtener cambios del repositorio remoto a tu repositorio local.
+
+-   **Clonar**: Es hacer una copia exacta de un repositorio remoto en tu máquina local.
+
+![](img/02_Fundamentos/SCV.png)
+
+
+## ¿Porqué es importante saber Git o cualquier otro sistema de control de versiones?
+
+Los sistemas de control de versiones (SCV), como lo es Git, son fundamentales en el desarrollo de software por varias razones clave:
+
+-   **Gestión de Historial**: Permiten mantener un registro detallado de todos los cambios realizados en el código y documentos del proyecto. Cada modificación se documenta con un mensaje descriptivo, lo que facilita la comprensión de la evolución del proyecto.
+
+-   **Colaboración Eficiente**: Facilitan el trabajo en equipo al permitir que varios desarrolladores trabajen simultáneamente en diferentes aspectos del proyecto. Las ramas (branches) permiten trabajar en nuevas funcionalidades sin interferir con el código principal.
+
+-   **Reversión y Recuperación**: Ofrecen la capacidad de revertir cambios no deseados o recuperar versiones anteriores del código en caso de errores o problemas inesperados.
+
+-   **Experimentación Segura**: Las ramas permiten probar nuevas ideas de forma segura antes de integrarlas en el código principal, lo que ayuda a mantener la estabilidad del proyecto.
+
+-   **Seguimiento de Responsabilidades**: Asignan responsabilidades claras al registrar quién realizó cada cambio y cuándo, lo que facilita la revisión y la resolución de problemas.
+
+*Es como en un videojuego donde tienes puntos de control, en el caso de Git serían los commits, a los que puedes volver si te encuentras en un problema y debes andar por otro camino o seguir una estrategia diferente.*
+
+![](img/02_Fundamentos/version-control.png)
+
+En resumen, los SCV son esenciales para mantener la integridad, colaboración y evolución ordenada de los proyectos de software, mejorando la eficiencia y reduciendo el riesgo de errores en el desarrollo.
+
+Existen distintos modelos de SCV, a continuación explicaremos 2 de los más implementados:
+
+-   **Repositorio Central**
+
+    Es un modelo de control de versiones donde existe un único servidor central que contiene la versión principal del proyecto. Los desarrolladores envían sus cambios directamente a este servidor central.
+
+    **Características:**
+
+    -   **Centralizado:** Todos los desarrolladores envían y reciben cambios desde el mismo lugar.
+
+    -   **Dependencia del servidor:** Requiere acceso constante al servidor central para realizar operaciones clave como commits y actualizaciones.
+
+    -   **Historial único:** El historial completo del proyecto reside en el servidor central.
+
+-   **Repositorio Distribuido**
+
+    En este modelo cada desarrollador tiene una copia completa del repositorio, incluyendo historial y ramas, en su máquina local. Los cambios se intercambian directamente entre repositorios locales o a través de uno central opcional.
+
+    **Características:**
+
+    -   **Descentralizado:** Cada desarrollador tiene su propio repositorio completo, lo que permite trabajar sin conexión a internet y facilita la colaboración.
+
+    -   **Flexibilidad:** Los cambios pueden ser compartidos entre repositorios locales o a través de repositorios remotos.
+
+    -   **Ramas y experimentación:** Permite a los desarrolladores trabajar en ramas independientes y experimentar sin afectar el repositorio principal hasta que estén listos.
+
+La diferencia clave radica en la arquitectura y la forma en que se gestionan y comparten los cambios. Los repositorios centrales son más tradicionales y dependen de un servidor centralizado, mientras que los distribuidos ofrecen mayor flexibilidad, autonomía y capacidad de trabajo offline.
+
+Git trabaja con el sistema de repositorio distribuido lo que permite que todo el equipo trabaje libremente sin depender de que el servidor central permanezca en condiciones de trabajo.
+
+![](img/02_Fundamentos/svn-vs-git.png)
+
+
+## Primeros comandos de Git
+
+Ahora sí comencemos con lo comandos
+
+Para comenzar vamos a configurar nuestro nombre de usuario, así como nuestro correo electrónico, estos van a servir para identificarnos y, más adelante, conectarnos con Github.
+
+``` {bash eval=F}
+git config --global user.name "[Nombre de usuario]"
+```
+
+``` {bash eval=F}
+git config --global user.email "[Direccion de correo]"
+```
+
+El correo no necesariamnete debe estar registrado en Github, sin embargo, para trabajar con esta plataforma es recomendable usar el correo con el que te registraste o vas a registrar en Github, ya que tanto el nombre como el correo sirven para identificar al usuario.
+
+Para visualizar las configuraciones que tenemos en git, podemos utilizar el comando
+
+``` {bash eval=F}
+git config --global -e
+```
+
+Este comando abrirá vim, un editor de textos, con el que podrán visualizar e incluso modificar las configuraciones que tienen de git.
+
+Ahora sí, comenzaremos con los primeros comandos.
+
+1.  
+
+    ``` {bash eval=F}
+      git --version
+    ```
+
+  Este comando nos indica con que versión de git contamos.
+
+2.  
+
+    ``` {bash eval=F}
+      git --help
+    ```
+
+  Este nos permite acceder a la documentación de git desde la terminal.
+
+3.  
+
+    ``` {bash eval=F}
+      git --help [nombre del comando]
+    ```
+
+  Con este podemos acceder a información específica del comando nombrado.
+
+**Nota:** para salir del editor en el que se abre la documentación, basta con presionar la tecla `Q` para volver a la terminal.
+
+## Primer Repositorio
+
+Para esta lección, vamos a utilizar el material "01-bases", se encuentra comprimido, primero hay que descomprimirlo y almacenar la carpeta resultante en alguna dirección dedicada a la lección.
+
+Ya en la terminal, nos situamos en la dirección en la que almacenamos la carpeta para comenzar con la lección.
+
+4.  
+
+    ``` {bash eval=F}
+      git init
+    ```
+
+  Este comando inicializa el repositorio de git. Git creará una carpeta oculta con el nombre .git en la cual se almacenará el repositorio y todos los cambios del mismo; es importante **No tocar esa carpeta.**
+
+6.  
+
+    ``` {bash eval=F}
+      git status
+    ```
+
+  Brinda información general del estado actual del repositorio: los commits realizados, los archivos listos para hacer un commit, los archivos editados pero que no han sido preparados para un commitasí como la rama actual en la que nos encontramos.
+
+
