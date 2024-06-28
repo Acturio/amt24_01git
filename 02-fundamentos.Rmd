@@ -77,8 +77,7 @@ Git trabaja con el sistema de repositorio distribuido lo que permite que todo el
 
 ![](img/02_Fundamentos/svn-vs-git.png)
 
-
-## Primeros comandos de Git
+## Configuración inicial de Git
 
 Ahora sí comencemos con lo comandos
 
@@ -100,9 +99,9 @@ Para visualizar las configuraciones que tenemos en git, podemos utilizar el coma
 git config --global -e
 ```
 
-Este comando abrirá vim, un editor de textos, con el que podrán visualizar e incluso modificar las configuraciones que tienen de git.
+Este comando abre el archivo de configuración global de Git en el editor de texto predeterminado para que puedas editarlo.
 
-Ahora sí, comenzaremos con los primeros comandos.
+## Primeros comandos de Git
 
 1.  
 
@@ -110,7 +109,7 @@ Ahora sí, comenzaremos con los primeros comandos.
       git --version
     ```
 
-  Este comando nos indica con que versión de git contamos.
+  Muestra la versión instalada de Git en tu sistema.
 
 2.  
 
@@ -118,7 +117,7 @@ Ahora sí, comenzaremos con los primeros comandos.
       git --help
     ```
 
-  Este nos permite acceder a la documentación de git desde la terminal.
+  Muestra una lista de comandos disponibles en Git junto con una breve descripción de cada uno y cómo usarlos.
 
 3.  
 
@@ -126,15 +125,11 @@ Ahora sí, comenzaremos con los primeros comandos.
       git --help [nombre del comando]
     ```
 
-  Con este podemos acceder a información específica del comando nombrado.
+  Muestra la documentación detallada y las opciones disponibles para el comando especificado en Git.
 
-**Nota:** para salir del editor en el que se abre la documentación, basta con presionar la tecla `Q` para volver a la terminal.
+### Primer Repositorio
 
-## Primer Repositorio
-
-Para esta lección, vamos a utilizar el material "01-bases", se encuentra comprimido, primero hay que descomprimirlo y almacenar la carpeta resultante en alguna dirección dedicada a la lección.
-
-Ya en la terminal, nos situamos en la dirección en la que almacenamos la carpeta para comenzar con la lección.
+Para esta lección, vamos a utilizar el material proporcionado, sigan las instrucciones de los instructores.
 
 4.  
 
@@ -142,7 +137,8 @@ Ya en la terminal, nos situamos en la dirección en la que almacenamos la carpet
       git init
     ```
 
-  Este comando inicializa el repositorio de git. Git creará una carpeta oculta con el nombre .git en la cual se almacenará el repositorio y todos los cambios del mismo; es importante **No tocar esa carpeta.**
+  Este comando inicializa un nuevo repositorio de Git en el directorio actual, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones, es importante.
+
 
 6.  
 
@@ -150,6 +146,7 @@ Ya en la terminal, nos situamos en la dirección en la que almacenamos la carpet
       git status
     ```
 
-  Brinda información general del estado actual del repositorio: los commits realizados, los archivos listos para hacer un commit, los archivos editados pero que no han sido preparados para un commitasí como la rama actual en la que nos encontramos.
+  El comando muestra el estado actual del repositorio, incluyendo los cambios en el área de preparación y los archivos modificados que no están preparados para el commit.
+
 
 
