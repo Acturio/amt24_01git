@@ -79,8 +79,6 @@ Git trabaja con el sistema de repositorio distribuido lo que permite que todo el
 
 ## Configuración inicial de Git
 
-Ahora sí comencemos con lo comandos
-
 Para comenzar vamos a configurar nuestro nombre de usuario, así como nuestro correo electrónico, estos van a servir para identificarnos y, más adelante, conectarnos con Github.
 
 ``` {bash eval=F}
@@ -103,50 +101,38 @@ Este comando abre el archivo de configuración global de Git en el editor de tex
 
 ## Primeros comandos de Git
 
-1.  
+Para empezar vamos a abrir la terminal, en caso de Windows Git Bash, para presentar los primeros comandos.
 
-    ``` {bash eval=F}
-      git --version
-    ```
+``` {bash eval=F}
+git --version
+```
 
-  Muestra la versión instalada de Git en tu sistema.
+Muestra la versión instalada de Git en tu sistema.
 
-2.  
+``` {bash eval=F}
+git --help
+```
 
-    ``` {bash eval=F}
-      git --help
-    ```
+Muestra una lista de comandos disponibles en Git junto con una breve descripción de cada uno y cómo usarlos.
 
-  Muestra una lista de comandos disponibles en Git junto con una breve descripción de cada uno y cómo usarlos.
+``` {bash eval=F}
+git --help [nombre del comando]
+```
 
-3.  
-
-    ``` {bash eval=F}
-      git --help [nombre del comando]
-    ```
-
-  Muestra la documentación detallada y las opciones disponibles para el comando especificado en Git.
+Muestra la documentación detallada y las opciones disponibles para el comando especificado en Git.
 
 ### Primer Repositorio
 
 Para esta lección, vamos a utilizar el material proporcionado, sigan las instrucciones de los instructores.
 
-4.  
+``` {bash eval=F}
+git init
+```
 
-    ``` {bash eval=F}
-      git init
-    ```
+Este comando inicializa un nuevo repositorio de Git en el directorio actual, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones, es importante.
 
-  Este comando inicializa un nuevo repositorio de Git en el directorio actual, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones, es importante.
+``` {bash eval=F}
+git status
+```
 
-
-6.  
-
-    ``` {bash eval=F}
-      git status
-    ```
-
-  El comando muestra el estado actual del repositorio, incluyendo los cambios en el área de preparación y los archivos modificados que no están preparados para el commit.
-
-
-
+El comando muestra el estado actual del repositorio, incluyendo los cambios en el área de preparación y los archivos modificados que no están preparados para el commit.
