@@ -12,6 +12,10 @@ Git es un sistema de control de versiones diseñado para gestionar proyectos de 
 
 -   **Repositorio**: Es un espacio donde Git almacena todos los archivos y carpetas que forman parte de tu proyecto.
 
+-   **Clonar**: Es hacer una copia exacta de un repositorio remoto en tu máquina local.
+
+-   **Status**: Muestra el estado actual de tu repositorio de Git, incluyendo cambios sin confirmar y archivos no rastreados.
+
 -   **Commit**: Es un registro de cambios en el repositorio. Cada commit tiene un mensaje que describe los cambios realizados.
 
 -   **Branch (Rama)**: Es una versión paralela del código principal. Se utilizan para desarrollar funcionalidades nuevas sin afectar el código principal hasta que estén listas.
@@ -20,12 +24,11 @@ Git es un sistema de control de versiones diseñado para gestionar proyectos de 
 
 -   **Push (Subir)** y **Pull (Bajar)**: `Push` se refiere a enviar cambios locales al repositorio remoto, mientras que `Pull` es obtener cambios del repositorio remoto a tu repositorio local.
 
--   **Clonar**: Es hacer una copia exacta de un repositorio remoto en tu máquina local.
-
 ![](img/02_Fundamentos/SCV.png)
 
+## Importancia de Git
 
-## ¿Porqué es importante saber Git o cualquier otro sistema de control de versiones?
+**¿Porqué es importante saber Git o cualquier otro sistema de control de versiones?**
 
 Los sistemas de control de versiones (SCV), como lo es Git, son fundamentales en el desarrollo de software por varias razones clave:
 
@@ -49,6 +52,8 @@ Existen distintos modelos de SCV, a continuación explicaremos 2 de los más imp
 
 -   **Repositorio Central**
 
+    ![](img/02_Fundamentos/repositorio-central.jpeg)
+
     Es un modelo de control de versiones donde existe un único servidor central que contiene la versión principal del proyecto. Los desarrolladores envían sus cambios directamente a este servidor central.
 
     **Características:**
@@ -60,6 +65,8 @@ Existen distintos modelos de SCV, a continuación explicaremos 2 de los más imp
     -   **Historial único:** El historial completo del proyecto reside en el servidor central.
 
 -   **Repositorio Distribuido**
+
+    ![](img/02_Fundamentos/repositorio-distribuido.jpeg)
 
     En este modelo cada desarrollador tiene una copia completa del repositorio, incluyendo historial y ramas, en su máquina local. Los cambios se intercambian directamente entre repositorios locales o a través de uno central opcional.
 
@@ -81,11 +88,11 @@ Git trabaja con el sistema de repositorio distribuido lo que permite que todo el
 
 Para comenzar vamos a configurar nuestro nombre de usuario, así como nuestro correo electrónico, estos van a servir para identificarnos y, más adelante, conectarnos con Github.
 
-``` {bash eval=F}
+```{bash eval=F}
 git config --global user.name "[Nombre de usuario]"
 ```
 
-``` {bash eval=F}
+```{bash eval=F}
 git config --global user.email "[Direccion de correo]"
 ```
 
@@ -93,7 +100,7 @@ El correo no necesariamnete debe estar registrado en Github, sin embargo, para t
 
 Para visualizar las configuraciones que tenemos en git, podemos utilizar el comando
 
-``` {bash eval=F}
+```{bash eval=F}
 git config --global -e
 ```
 
@@ -103,7 +110,7 @@ Este comando abre el archivo de configuración global de Git en el editor de tex
 
 Para empezar vamos a abrir la terminal, en caso de Windows Git Bash, para presentar los primeros comandos.
 
-``` {bash eval=F}
+```{bash eval=F}
 git --version
 ```
 
@@ -111,10 +118,9 @@ git --version
 git version 2.34.1
 ```
 
-
 Muestra la versión instalada de Git en tu sistema.
 
-``` {bash eval=F}
+```{bash eval=F}
 git --help
 ```
 
@@ -166,10 +172,9 @@ to read about a specific subcommand or concept.
 <!-- See 'git help git' for an overview of the system. -->
 ```
 
-
 Muestra una lista de comandos disponibles en Git junto con una breve descripción de cada uno y cómo usarlos.
 
-``` {bash eval=F}
+```{bash eval=F}
 git --help [nombre del comando]
 ```
 
@@ -179,13 +184,13 @@ Muestra la documentación detallada y las opciones disponibles para el comando e
 
 Para esta lección, vamos a utilizar el material proporcionado, sigan las instrucciones de los instructores.
 
-``` {bash eval=F}
+```{bash eval=F}
 git init
 ```
 
 Este comando inicializa un nuevo repositorio de Git en el directorio actual, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones, es importante.
 
-``` {bash eval=F}
+```{bash eval=F}
 git status
 ```
 
