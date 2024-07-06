@@ -117,8 +117,7 @@ git --version
 ```{bash eval=F}
 git version 2.34.1
 ```
-
-Muestra la versión instalada de Git en tu sistema.
+Muestra la versión instalada de Git en tu sistema. En este caso contamos con la versión `2.34.1` de Git.
 
 ```{bash eval=F}
 git --help
@@ -188,10 +187,24 @@ Para esta lección, vamos a utilizar el material proporcionado, sigan las instru
 git init
 ```
 
-Este comando inicializa un nuevo repositorio de Git en el directorio actual, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones, es importante.
+```{bash eval=F}
+Inicializado repositorio Git vacío en /[ubicación del directorio]/.git/
+```
+
+Este comando inicializa un nuevo repositorio de Git en el directorio actual `[ubicación del directorio]`, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones, es importante.
 
 ```{bash eval=F}
 git status
 ```
 
+```{bash eval=F}
+En la rama main
+
+No hay commits todavía
+
+no hay nada para confirmar (crea/copia archivos y usa "git add" para hacerles seguimiento)
+```
+
 El comando muestra el estado actual del repositorio, incluyendo los cambios en el área de preparación y los archivos modificados que no están preparados para el commit.
+En este caso el mensaje indica que te encuentras en la rama principal (`main`), aún no se ha realizado ningún commit, y no hay cambios pendientes para confirmar.
+   

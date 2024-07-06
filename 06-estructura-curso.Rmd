@@ -1,0 +1,143 @@
+# Estructura Curso
+
+**Section 1: Inicio del curso**
+
+-   ~~Objetivos del curso~~
+-   ~~Funcionamiento del curso~~
+-   ~~Dudas y consultas~~
+-   ~~Instalaciones necesarias para el curso~~
+
+**section 2: Fundamentos**
+
+-   ~~Introducción a los fundamentos de git~~
+-   ~~Importancia de git como sistema de control de versiones~~
+-   Primeros comandos de git
+-   Nuestro primer repositorio
+-   Nota - CRLF
+-   ¿Qué hace git por nosotros en estos momentos?
+-   Repaso de comandos vistos
+-   Cambiar nombre de la rama "master" a "main"
+-   Demostración de la creación, puesta en escena y commits
+-   Bonus VSCode add y commits
+-   Diferentes formas de agregar archivos al escenario
+-   Diferentes formas de añadir al Stage
+-   Creando Alias para nuestros comandos
+-   Examen teórico #1
+
+**Section 3: Un poco más allá de los fundamentos de git**
+
+-   Introducción a la sección
+-   Cambios en los archivos
+-   Actualizar mensaje del commit y revertir commits
+-   Posible error/warning que tienen algunos
+-   Preparando repositorio para viajes en el tiempo
+-   Viajes en el tiempo, resets y reflog
+-   Cambiar el nombre y eliminar archivos mediante y fuera de git
+-   Ignorando archivos que no deseamos
+-   Tarea práctica #1
+
+**Section 4: Ramas, uniones, conflictos y tags**
+
+-   Introducción a la sección
+-   Introducción Ramas, uniones y conflictos
+-   Merge: Fast-Forward
+-   Merge: Unión automática
+-   Merge: Uniones con conflictos
+-   Tags - Etiquetas
+-   Creando etiquetas - Tags
+-   Examen teórico #2
+
+**Section 5: Git Stash y Git Rebase - Para realizar cambios de emergencia**
+
+-   Introducción a la sección
+-   Introducción al Stash
+-   Git Stash
+-   Conflictos con el Stash
+-   Stash avanzado
+-   Introducción al Git Rebase
+-   Rebase: Actualizando una rama
+-   Rebase: Squash
+-   Rebase: Reword
+-   Rebase: edit
+-   Examen teórico #3
+
+**Section 6: Inicios en GitHub Remote, Git Remote, Push & Pull**
+
+-   Introducción a la sección
+-   Documentaciones útiles
+-   Creando una cuenta en GitHub
+-   Push a GitHub
+-   Push de los Tags de nuestro repositorio
+-   Creando - release tags
+-   Actualizar el perfil de GitHub
+-   Pull de los últimos cambios en el repositorio de GitHub
+-   Warning: Pulling without reconcile strategy
+-   Clonar un repositorio
+-   Subir cambios locales al remoto
+-   Git Pull Rebase
+-   Ejercicio: Git pull
+
+**Section 7: GitHub básico**
+
+-   Introducción a la sección
+-   Introducción a GitHub
+-   Introducción a la interfaz de GitHub
+-   Markdown y GitHub Markdown
+-   Documentación sobre el Markdown de GitHub
+-   Buscando archivos en GitHub
+-   Git Fetch
+-   Comentarios en los commits
+-   Comprender el flujo de GitHub
+-   Bonus: No hacer esto
+
+**Section 8: GitHub - avanzado**
+
+-   Introducción a la sección
+-   Fork, Clone y Colaboraciones
+-   Cloning y Fork
+-   Pull Request
+-   Actualizando nuestro Fork
+-   Introducción a los flujos de trabajo
+-   Feature Branch - Flujo de trabajo mediante pull request
+-   Bonus: Actualizar un Alias
+-   Feature Branch - Revisando el trabajo de otros compañeros
+-   Limpiar ramas que ya no son necesarias
+-   Rama de producción: GitHub
+-   Recuperar una rama de producción
+
+**Section 9: GitHub Issues, MileStones y Colaboradores**
+
+- Introducción a la sección
+-  GitHub Issues
+- Cerrar un Issue
+- Cerrar un Issue mediante un commit
+- Issue Templates
+- Labels - Etiquetas
+- MileStones: Un punto importante
+- Agregando colaboradores a un repositorio 
+
+**Section 10: Wikis, Proyectos y GitHub Pages**
+
+- Introducción a la sección
+- Nota de actualización: Wikis
+- Wiki
+- Agregando referencias entre páginas en la Wiki
+- Proyectos de GitHub
+- GitHub Pages - Para tu usuario u Organización
+- GitHub Pages - Para tu proyecto o repositorio
+- Insights 
+
+**Section 11: Organizaciones y Equipos**
+
+- Introducción a la sección
+- Creando una organización
+- Teams: Equipos de trabajo
+- Repositorios y privilegios a los equipos de nuestra organización
+- Más información sobre los miembros de la organización 
+
+**Section 12: Gist**
+
+- Introducción a la sección
+- Creando un Gist
+- Usando Plugins de Gist con tokens personales
+- Otros detalles de los Gist
