@@ -98,11 +98,37 @@ git config --global user.email "[Direccion de correo]"
 
 El correo no necesariamnete debe estar registrado en Github, sin embargo, para trabajar con esta plataforma es recomendable usar el correo con el que te registraste o vas a registrar en Github, ya que tanto el nombre como el correo sirven para identificar al usuario.
 
+Al iniciar un repositorio, Git crea una rama principal que generalmente es llamada `master` o `main`, Por diversas razones ultimamente  esta segunda opción se  ha vuelto la prferencia, por lo que vamos a establecer `main` como nombre por defecto de la rama principal:
+
+```{bash eval=F}
+git config --global init.defaultBranch main
+```
+
+Con este comando se establece `main` como nombre por defecto de la rama principal para cualquier nuevo repositorio.
+
+Si prefieres cambiar el nombre de la rama principal, o cualquier otra, puedes usar:
+
+```{bash eval=F}
+git branch -m [actual] [nuevo]
+```
+  
+Cambia el nombre `[actual]` de la rama por el `[nuevo]` en el repositorio actual sin alterar la configuración.
+
+
 Para visualizar las configuraciones que tenemos en git, podemos utilizar el comando
 
 ```{bash eval=F}
 git config --global -e
 ```
+
+```{bash eval=F}
+[user]
+  name = Nombre de usuario
+  email = Direccion de correo
+[init]
+  defaultBranch = main
+```
+
 
 Este comando abre el archivo de configuración global de Git en el editor de texto predeterminado para que puedas editarlo.
 
@@ -179,9 +205,13 @@ git --help [nombre del comando]
 
 Muestra la documentación detallada y las opciones disponibles para el comando especificado en Git.
 
-### Primer Repositorio
+## Primer Repositorio [Ejercicio]
 
-Para esta lección, vamos a utilizar el material proporcionado, sigan las instrucciones de los instructores.
+Con el material [Material]() y en compañía de los instructores, van a crear su primer repositorio. 
+Antes de comenzar, hay que conocer el concepto de __área de preparación de Git__ que presentaremos ahora.  
+El __área de preparación de Git__, también conocida como __"index"__ o __"staging area"__, es donde se preparan los cambios antes de confirmarlos con un commit. Permite seleccionar qué modificaciones se incluirán en el próximo commit y facilita la revisión y organización de los cambios antes de su confirmación definitiva en el historial del repositorio.
+
+En este ejercicio se van a presentar los siguientes comandos: 
 
 ```{bash eval=F}
 git init
@@ -191,7 +221,7 @@ git init
 Inicializado repositorio Git vacío en /[ubicación del directorio]/.git/
 ```
 
-Este comando inicializa un nuevo repositorio de Git en el directorio actual `[ubicación del directorio]`, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones, es importante.
+Este comando inicializa un nuevo repositorio de Git en el directorio actual `[Ubicación del directorio]`, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones.
 
 ```{bash eval=F}
 git status
@@ -206,5 +236,255 @@ no hay nada para confirmar (crea/copia archivos y usa "git add" para hacerles se
 ```
 
 El comando muestra el estado actual del repositorio, incluyendo los cambios en el área de preparación y los archivos modificados que no están preparados para el commit.
-En este caso el mensaje indica que te encuentras en la rama principal (`main`), aún no se ha realizado ningún commit, y no hay cambios pendientes para confirmar.
-   
+
+```{bash eval=F}
+git add [Nombre del archivo/directorio]
+```
+
+Añade el `archivo/directorio` al área de preparación para ser incliudo en el próximo commit, en caso de ser un directorio se agregan tolos los archivos y subdirectorios que contiene.
+
+```{bash eval=F}
+git add .
+```
+
+Agrega todos los archivos nuevos y modificados del directorio actual al área de preparación para el próximo commit.
+
+```{bash eval=F}
+git reset [archivo/directorio]
+```
+
+Deshace los cambios en el `archivo/directorio` especificado, retirándolo del área de preparación sin modificar el directorio de trabajo.
+
+```{bash eval=F}
+git commit -m "nombre del commit"
+```
+
+```{bash eval=F}
+[main (commit-raíz) 3648c0e] nombre del commit
+ 6 files changed, 604 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 css/.DS_Store
+ create mode 100755 css/bootstrap.min.css
+ create mode 100644 css/bootstrap/.DS_Store
+ create mode 100644 css/bootstrap/_media.css
+ create mode 100644 css/bootstrap/mixins/.DS_Store
+```
+
+
+Realiza un commit con un mensaje descriptivo especificado en `"nombre del commit"`, guardando los cambios realizados en el repositorio de Git.
+
+Hasta esta parte del ejercicio creaste tu primer repositorio, conociste al área de preparación e hiciste tu primer commit.
+Quizá ahora tengas una pregunta en mente.
+
+__¿Para qué me sirve estar haciendo commit frecuetemente?__.  
+Supongamos que por un fallo se corrompieron los archivos en los que estabas trabajando, o que por error borraste algo que no debías; esta clase de sucesos ocurren con bastante frecuencia pero, con ayuda de Git, podrás recuperar tu información.
+
+```{bash eval=F}
+git checkout -- .
+```
+
+El comando `git checkout` tiene muchas funcionalidades, pero en particular `git checkout -- .` restaura todos los archivos en el directorio de trabajo a su estado más reciente en el repositorio (último commit), descartando los cambios no confirmados, permitiendo recuperar la información delo último commit realizado, pero esto __sólo con los archivos a los que Git les da seguimiento__, por lo que es una buena páctica hacer commit con cierta regularidad.
+
+```{bash eval=F}
+git log
+```
+
+Muestra el historial de commits del repositorio, incluyendo mensajes, autores y fechas.
+
+## Distintas maneras de agregar elementos al Stage
+
+Ya sabemos que con `git add` podemos agregar uno por uno los elementos que deseamos al Stage (área de preparación), y que con `git add .` podemos agregar todos los archivos disponibles, pero imagina que modificaste muchos archivos, pero no quieres agregalos todos y hacerlo de uno en uno sería muy tardado.  
+Puedes agregar archivos con el mismo formata ubicados en el mismo directorio utilizando:
+
+```{bash eval=F}
+git add *.[formato]
+```
+
+Agrega al Stage todos los archivos `.[formato]` que se encuentren en el directorio actual, pero no hará nada con los archivos que se encuentren en un subdirectorio.
+
+```{bash eval=F}
+git add [subdirectorio]/*.[formato]
+```
+
+Este comando agrega los archivos `.[formato]` dentro de `[subdirectorio]/` al Stage.
+
+```{bash eval=F}
+git add [subdirectorio]/
+```
+Agrega todos los archivos modificados del `[subdirectorio]`.
+
+__Nota:__ Git de manera automática ignora los directorios vacíos por lo que, si no tienes cuidado, puede ignorar un fichero importante y llegar a romper tu proyecto, para evitarlo se suele agregar un archivo llamado `.gitkeep`  a las carpetas vacías un archivo especial para que git reconozca que deve hacerles seguimiento.
+
+De esta manera puedes organizar más facilmente los elementos modificados.
+
+## Repaso
+
+Ahora un breve repaso de los comandos que hemos visto hasta ahora.
+
+```{bash eval=F} 
+git config --global user.name "[Nombre de usuario]"
+```
+  
+Configura el nombre de usuario global para todos los repositorios de Git en tu sistema.
+  
+```{bash eval=F} 
+git config --global user.email "[Direccion de correo]"
+```
+  
+Configura el correo electrónico global para todos los repositorios de Git en tu sistema.
+  
+```{bash eval=F}
+git config --global init.defaultBranch main
+```
+
+Con este comando se establece `main` como nombre por defecto de la rama principal para cualquier nuevo repositorio.
+
+```{bash eval=F}
+git branch -m [actual] [nuevo]
+```
+
+Cambia el nombre `[actual]` de la rama por el `[nuevo]`.
+  
+```{bash eval=F} 
+git config --global -e
+```
+  
+Abre el archivo de configuración global de Git en tu editor de texto predeterminado para que puedas editarlo.
+  
+```{bash eval=F} 
+git --version
+```
+  
+Muestra la versión instalada de Git en tu sistema
+  
+```{bash eval=F} 
+git --help
+```
+  
+Muestra una lista de comandos disponibles en Git junto con una breve descripción de cada uno y cómo usarlos.
+  
+```{bash eval=F} 
+git --help [nombre del comando]
+```
+  
+Muestra la documentación detallada y las opciones disponibles para el comando especificado en Git.
+  
+```{bash eval=F} 
+git init
+```
+  
+Este comando inicializa un nuevo repositorio de Git en el directorio actual.
+  
+```{bash eval=F} 
+git status
+```
+  
+Muestra el estado actual del repositorio, incluyendo los cambios en el área de preparación y los archivos modificados que no están preparados para el commit.
+  
+```{bash eval=F} 
+git add
+```
+  
+Añade archivos al área de preparación para ser incluidos en el próximo commit.
+  
+```{bash eval=F} 
+git add .
+```
+  
+Agrega todos los archivos nuevos y modificados del directorio actual al área de preparación para el próximo commit.
+  
+```{bash eval=F} 
+git reset [archivo]
+```
+  
+Deshace los cambios en el archivo especificado, retirándolo del área de preparación sin modificar el directorio de trabajo.
+  
+```{bash eval=F} 
+git commit -m "nombre del commit"
+```
+  
+Realiza un commit con un mensaje descriptivo especificado, guardando los cambios realizados en el repositorio de Git.
+  
+```{bash eval=F} 
+git checkout -- .
+```
+  
+Restaura todos los archivos en el directorio de trabajo a su estado más reciente en el repositorio (último commit), descartando los cambios no confirmados.
+  
+```{bash eval=F}
+git log
+```
+
+Muestra el historial de commits del repositorio, incluyendo mensajes, autores y fechas.
+
+```{bash eval=F}
+git add *.[formato]
+```
+
+Agrega al Stage todos los archivos `.[formato]` que se encuentren en el directorio actual.
+
+```{bash eval=F}
+git add [subdirectorio]/*.[formato]
+```
+
+Este comando agrega los archivos `.[formato]` dentro de `[subdirectorio]/` al Stage.
+
+```{bash eval=F}
+git add [subdirectorio]/
+```
+Agrega todos los archivos modificados del `[subdirectorio]`.
+
+## Alias
+
+Ya conocen los comandos más básicos de Git y seguro han notado que muchos muestran información que generalmente no necesitamos, la gran mayoría de comandos en Git cuentan con etiquetas que permiten mostrar la información de manera distinta a como se hace normalmente pero, como se imaginarán, mejorar la visualización de la información hace que los comandos se extiendan mucho; por ello ahora aprenderán a crear sus propios alias.  
+Un alias de Git es un atajo personalizado que se configura para simplificar y acortar comandos de Git frecuentemente usados.
+
+Para crear tu propio alias utiliza:
+
+```{bash eval=F}
+git config --global alias.[alias] "[Comando]"
+```
+
+Establece un alias de manera que `git [alias]` hará lo mismo que `git "comando"`
+
+Así pueden crear tus propios alias para facilitarse el trabajo.
+
+Un ejemplo muy útil sería:
+
+```{bash eval=F}
+git config --global alias.s "status -s -b"
+```
+
+Veamos el cambio, la salida de `status`
+
+```{bash eval=F}
+git status
+```
+
+```{bash eval=F}
+En la rama main
+Cambios a ser confirmados:
+  (usa "git restore --staged <archivo>..." para sacar del área de stage)
+	nuevos archivos: java/resourse.java
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	java/focus.java
+	java/init.java
+```
+
+La salida de `s`
+
+```{bash eval=F}
+git s
+```
+
+```{bash eval=F}
+## main
+A  java/resourse.java
+?? java/focus.java
+?? java/init.java
+```
+
+Como pueden ver, el uso de alias es muy útil, sobre todo con comandos que se usan repetidamente.
+

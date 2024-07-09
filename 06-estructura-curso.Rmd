@@ -1,28 +1,27 @@
 # Estructura Curso
 
-**Section 1: Inicio del curso**
+~~**Section 1: Inicio del curso**~~
 
 -   ~~Objetivos del curso~~
 -   ~~Funcionamiento del curso~~
 -   ~~Dudas y consultas~~
 -   ~~Instalaciones necesarias para el curso~~
 
-**section 2: Fundamentos**
+~~**section 2: Fundamentos**~~
 
 -   ~~Introducción a los fundamentos de git~~
 -   ~~Importancia de git como sistema de control de versiones~~
--   Primeros comandos de git
--   Nuestro primer repositorio
--   Nota - CRLF
--   ¿Qué hace git por nosotros en estos momentos?
--   Repaso de comandos vistos
--   Cambiar nombre de la rama "master" a "main"
--   Demostración de la creación, puesta en escena y commits
--   Bonus VSCode add y commits
--   Diferentes formas de agregar archivos al escenario
--   Diferentes formas de añadir al Stage
--   Creando Alias para nuestros comandos
--   Examen teórico #1
+-   ~~Primeros comandos de git~~
+-   ~~Nuestro primer repositorio~~
+-   ~~Nota - CRLF~~
+-   ~~¿Qué hace git por nosotros en estos momentos?~~
+-   ~~Repaso de comandos vistos~~
+-   ~~Cambiar nombre de la rama "master" a "main"~~
+-   ~~Demostración de la creación, puesta en escena y commits~~
+-   ~~Bonus VSCode add y commits~~
+-   ~~Diferentes formas de agregar archivos al escenario~~
+-   ~~Creando Alias para nuestros comandos~~
+-   ~~Examen teórico #1~~
 
 **Section 3: Un poco más allá de los fundamentos de git**
 
