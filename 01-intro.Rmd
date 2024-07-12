@@ -8,9 +8,9 @@
 
 Bienvenidos a este curso introductorio de Git, en este curso nos encaminaremos al dominio de una de las herramientas más útiles para todo desarrollador.
 
-Git es un sistema de control de versiones,diseñado para manejar de todo, desde pequeños proyectos independientes hasta grandes y ambiciosos proyectos con rapidez y eficiencia. es una herramienta esencial para desarroladored de cualquier ámbito, permitiendo la colaboración y el seguimiento de cambios en el código de manera organizada.
+Git es un sistema de control de versiones,diseñado para manejar de todo, desde pequeños proyectos independientes hasta grandes y ambiciosos proyectos con rapidez y eficiencia. es una herramienta esencial para desarroladores de cualquier ámbito, ya que facilita la colaboración y el seguimiento de cambios en el código de manera organizada.
 
-Tiene una clara Orientación al código; te permite tener a dispocisión las versiones anteriores de cada proyecto en el que trabajes con el fin de tener una "Linea del tiempo" de tu proyecto que te permita ver los cambios que se han realizado a lo largo del tiempo.
+Tiene una clara orientación al código; te permite tener a dispocisión las versiones anteriores de cada proyecto en el que trabajes con el fin de tener una "Linea del tiempo" de tu proyecto que te permita ver los cambios que se han realizado a lo largo del tiempo.
 
 
 ![](img/01_Intro/imagen-4-1024x388.png)

@@ -8,21 +8,41 @@ A continuación, un par de recomendaciones para el resto del curso:
 
 ## Introducción a los fundamentos de Git
 
-Git es un sistema de control de versiones diseñado para gestionar proyectos de software y otros tipos de documentos de manera eficiente y colaborativa. Aquí están algunos conceptos fundamentales:
+Git es un sistema de control de versiones que, a diferencia de otros sistemas de control de versiones, almacena y maneja la información como un conjunto de copias instantáneas de un sistema de archivos miniatura.
 
--   **Repositorio**: Es un espacio donde Git almacena todos los archivos y carpetas que forman parte de tu proyecto.
+La mayoría de las operaciones en Git solo necesitan archivos y recursos locales para funcionar, lo que lo hace muy rápido.
 
--   **Clonar**: Es hacer una copia exacta de un repositorio remoto en tu máquina local.
+Git tiene tres estados principales en los que se pueden encontrar tus archivos:
 
--   **Status**: Muestra el estado actual de tu repositorio de Git, incluyendo cambios sin confirmar y archivos no rastreados.
+- **Confirmado:** significa que los datos están almacenados de manera segura en tu base de datos local. 
 
--   **Commit**: Es un registro de cambios en el repositorio. Cada commit tiene un mensaje que describe los cambios realizados.
+- **Modificado:** significa que has modificado el archivo pero todavía no lo has confirmado a tu base de datos. 
 
--   **Branch (Rama)**: Es una versión paralela del código principal. Se utilizan para desarrollar funcionalidades nuevas sin afectar el código principal hasta que estén listas.
+- **Preparado:** significa que has marcado un archivo modificado en su versión actual para que vaya en tu próxima confirmación.
 
--   **Merge (Fusionar)**: Es el proceso de combinar cambios de una rama a otra. Por ejemplo, fusionar una rama de funcionalidad en la rama principal (como `main` o `master`).
+Esto nos lleva a las tres secciones principales de un proyecto de Git: El directorio de Git (Git directory), el directorio de trabajo (working directory), y el área de preparación (staging area).
 
--   **Push (Subir)** y **Pull (Bajar)**: `Push` se refiere a enviar cambios locales al repositorio remoto, mientras que `Pull` es obtener cambios del repositorio remoto a tu repositorio local.
+- **El directorio de Git:** Es donde se almacenan los metadatos y la base de datos de objetos para tu proyecto.
+
+- **El directorio de trabajo:** Es una copia de una versión del proyecto. Estos archivos se sacan de la base de datos comprimida en el directorio de Git, y se colocan en disco para que los puedas usar o modificar.
+
+- **El área de preparación:** Es un archivo, generalmente contenido en tu directorio de Git, que almacena información acerca de lo que va a ir en tu próxima confirmación. A veces se le denomina índice (“index”).
+
+Git está diseñado para gestionar proyectos de software y otros tipos de documentos de manera eficiente y colaborativa. Aquí están algunos conceptos fundamentales:
+
+-   **Repositorio:** Es un espacio donde Git almacena todos los archivos y carpetas que forman parte de tu proyecto.
+
+-   **Clonar:** Es hacer una copia exacta de un repositorio remoto en tu máquina local.
+
+-   **Status:** Muestra el estado actual de tu repositorio de Git, incluyendo cambios sin confirmar y archivos no rastreados.
+
+-   **Commit:** Es un registro de cambios en el repositorio. Cada commit tiene un mensaje que describe los cambios realizados.
+
+-   **Branch (Rama):** Es una versión paralela del código principal. Se utilizan para desarrollar funcionalidades nuevas sin afectar el código principal hasta que estén listas.
+
+-   **Merge (Fusionar):** Es el proceso de combinar cambios de una rama a otra. Por ejemplo, fusionar una rama de funcionalidad en la rama principal (como `main` o `master`).
+
+-   **Push (Subir)** y **Pull (Bajar):** `Push` se refiere a enviar cambios locales al repositorio remoto, mientras que `Pull` es obtener cambios del repositorio remoto a tu repositorio local.
 
 ![](img/02_Fundamentos/SCV.png)
 
@@ -32,15 +52,15 @@ Git es un sistema de control de versiones diseñado para gestionar proyectos de 
 
 Los sistemas de control de versiones (SCV), como lo es Git, son fundamentales en el desarrollo de software por varias razones clave:
 
--   **Gestión de Historial**: Permiten mantener un registro detallado de todos los cambios realizados en el código y documentos del proyecto. Cada modificación se documenta con un mensaje descriptivo, lo que facilita la comprensión de la evolución del proyecto.
+-   **Gestión de Historial:** Permiten mantener un registro detallado de todos los cambios realizados en el código y documentos del proyecto. Cada modificación se documenta con un mensaje descriptivo, lo que facilita la comprensión de la evolución del proyecto.
 
--   **Colaboración Eficiente**: Facilitan el trabajo en equipo al permitir que varios desarrolladores trabajen simultáneamente en diferentes aspectos del proyecto. Las ramas (branches) permiten trabajar en nuevas funcionalidades sin interferir con el código principal.
+-   **Colaboración Eficiente:** Facilitan el trabajo en equipo al permitir que varios desarrolladores trabajen simultáneamente en diferentes aspectos del proyecto. Las ramas (branches) permiten trabajar en nuevas funcionalidades sin interferir con el código principal.
 
--   **Reversión y Recuperación**: Ofrecen la capacidad de revertir cambios no deseados o recuperar versiones anteriores del código en caso de errores o problemas inesperados.
+-   **Reversión y Recuperación:** Ofrecen la capacidad de revertir cambios no deseados o recuperar versiones anteriores del código en caso de errores o problemas inesperados.
 
--   **Experimentación Segura**: Las ramas permiten probar nuevas ideas de forma segura antes de integrarlas en el código principal, lo que ayuda a mantener la estabilidad del proyecto.
+-   **Experimentación Segura:** Las ramas permiten probar nuevas ideas de forma segura antes de integrarlas en el código principal, lo que ayuda a mantener la estabilidad del proyecto.
 
--   **Seguimiento de Responsabilidades**: Asignan responsabilidades claras al registrar quién realizó cada cambio y cuándo, lo que facilita la revisión y la resolución de problemas.
+-   **Seguimiento de Responsabilidades:** Asignan responsabilidades claras al registrar quién realizó cada cambio y cuándo, lo que facilita la revisión y la resolución de problemas.
 
 *Es como en un videojuego donde tienes puntos de control, en el caso de Git serían los commits, a los que puedes volver si te encuentras en un problema y debes andar por otro camino o seguir una estrategia diferente.*
 
@@ -208,8 +228,6 @@ Muestra la documentación detallada y las opciones disponibles para el comando e
 ## Primer Repositorio [Ejercicio]
 
 Con el material [Material]() y en compañía de los instructores, van a crear su primer repositorio. 
-Antes de comenzar, hay que conocer el concepto de __área de preparación de Git__ que presentaremos ahora.  
-El __área de preparación de Git__, también conocida como __"index"__ o __"staging area"__, es donde se preparan los cambios antes de confirmarlos con un commit. Permite seleccionar qué modificaciones se incluirán en el próximo commit y facilita la revisión y organización de los cambios antes de su confirmación definitiva en el historial del repositorio.
 
 En este ejercicio se van a presentar los siguientes comandos: 
 
@@ -289,7 +307,48 @@ El comando `git checkout` tiene muchas funcionalidades, pero en particular `git 
 git log
 ```
 
-Muestra el historial de commits del repositorio, incluyendo mensajes, autores y fechas.
+```{bash eval=F}
+commit e4d9d8e7b9367137765f42870a06e29d295a7434 (HEAD -> main)
+Author: [Nombre de usuario] <[Direccion de correo]>
+Date:   Mon Jul 8 21:55:45 2024 -0600
+
+    se agrgan archivos SCSS
+
+commit b71cd6d5306d5c19dc6f53bef8f1ff3f62da0bf2
+Author: [Nombre de usuario] <[Direccion de correo]>
+Date:   Mon Jul 8 21:55:07 2024 -0600
+
+    se agregan archivos JS
+
+commit 8daaec9718c9e4239162092251660cbc9b3e7ed8
+Author: [Nombre de usuario] <[Direccion de correo]>
+Date:   Mon Jul 8 21:54:41 2024 -0600
+
+    se agrega uploads
+
+commit ff7c40ac6a9d942e818cf2bd3996b193f8b07101
+Author: [Nombre de usuario] <[Direccion de correo]>
+Date:   Mon Jul 8 21:54:17 2024 -0600
+
+    se agregan fuentes e imagenes
+```
+
+Muestra el historial de commits del repositorio, incluyendo mensajes, autores y fechas, la clave alfanumérica que aparece al principio de cada commit es el hash con el que Git regitra ese commit, cada clave es distinta y le corresponde una única instantanea (commit).
+Este comando muestra mucha información que realmente entorpece la visualización, pero hay maneras de mejorar la forma en que se presenta esta información.
+
+```{bash eval=F}
+git log --oneline
+```
+
+```{bash eval=F}
+e4d9d8e (HEAD -> main) se agrgan archivos SCSS
+b71cd6d se agregan archivos JS
+8daaec9 se agrega uploads
+ff7c40a se agregan fuentes e imagenes
+```
+
+Muestra una forma reducida del hash de cada commit seguido de su mensaje de identificación.  
+Cabe aclarar que la palabra `HEAD` marca al último commit realizado y que `(HEAD -> main)` indica que dicho commit se realizó en la rama `main`.
 
 ## Distintas maneras de agregar elementos al Stage
 
@@ -445,7 +504,7 @@ Para crear tu propio alias utiliza:
 git config --global alias.[alias] "[Comando]"
 ```
 
-Establece un alias de manera que `git [alias]` hará lo mismo que `git "comando"`
+Establece un alias de manera que `git [alias]` hará lo mismo que `git "[comando]"`
 
 Así pueden crear tus propios alias para facilitarse el trabajo.
 
