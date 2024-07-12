@@ -1,0 +1,103 @@
+# Los cambios en Git
+
+## Cambios en los archivos
+
+Cuando acabas de editar un archivo y quieres ver con claridad las diferencias entre las "versiones", puedes hacerlo de varias formas, como hacer copia del "original" o ir revirtiendo los cambios poco a poco, pero tener toda la información disponible hace que fácilmente se pierda de vista lo que uno busca;
+git puede mostrarte, de manera organizada, unicamente los cambios que hay entre las dos versiones que quieres comparar de un archivo, lo que facilita bastante distinguir los cambios efectuados.
+
+En esta ocación presentaremos un comando que nos ayudará a distinguir los cambios realizados en un archivo.
+
+```{bash eval=F}
+git diff
+```
+
+```{bash eval=F}
+diff --git a/instalaciones.md b/instalaciones.md
+index a7cc8e4..512d0e8 100644
+--- a/instalaciones.md
++++ b/instalaciones.md
+@@ -1,8 +1,14 @@
+ # Pasos para instalar
+-Seguir estos pasos:
++1. Seguir estos pasos:
+ 
+ ```
+-npm install
++yarn install
+ ```
+ 
++2. Ejecutar el comando :
++```
++npm start
++```
++
++
+ 
+
+```
+
+
+Muestra las diferencias no confirmadas entre el directorio de trabajo y el último commit realizado. En la salida podemos notar que hay líneas que comienzan con `+` y `-`, estos cimbolos nos indican los cambios que presenta el archivo en el que se está trabajando respecto al último registro realizado.  
+`+[contenido]` Indica que se agregó `[contenido]` al archivo en cuestión, mientras que 
+`-[contenido]` Indica que `[contenido]` fue removido delarchivo, preo solo muestra cambios en archivos que ya tienen seguimiento y no reconoce los cambios que se encuentran en el stage. Las líneas que no cuentan con estos marcadores no han sido modificadas.
+
+```{bash eval=F}
+git diff --staged
+```
+
+```{bash eval=F}
+diff --git a/instalaciones.md b/instalaciones.md
+index a7cc8e4..512d0e8 100644
+--- a/instalaciones.md
++++ b/instalaciones.md
+@@ -1,8 +1,14 @@
+ # Pasos para instalar
+-Seguir estos pasos:
++1. Seguir estos pasos:
+ 
+ ```
+-npm install
++yarn install
+ ```
+ 
++2. Ejecutar el comando :
++```
++npm start
++```
++
++
+ 
+
+
+```
+
+
+Muestra las diferencias presentes en los elementos que se encuentran en el área de preparación de la misma manera que `git diff`.
+
+## Correción de commits
+
+En ocaciones, por algún descuido, hacemos un commit con un mensaje incompleto, mal escrito o simplemente distinto a lo que buscamos presentar, pero no hay de que alarmarse, este mensaje se puede corregir de manera sencilla.
+
+```{bash eval=F}
+git commit --amend -m "[correccion]"
+```
+
+```{bash eval =F}
+[main 9d520f3] [correccion]
+ Date: Thu Jul 11 18:21:25 2024 -0600
+ 1 file changed, 5 insertions(+)
+```
+
+Este comando permite cambiar el mensaje del **último commit** registrado por `[correccion]`.
+
+Tambien ocurre que hicimos una confirmación que puede considererse incompleta, aunque sencillamente podrías hacer otro commit con los cambios restantes, Git ofrece la opción de restaurar el commit deseado para continuar trabajando sobre él.
+
+```{bash eval=F}
+git reset --soft HEAD^
+```
+
+Deshace el último commit, manteniendo los cambios en el área de preparación.
+Puedes sustituir `HEAD^` por el hash correspondiente al último commit, incliso puedes hacerlo con cualquier otro commit, pero es más simple dejarlo así.
+
+
+

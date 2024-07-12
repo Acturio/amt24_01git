@@ -25,10 +25,9 @@
 
 **Section 3: Un poco más allá de los fundamentos de git**
 
--   Introducción a la sección
--   Cambios en los archivos
--   Actualizar mensaje del commit y revertir commits
--   Posible error/warning que tienen algunos
+-   ~~Introducción a la sección~~
+-   ~~Cambios en los archivos~~
+-   ~~Actualizar mensaje del commit y revertir commits~~
 -   Preparando repositorio para viajes en el tiempo
 -   Viajes en el tiempo, resets y reflog
 -   Cambiar el nombre y eliminar archivos mediante y fuera de git
