@@ -99,5 +99,16 @@ git reset --soft HEAD^
 Deshace el último commit, manteniendo los cambios en el área de preparación.
 Puedes sustituir `HEAD^` por el hash correspondiente al último commit, incliso puedes hacerlo con cualquier otro commit, pero es más simple dejarlo así.
 
+## Preparación de repositorio
+
+Vamos a trabajar ahora con la carpeta `material`, que se les proporcionará, y pondremos en practica los conocimientos adquiridos hasta ahora, para ello seguiremos las siguientes instrucciones:
+
+1. desde la terminal, colocate en la ubicación de la carpeta e inicializa un repositorio de Git con
+
+```{bash eval=F}
+git init
+```
+
+2. Uno por uno, ve registrando los archivos: numeros.md, caracteristicas.md y problemas.md; recuerde que debes llevarlos al Satage con `git add [elemento]` y luego registrarlos con `git commit -m "[mensaje]"`.
 
 
