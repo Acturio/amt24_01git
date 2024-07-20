@@ -547,3 +547,11 @@ A  java/resourse.java
 
 Como pueden ver, el uso de alias es muy útil, sobre todo con comandos que se usan repetidamente.
 
+
+Por último una recomendación de `alias` que será muy útil en adelante:
+
+```{bash eval=F}
+git config --global alias.lg "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+```
+
+Con este alias se mostrarán los registros de un repositorio de manera resumida y organizada, de forma que será más facil identificar la información.
