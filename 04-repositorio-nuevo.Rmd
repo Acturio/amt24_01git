@@ -1,0 +1,410 @@
+# Repositorio nuevo
+
+En este capítulo vamos a simular distintos escenarios en los que nos podemos encontrar al desarrollar un proyecto;
+Vamos a trabajar ahora con la carpeta `material-numeros`, que se proporcionará por los instructores, y pondremos en practica los conocimientos adquiridos hasta ahora a la vez que profundizamos en las distintas opciones que nos proporciona la herramienta Git.
+Con ese propósito vamos a seguir una narrativa en la cual nos encontramos desarrollando un proyecto llamado números.
+
+## Preparación de repositorio
+
+Primero vamos a preparar el repositorio y haremos que Git rastreé los cambios relalizados en el proyecto.
+
+1. Desde la terminal, nos colocamos en la ubicación de la carpeta `material-numeros/` e inicializamos un repositorio de Git con
+
+```{bash eval=F}
+git init
+```
+```{bash eval=F}
+Inicializado repositorio Git vacío en [path]/material-numeros/.git/
+```
+
+
+2. Uno por uno, vamos a registrar los archivos: `README.md`, `numeros.md`, `caracteristicas.md`, `problemas.md` y el directorio `operaciones/` (haciendo commit); recuerde que debes llevarlos al Satage con 
+
+```{bash eval=F}
+git add [elemento]
+```
+
+para luego poder registrarlos con un mensaje a traves de
+
+```{bash eval=F}
+git commit -m "[elemento] agregado"
+```
+```{bash eval=F}
+[main (commit-raíz) a4356d4] [elemento] agregado
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+```
+
+
+3. Vamos a cambiar el mensaje de registro que hicimos al guardar el directorio `operaciones/`, para ello usaremos
+
+```{bash eval=F}
+git commit --amend
+```
+```{bash eval=F}
+operaciones/ agregado
+
+# Por favor ingresa el mensaje del commit para tus cambios. Las
+#  líneas que comiencen con '#' serán ignoradas, y un mensaje
+#  vacío aborta el commit.
+#
+# Fecha:     Sun Jul 21 18:00:13 2024 -0600
+#
+# En la rama main
+# Cambios a ser confirmados:
+#	nuevos archivos: operaciones/producto.md
+#	nuevos archivos: operaciones/suma.md
+#
+```
+
+
+Este comando abrirá el editor de texto por defecto de cada equipo para mostrar un archivo de registro, el cual vamos a editar de la siguiente manera:
+La primera línea, donde se encuentra escrito `operaciones/ agregado`, cambiaremos ese mensaje por:
+
+```{bash eval=F}
+operaciones/suma.md y operaciones/producto.md agregados
+```
+
+
+Y guardemos los cambios en el archivo de registro.
+
+Con los registros realizados hasta ahora, tomando en cuenta que se suguió la recomendación de `alias` presentada al final del Capítulo 2, usando `git lg` deberiamos tener una salida como la que sigue
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+* f0e5d47 - (hace 9 segundos) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario] (HEAD -> main)
+* d610af4 - (hace 55 segundos) problemas.md agregado - [Nombre de usuario]
+* a54e313 - (hace 2 minutos) caracteristicas.md agregado - [Nombre de usuario]
+* 37d5a5b - (hace 2 minutos) numeros.md agregado - [Nombre de usuario]
+* a4356d4 - (hace 3 minutos) README.md agregado - [Nombre de usuario]
+```
+
+## Viajes en los registros 
+
+Ya que Git rastrea todos los elementos involucrados en el proyecto empezamos a hacer cambios para, posteriormente, realizar los viajes en los commits realizados. 
+
+1. Empezando con la edición de archivos, en el archivo `numeros.md` se encontrarán con una lista de clases de números, a la que le agregaremos, al final, el siguiente elemento:
+
+```{bash eval=F}
+* Imaginarios
+```
+
+Luego, al archivo `caracteristicas.md` le vamos a agregar:
+
+```{bash eval=F}
+* Unidad imaginaria "i".
+```
+
+Después, en el archivo `problemas.md` añadimos:
+
+```{bash eval=F}
+* Sin cerradura en producto
+```
+
+Tras los cambios anteriormente realizados, haremos una verificación.
+
+```{bash eval=F}
+git s
+```
+```{bash eval=F}
+## main
+ M caracteristicas.md
+ M numeros.md
+ M problemas.md
+```
+
+
+Ahora haremos un nuevo commit con el siguiente comando.
+
+```{bash eval=F}
+git commit -am "numeros imaginarios agregados"
+```
+
+2. Comenzaremos con los viajes en el tiempo, primero veamos nuestra línea del tiempo con
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+* f5ef0ba - (hace 3 minutos) numeros imaginarios agregados - [Nombre de usuario] (HEAD -> main)
+* f0e5d47 - (hace 8 minutos) operaciones/ agregado - [Nombre de usuario]
+* d610af4 - (hace 9 minutos) problemas.md agregado - [Nombre de usuario]
+* a54e313 - (hace 10 minutos) caracteristicas.md agregado - [Nombre de usuario]
+* 37d5a5b - (hace 10 minutos) numeros.md agregado - [Nombre de usuario]
+* a4356d4 - (hace 11 minutos) README.md agregado - [Nombre de usuario]
+
+```
+Vemos todos los registros que hemos hecho hasta ahora, pero sabemos que al agregar loe números imaginarios ya podemos considerar a los números complejos, por lo que quermeos agregarlos tambíen, pero en lugar de hacer un nuevo commit, buscamos que sean agregados a la vez. Para ello, vamos a usar de nuevo el comando `git reset --soft`, pero recordemos que este nos permite darle la entrade `HEAD^` o en su lugar el `hash` de registro del commit al que nos vamos a mover; esta vez usaremos esta segunda forma, en este caso el paámetro que usaremos es el penúltimo `[hash]` que mostró el comando `git lg`, por lo que emplearemos
+
+```{bash eval=F}
+git reset --soft [hash]
+```
+
+Ahora podemos agregar los números complejos para registrarlos junto a los imaginarios, lo que haremos como anteriormente:
+
+Al archivo `numerso.md` le agregaremos:
+
+```{bash eval=F}
+* Complejos
+```
+
+Luego, al archivo `caracteristicas.md` le vamos a agregar:
+
+```{bash eval=F}
+* Unión de reales e imaginarios, plano complejo.
+```
+
+Después, en el archivo `problemas.md` añadimos:
+
+```{bash eval=F}
+* --------------------------------------------
+```
+
+Por último, tanto a `suma.md` como a `producto.md`, ubicados en el directorio `operaciones`, agregaremos el elemento:
+
+```{bash eval=F}
+* Complejos
+```
+
+Haciendo una verificación de los cambios.
+
+```{bash eval=F}
+git s
+```
+```{bash eval=F}
+## main
+MM caracteristicas.md
+MM numeros.md
+ M operaciones/producto.md
+ M operaciones/suma.md
+MM problemas.md
+```
+Veremos que hay algunos cambios que ya se agregaron al Satge, los referentes a la entrada de números imaginarios, pero también encontramos cambios en el directorio de trabajo, los que se acaban de añadir.
+
+
+Ahora haremos un nuevo commit con el siguiente comando.
+
+```{bash eval=F}
+git commit -am "numeros imaginarios y complejos agregados"
+```
+```{bash eval=F}
+[main 451e900] numeros imaginarios y complejos agregados
+ 5 files changed, 8 insertions(+)
+```
+
+Con esto hemos cambiado el registro que teníamos por uno más completo, en el cuál agregamos tanto a los números imaginarios como a los complejos.
+
+Veamos como se reflejan estos cambios en los registros:
+
+```{bash eval=F}
+git lg
+```
+
+```{bash eval=F}
+* 451e900 - (hace 5 segundos) numeros imaginarios y complejos agregados - [Nombre de usuario] (HEAD -> main)
+* f0e5d47 - (hace 8 minutos) operaciones/ agregado - [Nombre de usuario]
+* d610af4 - (hace 9 minutos) problemas.md agregado - [Nombre de usuario]
+* a54e313 - (hace 10 minutos) caracteristicas.md agregado - [Nombre de usuario]
+* 37d5a5b - (hace 10 minutos) numeros.md agregado - [Nombre de usuario]
+* a4356d4 - (hace 11 minutos) README.md agregado - [Nombre de usuario]
+```
+
+3. Luego de todo esto percibimos que algo _anda mal_ en el proyecto y notamos que el último punto en el que todo marchaba bien es tras haber agregado `problemas.md` por lo que vamos a copiar su `[hash]` de registro y esta vez usaremos:
+
+```{bash eval=F}
+git reset --mixed [hash]
+```
+```{bash eval=F}
+Cambios fuera del área de stage tras el reset:
+M	caracteristicas.md
+M	numeros.md
+M	problemas.md
+```
+
+Lo que nos regresará al punto que marcamos pero esta vez con los cambios realizados fuera del Stage, así mantenemos los cambios en  el directorio de trabajo. Aquí podemos ver el el estado del repositorio.
+
+```{bash eval=F}
+git s
+```
+```{bash eval=F}
+## main
+ M caracteristicas.md
+ M numeros.md
+ M problemas.md
+?? operaciones/
+```
+
+También veamos como quedan los registros del repositorio.
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+* d610af4 - (hace 15 minutos) problemas.md agregado - [Nombre de usuario]
+* a54e313 - (hace 16 minutos) caracteristicas.md agregado - [Nombre de usuario]
+* 37d5a5b - (hace 16 minutos) numeros.md agregado - [Nombre de usuario]
+* a4356d4 - (hace 17 minutos) README.md agregado - [Nombre de usuario]
+```
+
+Como los cambios realizados después de este punto realmente no van a servirnos, haremos un `reset`, al mismo commit en el que nos ubicamos, pero de una manera distinta.
+
+```{bash eval=F}
+git resset --hard [hash]
+```
+Esta vez el repositorio queda tal cual como Git lo registró y los cambios realizados tras este commit han sido removidos.
+
+Continuamos regresando en el tiempo a los commits donde se agregaron `caracteristicas.md` y una vez más a donde añadimos `numeros.md`, ya que es en este punto donde parece que se originan los problemas que presenta el proyecto.
+
+Llegados a este punto resulta que no había nada malo en el proyecto y hay que volver al punto en el que estábamos originalmente para recuperar toda nustra línea del tiempo, puede parecer imposible ya que eliminamos los registros que ya teníamos y tendremos que hacer cada cambio de nuevo pero Git mantiene un historial con los cambios hechos en los propios registros lo que permite recuperar esa información que se podría considerar perdida. 
+
+Notemos que al acceder al historial de commits no podemos ver mas allá del segundo.
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+* 37d5a5b - (hace 20 minutos) numeros.md agregado - [Nombre de usuario]
+* a4356d4 - (hace 21 minutos) README.md agregado - [Nombre de usuario]
+```
+
+Pero Git tiene otro comando para acceder a los registros, uno que rastrea cambios de los propios registros y los movimientos en ellos.
+
+```{bash eval=F}
+git reflog
+```
+```{bash eval=F}
+37d5a5b (HEAD -> main) HEAD@{0}: reset: moving to 37d5a5b
+a54e313 HEAD@{1}: reset: moving to a54e313
+d610af4 HEAD@{2}: reset: moving to d610af4
+d610af4 HEAD@{3}: reset: moving to d610af4
+451e900 HEAD@{4}: commit: numeros imaginarios y complejos agregados
+f0e5d47 HEAD@{5}: reset: moving to f0e5d47
+f5ef0ba HEAD@{6}: commit: numeros imaginarios agregados
+f0e5d47 HEAD@{7}: commit (amend): operaciones/suma.md y operaciones/producto.md agregados
+f5fe98a HEAD@{8}: commit: operaciones/ agregado
+d610af4 HEAD@{9}: commit: problemas.md agregado
+a54e313 HEAD@{10}: commit: caracteristicas.md agregado
+37d5a5b (HEAD -> main) HEAD@{11}: commit: numeros.md agregado
+a4356d4 HEAD@{12}: commit (initial): README.md agregado
+```
+
+Muestra un historial de los movimientos y cambios de referencia en el repositorio.
+
+En la primer columna se nos muestran los `hash` correspondientes a cada commit registrado por Git. Vamos a buscar el `[hash]` correspondiente al commt que debemos recuperar, registrado con el mensaje `numeros imaginarios y complejos agregados`, luego utilizamos:
+
+```{bash eval=F}
+git reset --hard [hash]
+```
+
+Para recuperar todo el trabajo realizado hasta ahora, lo que podemos verificar con:
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+* 451e900 - (hace 14 minutos) numeros imaginarios y complejos agregados - [Nombre de usuario] (HEAD -> main)
+* f0e5d47 - (hace 22 minutos) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario]
+* d610af4 - (hace 23 minutos) problemas.md agregado - [Nombre de usuario]
+* a54e313 - (hace 24 minutos) caracteristicas.md agregado - [Nombre de usuario]
+* 37d5a5b - (hace 24 minutos) numeros.md agregado - [Nombre de usuario]
+* a4356d4 - (hace 25 minutos) README.md agregado - [Nombre de usuario]
+```
+
+
+## Cambiar de nombre y eliminar archivos
+
+En el desarrollo es muy recurrente la necesidad de cambiarle el nombre a algunos archivos así como eliminarlos por distintas causas, esta vez aprenderemos a hacerlo de manera que Git se mantenga al tando de estos cambios, tanto si fueron realizados mediante Git o fuera del mismo.
+
+### Mediante Git
+
+1. Empezamos con la creación de un nuevo archivo de nombre:
+
+```{bash eval=F}
+divison-cero.md
+```
+
+Al cual le vamos a agregar la siguiente entrada:
+
+```{bash eval=F}
+# Esta es la implementacion de:
+Division entre cero
+```
+
+Agregamos este archivo al area de preparación
+
+```{bash eval=F}
+git add division-cero.md
+```
+
+Hacemos un commit
+
+```{bash eval=F}
+git commit -m "division-cero.md agregado"
+```
+```{bash eval=F}
+[main 3741b68] division-cero.md agregado
+ 1 file changed, 2 insertions(+)
+ create mode 100644 divison-cero.md
+```
+
+2. Notamos que implementar una división entre cero genera muchos problemas y decidimos mejor restringir la operación para que esto no ocurra, por lo que cambiamos el nombre del archivo:
+
+```{bash eval=F}
+git mv divison-cero.md restriccion-division.md
+```
+
+Viemdo el estado del repositorio
+
+```{bash eval=F}
+git s
+```
+```{bash eval=F}
+## main
+R  divison-cero.md -> restriccion-division.md
+```
+
+La `R` indica que el archivo fue renombrado. Ahora hacemos un nuevo commit del archivo renombrado
+
+```{bash eval=F}
+git commit -m "division-cero.md renombrado"
+```
+```{bash eval=F}
+[main f67c77c] division-cero.md renombrado
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename divison-cero.md => restriccion-division.md (100%)
+```
+
+Veamos el historial de registros
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+* f67c77c - (hace 11 segundos) division-cero.md renombrado - [Nombre de usuario] (HEAD -> main)
+* 3741b68 - (hace 4 minutos) division-cero.md agregado - [Nombre de usuario]
+* 451e900 - (hace 2 horas) numeros imaginarios y complejos agregados - [Nombre de usuario]
+* f0e5d47 - (hace 3 horas) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario]
+* d610af4 - (hace 3 horas) problemas.md agregado - [Nombre de usuario]
+* a54e313 - (hace 3 horas) caracteristicas.md agregado - [Nombre de usuario]
+* 37d5a5b - (hace 3 horas) numeros.md agregado - [Nombre de usuario]
+* a4356d4 - (hace 3 horas) README.md agregado - [Nombre de usuario]
+```
+
+3. Con la esperanza de que a nadie se le ocurra la idea de dividir entre cero, decidimos eliminar esta restricción.
+
+```{bash eval=F}
+git rm restriccion-division.md
+```
+```{bash eval=F}
+1 file changed, 2 deletions(-)
+ delete mode 100644 restriccion-division.md
+```
+
+### Fuera de Git
+
+
+
+
+
