@@ -404,7 +404,267 @@ git rm restriccion-division.md
 
 ### Fuera de Git
 
+Esta es la manera más común de eliminar y renombrar archivos. Para no repetir los pasos anteriores, ahora vamos a trabajar con el subdirectorio `operaciones` en el que encontramos con `suma.md` y `producto.md`, si revisamos el contenido en `suma.md`, encontraremos una lista con las clases de números con los que se tiene una operación inversa a la suma "la resta" por esta razón, cambiaremos el nombre del archivo a:
+
+```{bash eval=F}
+suma-con-inversa.md
+```
+
+Este cambio, al hacer un `git s / git status`, a diferencia de la vez anterior aparecerá de una forma peculiar
+
+```{bash eval=F}
+git s
+```
+```{bash eval=F}
+## HEAD (sin rama)
+ D suma.md
+?? suma-con-inversa.md
+```
+
+Parece que Git no reconoce lo que hicimos como un renombramiento del archivo, sio que hemos eliminado `suma.md` y se ha creado un nuevo archivo, que aún no tiene seguimieto, llamado `suma-con-inversa.md`. No hay porque alarmarse con esto, utilizando
+
+```{bash eval=F}
+git add .
+```
+
+Git, al ver que el contenido de los archivos es idéntico, cambiará el tipo de registro a "renombrado" y podemos verificarlo usando
+
+```{bash eval=F}
+git s
+```
+```{bash eval=F}
+## HEAD (sin rama)
+R  suma.md -> suma-con-inversa.md
+```
+
+En este caso la `R` indica que Git ha registrado el cambio como renombramiento, casi siempre funciona así, si en algún caso Git no registra este cmbio como "renombrado" hay que volver un paso atras, empleando `git restore --staged` y hacer este renombramiento mediante Git.
+Ahora, queda hacer el commit
+
+```{bash eval=F}
+git commit -m "suma.md renombrado"
+```
+
+viendo como queda el registro 
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+* 8d867e7 - (hace 6 segundos) suma.md renombrado~ - [Nombre de usuario] (HEAD -> main)
+* f67c77c - (hace 2 minutos) division-cero.md renombrado - [Nombre de usuario]
+* 3741b68 - (hace 6 minutos) division-cero.md agregado - [Nombre de usuario]
+* 451e900 - (hace 2 horas) numeros imaginarios y complejos agregados - [Nombre de usuario]
+* f0e5d47 - (hace 3 horas) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario]
+* d610af4 - (hace 3 horas) problemas.md agregado - [Nombre de usuario]
+* a54e313 - (hace 3 horas) caracteristicas.md agregado - [Nombre de usuario]
+* 37d5a5b - (hace 3 horas) numeros.md agregado - [Nombre de usuario]
+* a4356d4 - (hace 3 horas) README.md agregado - [Nombre de usuario]
+```
+
+Luego de tener renombrado el archivo `suma.md`, vamos a eliminar el archivo `producto.md` ya que hasta ahora no ha sido necesario y con la suma y su inversa nos basta. una vez eliminado el archivo vamos a ver que es lo que ha cambiado en el repositorio
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+## main
+ D producto.md
+```
+
+Veamos que Git ha registrado lo que hicimos como una eliminación del archivo `producto.md`, continuamos agregando los cambios al Stage
+
+```{bash eval=F}
+git add .
+```
+
+y hacemos el correspondiente commit
 
 
+```{bash eval=F}
+git commit -m "producto.md eliminado"
+```
+```{bash eval=F}
+[main c32cdc0] producto.md eliminado
+ 1 file changed, 6 deletions(-)
+ delete mode 100644 operaciones/producto.md
+```
+
+Así es como se eliminan y renombran archivos tanto mediante como fuera de Git.
 
 
+## Ignorar archivos no deseados
+
+En muchas ocaciones, dentro del proceso de desarrollo, tenemos archivos e incluso directorios a los que no nos interesa darles seguimiento; vamos a crear unos cuantos archivos y directorios de ejemplo con el objetivo de hacer que git ignore estos elementos y no regstre los cambios pesentes en ellos.
+
+Vamos a crear los siguientes directorios: 
+
+```{bash eval=F}
+dist
+```
+```{bash eval=F}
+node_modules
+```
+
+Dentro de `node_modules` vamos a crear el directorio
+
+```{bash eval=F}
+vue
+```
+
+Ahora crearemos los archivos:
+
+
+```{bash eval=F}
+server.log
+```
+
+Aquí vamos a meter comp entrada, arbitrariamente, los diguientes logs
+
+```{bash eval=F}
+012038239123: Exploto el equipo...
+012038239123: Exploto el equipo...
+012038239123: Exploto el equipo...
+012038239123: Exploto el equipo...
+012038239123: Exploto el equipo...
+012038239123: Exploto el equipo...
+```
+
+dentro de `dist` creamos
+
+
+```{bash eval=F}
+index.html
+```
+
+Que estará vacío.
+Por último dentro de `vue`, subdirectorio de `node_modules` creamos
+
+
+```{bash eval=F}
+app.module.ts
+```
+```{bash eval=F}
+react.jsx
+```
+```{bash eval=F}
+vue.vue
+```
+
+Estos archivos y directorios no necesitan tener sentido, y no lo tienen en este contexto pero son ejemplos de directorios o archivos comunes en proyectos que no requieren un seguimiento de los cambios presentes en ellos por diversas razones, están aqui simplemente para aprender a hacer que gir ignore los elementos que no nesesitamos que tengan ub rastreo.
+Veamos primero el estado del repositorio 
+
+```{bash eval=F}
+git s
+```
+```{bash eval=F}
+## main
+?? dist/
+?? node_modules/
+?? server.log
+```
+
+### Archivo .gitignore
+
+Vamos a presentar el archivo `.gitignore`, que nos premitirá enlistar archivos y directorios que Git va a ignorar, muy útil para facilitar esta tarea.
+
+Veamos como funciona. Vamos a crear el archivo `.gitignore` y en este vamos a agregar la siguiente entrada:
+
+```{bash eval=F}
+dist/
+node_modules/
+
+server.log
+```
+
+Una vez creado el archivo, al revisar el estado del repositorio veremos que tenemos una respuesta muy distinta a la última que tuvimos
+
+```{bash eval=F}
+git s
+```
+```{bash eval=F}
+## main
+?? .gitignore
+```
+
+Ahora no aparecen lo elementos creados anteriormente y simplemente nos encontramos con el archivo `.gitignore` al que si es necesario darle seguimiento por lo que haremos su correspondiente registro.
+
+```{bash eval=F}
+git add .gitignore
+```
+
+```{bash eval=F}
+git commit -m ".gitignore agregado"
+```
+```{bash eval=F}
+[main ae676b5] .gitignore agregado
+ 1 file changed, 4 insertions(+)
+ create mode 100644 .gitignore
+```
+
+Ahora, para ver in poco de la sintaxis dentro de `.gitignore` vamos a crear un par de nuevos archivos a los que no se les va a dar seguimiento:
+
+```{bash eval=F}
+application.log
+```
+```{bash eval=F}
+system.log
+```
+
+Como no queremos que se les de seguimiento a estos archivos, hay que agregarlo al `.gitignore`, pero esta vez en vez de agregarlos uno por unlo cambiaremos la línea `server.log` por `*.log` de forma que el contenideo de `.gitignore` quedaría así:
+
+```{bash eval=F}
+dist/
+node_modules/
+
+*.log
+```
+
+Con este cambio le decimos a git que ignore a todos los archivos con extension `log` sin extender el contenido del archivo `.gitignore` veamos como percibe estos cambios Git:
+
+```{bash eval=F}
+git s
+```
+```{bash eval=F}
+## main
+ M .gitignore
+```
+
+Notemos que, aunque creamos dos archivos nuevos, Git solamente rastreó el cambio realizado en el archivo `.gitignore`. Vamos hacer un commit sobre estos cambios.
+
+```{bash eval=F}
+git commit -am ".gitignore actualizado (extension .log)"
+```
+```{bash eval=F}
+[main 62b4657] .gitignore actualizado (extension .log)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+
+Ahora vamos a creat un par de archivos nuevos con la extensión `.log` para ver como afecta al registro del repositorio; esta vez crearemos los archivos:
+
+```{bash eval=F}
+error.log
+```
+```{bash eval=F}
+access.log
+```
+
+Y para continuar empleamos:
+
+```{bash eval=F}
+git s
+```
+```{bash eval=F}
+## main
+```
+
+Podemos notar que esta vez no se ha registrado ningún cambio realizado en el repositorio, ya que Git ignora cualquier cambio realizado a archivos con extensión `.log`, esto incluye la cración de nuevos archivos con dicha exensión.
+
+## Resumen
+
+1. Creamos un repositorio y lo preparamos para que Git haga un rastreo de los cambios presentes en sus elementos.
+
+2. Viajamos en los registros realizados anteriormente, hicimos algunos cambios y recuperamos todo el avance que se tenía en un principio.
+
+3. Aprendimos a renombrar y eliminar archivos y directorios de manera que Git pueda rastrear estos cambios de la manera adecuada.
+
+4. Hicimos que Git ignorara archivos a los que no nos interesa darles seguimiento.

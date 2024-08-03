@@ -29,10 +29,10 @@
 -   ~~Cambios en los archivos~~
 -   ~~Actualizar mensaje del commit y revertir commits~~
 -   ~~Preparando repositorio para viajes en el tiempo~~
--   Viajes en el tiempo, resets y reflog
--   Cambiar el nombre y eliminar archivos mediante y fuera de git
--   Ignorando archivos que no deseamos
--   Tarea práctica #1
+-   ~~Viajes en el tiempo, resets y reflog~~
+-   ~~Cambiar el nombre y eliminar archivos mediante y fuera de git~~
+-   ~~Ignorando archivos que no deseamos~~
+-   ~~Tarea práctica #1~~
 
 **Section 4: Ramas, uniones, conflictos y tags**
 
