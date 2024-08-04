@@ -1,0 +1,184 @@
+# Tags (Etiquetas)
+
+En esta sección veremos que son los tags, cual es su función / utilidad y como empearlas dentro de nuestro repositorio.
+
+**Tags**: Los tags en Git son referencias que apuntan a commits específicos, utilizados para marcar puntos importantes en la historia del proyecto, como versiones de lanzamiento.
+
+## Creando primeros Tags
+
+La creación de Tags es realmente sencilla, para crear un Tag o etiqueta en el commit actual, basta con usar el siguiente comando:
+
+```{bash eval=F}
+git tag [nombre de la etiqueta]
+```
+
+Por ejemplo, supongamos que el proyecto `numeros` se encuentra en el punto en que puede salir a produccion y el último commit está listo para sel la primera versión de producción, por lo que debemos darle una etiqueta que nos indique el pundo correspondiente a la salida a producción:
+
+```{bash eval=F}
+git tag primera-version
+```
+
+Una vez creada la etiqueta, podemos encontrarla al ver los registros del repositorio:
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+*   5414405 - (hace 5 minutos) union de main con numero-4 - [Nombre de usuario] (HEAD -> main, tag: primera-version)
+|\  
+| * 3447252 - (hace 9 minutos) problemas.md modificado (numeros-2) - [Nombre de usuario] (numeros-4)
+* | 74aca37 - (hace 12 minutos) problemas.md modificado - [Nombre de usuario]
+|/  
+*   bb296da - (hace 17 minutos) implementacion de numeros abundantes en rama 'numeros-3' - [Nombre de usuario]
+
+```
+
+Podemos listar las etiquetas que tenemos con:
+
+```{bash eval=F}
+git tag
+```
+```{bash eval=F}
+primera-version
+```
+
+Es aconsejable tener un orden en nuestras etiquetas para mejorar la administracion de las mismas.  
+Para eliminar la unaeqiqueta, en este caso la única que hemos creado:
+
+```{bash eval=F}
+git tag -d primera-version
+```
+```{bash eval=F}
+Etiqueta primera-version eliminada (era 5414405)
+```
+
+Una forma de llamar a las etiquetas muy común y bastante útil, llamado versionamiento semantico, a la hora de identificarlas es utilizar una sintaxis de versiones, como por ejemplo:
+
+```{bash eval=F}
+git tag  -a v-1.0.0 -m "Version 1.0.0 lista"
+```
+
+En este caso el parámetro `-a` indica que la etiqueta es anorada, lo que significa que almacena más informacion como el nombre del creador, la fecha de creación y un mensaje, opcional, que se agrega con el parámetro -m seguido del mensaje que deseamos guardar.
+
+Si deseamos crear etiquetas en puntos de registro distintos a donde nos encontramos, simplemente hay que utilizar el `hash` de registro del commit que deseamos etiquetar, por ejemplo, supongamos que quuiero etiquetar como `v-0.1.0` al punto en el que se eliminó `restriccion-division.md``. Primero listamos los registros
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+*   5414405 - (hace 33 segundos) union de main con numero-4 - [Nombre de usuario] (HEAD -> main, tag: v-1.0.0)
+|\  
+| * 3447252 - (hace 4 minutos) problemas.md modificado (numeros-2) - [Nombre de usuario] (numeros-4)
+* | 74aca37 - (hace 7 minutos) problemas.md modificado - [Nombre de usuario]
+|/  
+*   bb296da - (hace 12 minutos) implementacion de numeros abundantes en rama 'numeros-3' - [Nombre de usuario]
+|\  
+| * e26e013 - (hace 18 minutos) caracteristicas-2 modificado (numeros abundantes agregados) - [Nombre de usuario]
+| * 5886d1b - (hace 20 minutos) numeros-2.md modificado (numeros abundantes agregados) - [Nombre de usuario]
+* | 9556c19 - (hace 13 minutos) se retiran los numeros imaginarios y complejos - [Nombre de usuario]
+|/  
+* 01e1562 - (hace 21 minuto) caracteristicas-2.md agregado - [Nombre de usuario]
+* 34238c5 - (hace 22 minutos) numeros-2.md agregado - [Nombre de usuario]
+* 62b4657 - (hace 28 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario]
+* ae676b5 - (hace 30 minutos) .gitignore agregado - [Nombre de usuario]
+* c32cdc0 - (hace 32 minutos) producto.md eliminado - [Nombre de usuario]
+* 8d867e7 - (hace 35 minutos) suma.md renombrado~ - [Nombre de usuario] 
+* 8606014 - (hace 36 minutos) restriccion-division.md eliminado - [Nombre de usuario]
+* f67c77c - (hace 37 minutos) division-cero.md renombrado - [Nombre de usuario]
+* 3741b68 - (hace 42 minutos) division-cero.md agregado - [Nombre de usuario]
+* 451e900 - (hace 4 horas) numeros imaginarios y complejos agregados - [Nombre de usuario]
+* f0e5d47 - (hace 5 horas) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario]
+* d610af4 - (hace 5 horas) problemas.md agregado - [Nombre de usuario]
+* a54e313 - (hace 5 horas) caracteristicas.md agregado - [Nombre de usuario]
+* 37d5a5b - (hace 5 horas) numeros.md agregado - [Nombre de usuario]
+* a4356d4 - (hace 5 horas) README.md agregado - [Nombre de usuario]
+```
+
+Luego identificamos el `hash` de registro, en este caso es `8606014` y lo colocamos al final del comando que crea la etiqueta:
+
+```{bash eval=F}
+git tag -a v-0.1.0 -m "Version 0.1.0: alpha" [hash] 
+```
+
+Ahora encontraremos la etiqueta al ver los registros del repositorio:
+
+```{bash eval=F}
+git lg
+```
+```{bash eval=F}
+*   5414405 - (hace 33 segundos) union de main con numero-4 - [Nombre de usuario] (HEAD -> main, tag: v-1.0.0)
+|\  
+| * 3447252 - (hace 4 minutos) problemas.md modificado (numeros-2) - [Nombre de usuario] (numeros-4)
+* | 74aca37 - (hace 7 minutos) problemas.md modificado - [Nombre de usuario]
+|/  
+*   bb296da - (hace 12 minutos) implementacion de numeros abundantes en rama 'numeros-3' - [Nombre de usuario]
+|\  
+| * e26e013 - (hace 18 minutos) caracteristicas-2 modificado (numeros abundantes agregados) - [Nombre de usuario]
+| * 5886d1b - (hace 20 minutos) numeros-2.md modificado (numeros abundantes agregados) - [Nombre de usuario]
+* | 9556c19 - (hace 13 minutos) se retiran los numeros imaginarios y complejos - [Nombre de usuario]
+|/  
+* 01e1562 - (hace 21 minuto) caracteristicas-2.md agregado - [Nombre de usuario]
+* 34238c5 - (hace 22 minutos) numeros-2.md agregado - [Nombre de usuario]
+* 62b4657 - (hace 28 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario]
+* ae676b5 - (hace 30 minutos) .gitignore agregado - [Nombre de usuario]
+* c32cdc0 - (hace 32 minutos) producto.md eliminado - [Nombre de usuario]
+* 8d867e7 - (hace 35 minutos) suma.md renombrado~ - [Nombre de usuario] 
+* 8606014 - (hace 36 minutos) restriccion-division.md eliminado - [Nombre de usuario] (tag: v-0.1.0)
+* f67c77c - (hace 37 minutos) division-cero.md renombrado - [Nombre de usuario]
+* 3741b68 - (hace 42 minutos) division-cero.md agregado - [Nombre de usuario]
+* 451e900 - (hace 4 horas) numeros imaginarios y complejos agregados - [Nombre de usuario]
+* f0e5d47 - (hace 5 horas) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario]
+* d610af4 - (hace 5 horas) problemas.md agregado - [Nombre de usuario]
+* a54e313 - (hace 5 horas) caracteristicas.md agregado - [Nombre de usuario]
+* 37d5a5b - (hace 5 horas) numeros.md agregado - [Nombre de usuario]
+* a4356d4 - (hace 5 horas) README.md agregado - [Nombre de usuario]
+```
+
+Al listar las etiquetas que tenemos:
+
+```{bash eval=F}
+git tag
+```
+```{bash eval=F}
+v-0.1.0
+v-1.0.0
+```
+
+Si queremos más información sobre alguna de las etiquetas, podemos emplear:
+
+```{bash eval=F}
+git show [tag]
+```
+```{bash eval=F}
+tag v-0.1.0
+Tagger: [nombre de usuario] <[Direccion de correo]>
+Date:   Sat Aug 3 23:14:33 2024 -0600
+
+Version 0.1.0: alpha
+
+commit 8606014249972136e73e4d02e258c1c847b13740 (tag: v-0.1.0)
+Author: [nombre de usuario] <[Direccion de correo]>
+Date:   Sun Jul 21 20:38:09 2024 -0600
+
+    restriccion-division.md eliminado
+
+diff --git a/restriccion-division.md b/restriccion-division.md
+deleted file mode 100644
+index a0c00a9..0000000
+--- a/restriccion-division.md
++++ /dev/null
+@@ -1,2 +0,0 @@
+-# Esta es la implementacion de:
+-Division entre cero
+```
+
+Aquí encontramos más información como autor, fecha, información del commit al que apunta y el mensaje con el que se guardó.
+
+
+
+
+
+
+
+
+
