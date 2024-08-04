@@ -451,6 +451,7 @@ git lg
 ```
 ```{bash eval=F}
 * 8d867e7 - (hace 6 segundos) suma.md renombrado~ - [Nombre de usuario] (HEAD -> main)
+* 8606014 - (hace 1 minuto) restriccion-division.md eliminado - [Nombre de usuario]
 * f67c77c - (hace 2 minutos) division-cero.md renombrado - [Nombre de usuario]
 * 3741b68 - (hace 6 minutos) division-cero.md agregado - [Nombre de usuario]
 * 451e900 - (hace 2 horas) numeros imaginarios y complejos agregados - [Nombre de usuario]
