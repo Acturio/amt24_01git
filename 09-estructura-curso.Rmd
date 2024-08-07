@@ -36,19 +36,19 @@
 
 **Section 4: Ramas, uniones, conflictos y tags**
 
--   Introducción a la sección
--   Introducción Ramas, uniones y conflictos
--   Merge: Fast-Forward
--   Merge: Unión automática
--   Merge: Uniones con conflictos
--   Tags - Etiquetas
--   Creando etiquetas - Tags
--   Examen teórico #2
+-   ~~Introducción a la sección~~
+-   ~~Introducción Ramas, uniones y conflictos~~
+-   ~~Merge: Fast-Forward~~
+-   ~~Merge: Unión automática~~
+-   ~~Merge: Uniones con conflictos~~
+-   ~~Tags - Etiquetas~~
+-   ~~Creando etiquetas - Tags~~
+-   ~~Examen teórico #2~~
 
 **Section 5: Git Stash y Git Rebase - Para realizar cambios de emergencia**
 
--   Introducción a la sección
--   Introducción al Stash
+-   ~~Introducción a la sección~~
+-   ~~Introducción al Stash~~
 -   Git Stash
 -   Conflictos con el Stash
 -   Stash avanzado
