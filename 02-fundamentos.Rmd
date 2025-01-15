@@ -258,7 +258,7 @@ Muestra la documentación detallada y las opciones disponibles para el comando e
 
 ## Primer Repositorio [Ejercicio]
 
-Con el material [Material]() y en compañía de los instructores, van a crear su primer repositorio. 
+Con el material [Demografia](material/Demografia.zip) y en compañía de los instructores, van a crear su primer repositorio, para ello hay que acceder a la carpeta `Demografia`, una vez descomprimido el arcivo `Demografia.zip`.
 
 En este ejercicio se van a presentar los siguientes comandos: 
 
@@ -267,10 +267,10 @@ git init
 ```
 
 ```{bash eval=F}
-Inicializado repositorio Git vacío en /[ubicación del directorio]/.git/
+Inicializado repositorio Git vacío en /[Ruta]/Demografia/.git/
 ```
 
-Este comando inicializa un nuevo repositorio de Git en el directorio actual `[Ubicación del directorio]`, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones.
+Este comando inicializa un nuevo repositorio de Git en el directorio actual `[Demografia]`, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones.
 
 ```{bash eval=F}
 git status
@@ -287,10 +287,10 @@ no hay nada para confirmar (crea/copia archivos y usa "git add" para hacerles se
 El comando muestra el estado actual del repositorio, incluyendo los cambios en el área de preparación y los archivos modificados que no están preparados para el commit.
 
 ```{bash eval=F}
-git add [Nombre del archivo/directorio]
+git add images
 ```
 
-Añade el `archivo/directorio` al área de preparación para ser incliudo en el próximo commit, en caso de ser un directorio se agregan tolos los archivos y subdirectorios que contiene.
+Añade la carpeta `images` al área de preparación para ser incliudo en el próximo commit, en caso de ser un directorio se agregan tolos los archivos y subdirectorios que contiene.
 
 ```{bash eval=F}
 git add .
@@ -299,28 +299,69 @@ git add .
 Agrega todos los archivos nuevos y modificados del directorio actual al área de preparación para el próximo commit.
 
 ```{bash eval=F}
-git reset [archivo/directorio]
+git reset EDOMEX-demo.R
 ```
 
-Deshace los cambios en el `archivo/directorio` especificado, retirándolo del área de preparación sin modificar el directorio de trabajo.
+Deshace los cambios en `EDOMEX-demo.R`, en este caso no hay cambios pero el archivo no se guardará, retirándolo del área de preparación sin modificar el directorio de trabajo.
+
+Si verificamos el estado del repositorio, veremos algo así:
 
 ```{bash eval=F}
-git commit -m "nombre del commit"
+git status
 ```
 
 ```{bash eval=F}
-[main (commit-raíz) 3648c0e] nombre del commit
- 6 files changed, 604 insertions(+)
- create mode 100644 .DS_Store
- create mode 100644 css/.DS_Store
- create mode 100755 css/bootstrap.min.css
- create mode 100644 css/bootstrap/.DS_Store
- create mode 100644 css/bootstrap/_media.css
- create mode 100644 css/bootstrap/mixins/.DS_Store
+En la rama main
+
+No hay commits todavía
+
+Cambios a ser confirmados:
+  (usa "git rm --cached <archivo>..." para sacar del área de stage)
+	nuevos archivos: Demografia.Rmd
+	nuevos archivos: Demografia.pdf
+	nuevos archivos: DistribucionNE-2010.xlsx
+	nuevos archivos: DistribucionNE-2020.xlsx
+	nuevos archivos: EDOMEX2010.Rda
+	nuevos archivos: EDOMEX2010.csv
+	nuevos archivos: EDOMEX2010M.Rda
+	nuevos archivos: EDOMEX2020.Rda
+	nuevos archivos: EDOMEX2020.csv
+	nuevos archivos: EDOMEX2020M.Rda
+	nuevos archivos: images/indice-masculinidad.png
+	nuevos archivos: images/piramide-EDOMEX-2010.png
+	nuevos archivos: images/piramide-EDOMEX-2020.png
+
+Archivos sin seguimiento:
+  (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
+	EDOMEX-demo.R
 ```
 
 
-Realiza un commit con un mensaje descriptivo especificado en `"nombre del commit"`, guardando los cambios realizados en el repositorio de Git.
+
+```{bash eval=F}
+git commit -m "commit inicial"
+```
+
+```{bash eval=F}
+[main (commit-raíz) 37fd5c8] commit inicial
+ 13 files changed, 395 insertions(+)
+ create mode 100644 Demografia.Rmd
+ create mode 100644 Demografia.pdf
+ create mode 100755 DistribucionNE-2010.xlsx
+ create mode 100755 DistribucionNE-2020.xlsx
+ create mode 100644 EDOMEX2010.Rda
+ create mode 100755 EDOMEX2010.csv
+ create mode 100644 EDOMEX2010M.Rda
+ create mode 100644 EDOMEX2020.Rda
+ create mode 100644 EDOMEX2020.csv
+ create mode 100644 EDOMEX2020M.Rda
+ create mode 100644 images/indice-masculinidad.png
+ create mode 100644 images/piramide-EDOMEX-2010.png
+ create mode 100644 images/piramide-EDOMEX-2020.png
+```
+
+
+Realiza un commit con un mensaje descriptivo especificado en `"commit inicial"`, guardando los cambios realizados en el repositorio de Git.
 
 Hasta esta parte del ejercicio creaste tu primer repositorio, conociste al área de preparación e hiciste tu primer commit.
 Quizá ahora tengas una pregunta en mente.
@@ -343,25 +384,7 @@ commit e4d9d8e7b9367137765f42870a06e29d295a7434 (HEAD -> main)
 Author: [Nombre de usuario] <[Direccion de correo]>
 Date:   Mon Jul 8 21:55:45 2024 -0600
 
-    se agrgan archivos SCSS
-
-commit b71cd6d5306d5c19dc6f53bef8f1ff3f62da0bf2
-Author: [Nombre de usuario] <[Direccion de correo]>
-Date:   Mon Jul 8 21:55:07 2024 -0600
-
-    se agregan archivos JS
-
-commit 8daaec9718c9e4239162092251660cbc9b3e7ed8
-Author: [Nombre de usuario] <[Direccion de correo]>
-Date:   Mon Jul 8 21:54:41 2024 -0600
-
-    se agrega uploads
-
-commit ff7c40ac6a9d942e818cf2bd3996b193f8b07101
-Author: [Nombre de usuario] <[Direccion de correo]>
-Date:   Mon Jul 8 21:54:17 2024 -0600
-
-    se agregan fuentes e imagenes
+    commit inicial
 ```
 
 Muestra el historial de commits del repositorio, incluyendo mensajes, autores y fechas, la clave alfanumérica que aparece al principio de cada commit es el hash con el que Git regitra ese commit, cada clave es distinta y le corresponde una única instantanea (commit).
@@ -372,10 +395,7 @@ git log --oneline
 ```
 
 ```{bash eval=F}
-e4d9d8e (HEAD -> main) se agrgan archivos SCSS
-b71cd6d se agregan archivos JS
-8daaec9 se agrega uploads
-ff7c40a se agregan fuentes e imagenes
+e4d9d8e (HEAD -> main) commit inicial
 ```
 
 Muestra una forma reducida del hash de cada commit seguido de su mensaje de identificación.  
@@ -403,7 +423,11 @@ git add [subdirectorio]/
 ```
 Agrega todos los archivos modificados del `[subdirectorio]`.
 
-__Nota:__ Git de manera automática ignora los directorios vacíos por lo que, si no tienes cuidado, puede ignorar un fichero importante y llegar a romper tu proyecto, para evitarlo se suele agregar un archivo llamado `.gitkeep`  a las carpetas vacías un archivo especial para que git reconozca que deve hacerles seguimiento.
+::: {.infobox}
+__Nota:__ 
+
+Git de manera automática ignora los directorios vacíos por lo que, si no tienes cuidado, puede ignorar un fichero importante y llegar a romper tu proyecto, para evitarlo se suele agregar un archivo llamado `.gitkeep`  a las carpetas vacías un archivo especial para que git reconozca que debe hacerles seguimiento.
+:::
 
 De esta manera puedes organizar más facilmente los elementos modificados.
 
