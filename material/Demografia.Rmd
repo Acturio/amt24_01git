@@ -1,0 +1,191 @@
+---
+title: 
+- "Demografía"
+output: 
+  pdf_document:
+    fig_width: 12.8
+    fig_height: 7.2
+---
+
+
+## *Introducción*
+
+Existen varios aspectos que pueden influir en la forma que se comporta una población. Por ejemplo, los factores sociales que son aquellas influencias externas o ajenas a nosotros, cosas que están fuera de nuestro control; como el acceso a la educación, calidad de servicios médicos, ciertas tradiciones y normas, la familia, y ciertas políticas que pueden afectar las decisiones familiares. Por otro lado, tenemos los factores económicos, que están definidos como todo aquello que este ligado con la economía, ya sea macro o micro; por ejemplo, desempleo, ingresos económicos, desarrollo urbano y rural, el costo de vida, y como está la economía local.
+
+Todos estos factores influyen en los principales componentes demográficos, unos más que otros, y otros son dependientes entre sí, por lo tanto, hemos concluido 3 hipótesis:
+
+1.  Si la educación y su acceso incrementa, entonces la tasa de natalidad bajara, puesto que las mujeres preferirán seguir estudiando que tener hijos.
+
+2.  Si la calidad de servicios aumenta y mejora, entonces la tasa de natalidad sube, ya que los hospitales estarán mejor preparados, y por lo tanto la tasa de mortalidad disminuirá, por la misma razón.
+
+3.  Si la economía mejora y el costo de vida baja, entonces la emigración disminuirá y la inmigración aumentará.
+
+## _Distribución del no especificado_
+
+La población no especificada son las personas que forman parte de un censo pero que se desconoce su edad tanto de hombres como de mujeres. La distribución no especificada es un valor que sirve para distribuir dicha población entre los demás rangos de edad de tal manera que toda la estructura que teníamos cambiara de igual manera para todos.
+
+Para el cálculo de la distribución necesitamos dos valores
+
+1.  Población no especificada: es la suma de la población no especificada de hombres más la población no especificada de mujeres
+
+2.  Población total: es la suma de la población total de hombres más la población total de mujeres
+
+Finalmente aplicamos la siguiente formula
+
+$$\textit{Distribución } = 1 + 
+\left(
+\frac{\textit{Población No Especificada}}
+{\textit{Popbación } - \textit{ Población No Especificada}}
+\right)$$
+
+## _Población de Entidad_
+
+Una pirámide poblacional es un grafico que muestra como se distribuye la población de alguna entidad ya sea estado, país, etc. La cual muestra la cantidad de personas que hay en diferentes rangos de edad y que se divide entre hombres y mujeres. 
+
+
+
+
+
+```{r echo=F}
+EDOMEX2010 <- read.csv("EDOMEX2010.csv")
+EDOMEX2020 <- read.csv("EDOMEX2020.csv")
+
+save(EDOMEX2010, file = "EDOMEX2010.Rda")
+save(EDOMEX2020, file = "EDOMEX2020.Rda")
+
+library(pyramid)
+
+piramide2010 <- data.frame(Hombres = EDOMEX2010$Hombres,
+                           Mujeres = EDOMEX2010$Mujeres,
+                           Edad = EDOMEX2010$Edad)
+
+piramide2020 <- data.frame(Hombres = EDOMEX2020$Hombres,
+                           Mujeres = EDOMEX2020$Mujeres,
+                           Edad = EDOMEX2020$Edad)
+
+pyramid(piramide2010,
+        Llab = "Hombres",
+        Rlab = "Mujeres",
+        Clab = "Edad",
+        Rcol = "mediumorchid3",
+        Lcol = "turquoise3",
+        Cstep = 10,
+        main = "Estado de México 2010",
+        AxisFM = "d",
+        Laxis = seq(0, 200000, 50000))
+
+pyramid(piramide2020,
+        Llab = "Hombres",
+        Rlab = "Mujeres",
+        Clab = "Edad",
+        Rcol = "mediumvioletred",
+        Lcol = "mediumspringgreen",
+        Cstep = 10,
+        main = "Estado de México 2020",
+        AxisFM = "d",
+        Laxis = seq(0, 200000, 50000))
+
+```
+
+Podemos observar que en 2010 el numero de nacimientos tanto de hombres como de mujeres estaba casi llegando a los 150,000 individuos mientras que en 2020 con tan solo una diferencia de 10 años los nacimientos se redujeron a solo 100.000 individuos. 
+
+También podemos observar que para 2020 la densidad de la población tanto en hombres como mujeres aumento en el rango de edad de 30 a 70 años aproximadamente, es decir en 2020 hay mucha mas población adulta que en 2010, otra característica que se puede observar es que tanto para 2010 como para 2020 hay mas hombres que mujeres  
+
+
+## _Índice de masculinidad_
+
+El cociente de masculinidad es un factor que mide la cantidad de hombres que hay respecto a un número de mujeres, se calcula de la siguiente manera:
+
+$$\textit{Índice de Masculinidad } = 
+\left(
+\frac{\textit{Número de Hombres}}{\textit{Número de Mujeres}}
+\right)
+\cdot 100
+$$
+
+En este caso es la cantidad de hombres por cada 100 mujeres, si en la formula se hubiera multiplicado por 1000 sería la cantidad de hombres que hay por cada 1000 mujeres.
+
+```{r echo=F}
+
+IndiceMasculinidad2010 <- (EDOMEX2010$Hombres / EDOMEX2010$Mujeres) * 100
+IndiceMasculinidad2020 <- (EDOMEX2020$Hombres / EDOMEX2020$Mujeres) * 100
+
+plot(IndiceMasculinidad2010, 
+     type = "l",
+     col="seagreen4",
+     main="Indice de Masculinidad",
+     ylab = "Indice de Masculinidad",
+     xlab = "Edad")
+
+lines(IndiceMasculinidad2020,
+      type = "l",
+      col = "royalblue4")
+
+```
+
+Notamos que, al inicio, los nacimientos de hombres son similares en cantidad al de las mujeres, pero conforme va pasando el tiempo, notamos un decaimiento del índice entre los 20 y 40 años sugiriendo que los hombres empiezan a fallecer, pero por la edad de 80 años cae abruptamente la razón, concluyendo que las mujeres viven más que los hombres en el Estado de México.
+
+
+## _Tasa de crecimiento de la Entidad_
+
+Basándonos en el modelo de crecimiento poblacional exponencial con la siguiente fórmula:
+
+$p_f = p_i \cdot e ^ {r \cdot h}$
+
+Donde:
+
+-   $p_f$ es la población final
+-   $p_i$ es la población inicial
+-   $r$ es la tasa de crecimiento
+-   $h$ es el tiempo de crecimiento
+
+```{r echo=F}
+
+FCenso2010 <- as.Date("2010-06-12")
+FCenso2020 <- as.Date("2020-03-15")
+FMCenso2010 <- as.Date("2010-06-30")
+FMCenso2020 <- as.Date("2020-06-30")
+
+crecimiento <- function(Censo1, Censo2, fecha1, fecha2){
+        PIH <- sum(Censo1$Hombres)
+        PFH <- sum(Censo2$Hombres)
+        PIM <- sum(Censo1$Mujeres)
+        PFM <- sum(Censo2$Mujeres)
+        h <- as.numeric(difftime(fecha2, fecha1)) / 365
+        rH <- (log(PFH / PIH)) / h
+        print(paste("La tasa de crecimiento exponencial de hombres es:", 
+                    round(rH * 100, digits = 4), "%"))
+        rM <- (log(PFM / PIM)) / h
+        print(paste("La tasa de crecimiento exponencial de mujeres es:", 
+                    round(rM * 100, digits = 4), "%"))
+        tasas <- c(rH, rM)
+        names(tasas) <- c("Hombres", "Mujeres")
+        #return(tasas)
+}
+
+crecimiento(EDOMEX2010, EDOMEX2020, FCenso2010, FCenso2020)
+
+```
+
+
+## _Población a Mitad del año_
+
+Utilizando el modelo de crecimiento exponencial, podemos simular la población en un punto en el tiempo (mitad de año), distinto a los puntos en los que se conoce la población. Esto lo hacemos para poder calcular con una mejor precisión cálculos demográficos y estadísticos ya que la población final o inicial no contemplan los cambios que pueden suceder durante el año, por lo tanto, interpolamos en el punto medio para tener un tipo de “promedio” y así tener una mejor estimación. Por ejemplo, la tasa de mortalidad. 
+
+```{r echo=F}
+load("EDOMEX2010M.Rda")
+load("EDOMEX2020M.Rda")
+```
+
+```{r}
+EDOMEX2010M
+```
+\newpage
+
+```{r}
+EDOMEX2020M
+```
+
+
+
+
