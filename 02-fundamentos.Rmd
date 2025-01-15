@@ -62,13 +62,17 @@ Los sistemas de control de versiones (SCV), como lo es Git, son fundamentales en
 
 -   **Seguimiento de Responsabilidades:** Asignan responsabilidades claras al registrar quién realizó cada cambio y cuándo, lo que facilita la revisión y la resolución de problemas.
 
-*Es como en un videojuego donde tienes puntos de control, en el caso de Git serían los commits, a los que puedes volver si te encuentras en un problema y debes andar por otro camino o seguir una estrategia diferente.*
+::: {.infobox}
+
+Es como en un videojuego donde tienes **puntos de control**, en el caso de Git serían los **commits**, a los que puedes volver si te encuentras en un problema y debes andar por otro camino o seguir una estrategia diferente.
+
+:::
 
 ![](img/02_Fundamentos/version-control.png)
 
 En resumen, los SCV son esenciales para mantener la integridad, colaboración y evolución ordenada de los proyectos de software, mejorando la eficiencia y reduciendo el riesgo de errores en el desarrollo.
 
-Existen distintos modelos de SCV, a continuación explicaremos 2 de los más implementados:
+Existen distintos modelos de SCV, a continuación explicaremos 2 de los más implementados, veremos sus características y complementaremos con una analogía.
 
 -   **Repositorio Central**
 
@@ -83,6 +87,21 @@ Existen distintos modelos de SCV, a continuación explicaremos 2 de los más imp
     -   **Dependencia del servidor:** Requiere acceso constante al servidor central para realizar operaciones clave como commits y actualizaciones.
 
     -   **Historial único:** El historial completo del proyecto reside en el servidor central.
+    
+    
+    ::: {.infobox}
+    **Ejemplo:**
+    
+    Imagina que hay una Torre de los Vengadores **(Repositorio Central)** en Nueva York. Esta Torre es el cuartel general de los Vengadores y donde se almacenan todas las misiones y planes importantes **(código fuente)**. Todos los Vengadores **(desarrolladores)** tienen que ir a esta torre para obtener las misiones y para reportar los resultados de sus tareas.
+    
+    1. **_Obteniendo misiones_ (Pulling)**: Cada Vengador **(desarrollador)** vuela a la Torre de los Vengadores **(repositorio central)** para obtener su misión **(código actual)**. Cuando alguien necesita una actualización, va directamente a la Torre.
+    
+    2. **_Reportando misiones completadas_ (Pushing)**: Una vez que el Vengador ha completado su misión **(hecho sus cambios)**, vuelve a la Torre para informar **(hacer push)** y actualizar el cuartel general con los resultados. Todos los demás Vengadores pueden ver esta actualización la próxima vez que vuelvan a la Torre.
+    
+    En este modelo, la Torre de los Vengadores es la única fuente de verdad y todos los Vengadores dependen de ella.
+    :::
+    
+    
 
 -   **Repositorio Distribuido**
 
@@ -97,6 +116,18 @@ Existen distintos modelos de SCV, a continuación explicaremos 2 de los más imp
     -   **Flexibilidad:** Los cambios pueden ser compartidos entre repositorios locales o a través de repositorios remotos.
 
     -   **Ramas y experimentación:** Permite a los desarrolladores trabajar en ramas independientes y experimentar sin afectar el repositorio principal hasta que estén listos.
+    
+    ::: {.infobox}
+    **Ejemplo:**
+    
+    Ahora, imagina que el multiverso de Marvel está en plena acción, con diferentes versiones de los Vengadores en cada universo. Cada uno de estos equipos de Vengadores **(desarrolladores)** tiene su propia Torre **(su propio repositorio)** en su universo.
+    
+    1. **_Misiones propias_ (Local Commits)**: En cada universo, los Vengadores tienen sus propias misiones que pueden completar de manera independiente, sin tener que volver a la Torre principal en Nueva York. Cada universo tiene su propia copia de las misiones **(repositorio completo)** y pueden hacer cambios sin necesidad de interactuar con otros universos.
+    
+    2. **_Intercambio de misiones entre universos_ (Push/Pull entre repositorios)**: A veces, los Vengadores de un universo pueden decidir compartir misiones o resultados con otro universo. Por ejemplo, los Vengadores de _Tierra-616_ podrían decidir que los Vengadores de _Tierra-199999_  necesitan saber algo que descubrieron. Entonces, envían esa misión o resultado **(push)** a la Torre de otro universo o piden recibir actualizaciones **(pull)** de ellos.
+    
+    3. **_Sin Torre central única_**: No hay una **Torre central** a la que todos los Vengadores tengan que ir. Cada universo es autónomo y puede compartir información con otros universos según sea necesario.
+    :::
 
 La diferencia clave radica en la arquitectura y la forma en que se gestionan y comparten los cambios. Los repositorios centrales son más tradicionales y dependen de un servidor centralizado, mientras que los distribuidos ofrecen mayor flexibilidad, autonomía y capacidad de trabajo offline.
 
@@ -161,9 +192,9 @@ git --version
 ```
 
 ```{bash eval=F}
-git version 2.34.1
+git version 2.47.0
 ```
-Muestra la versión instalada de Git en tu sistema. En este caso contamos con la versión `2.34.1` de Git.
+Muestra la versión instalada de Git en tu sistema. En este caso contamos con la versión `2.47.0` de Git.
 
 ```{bash eval=F}
 git --help
