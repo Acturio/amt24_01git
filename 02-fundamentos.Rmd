@@ -267,7 +267,7 @@ git init
 ```
 
 ```{bash eval=F}
-Inicializado repositorio Git vacío en /[Ruta]/Demografia/.git/
+Inicializado repositorio Git vacío en /[path]/Demografia/.git/
 ```
 
 Este comando inicializa un nuevo repositorio de Git en el directorio actual `[Demografia]`, creando un subdirectorio `.git` con todos los archivos necesarios para el control de versiones.

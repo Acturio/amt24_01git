@@ -12,28 +12,22 @@ git diff
 ```
 
 ```{bash eval=F}
-diff --git a/instalaciones.md b/instalaciones.md
-index a7cc8e4..512d0e8 100644
---- a/instalaciones.md
-+++ b/instalaciones.md
-@@ -1,8 +1,14 @@
- # Pasos para instalar
--Seguir estos pasos:
-+1. Seguir estos pasos:
+diff --git a/Demografia.Rmd b/Demografia.Rmd
+index 0d2f647..090d477 100644
+--- a/Demografia.Rmd
++++ b/Demografia.Rmd
+@@ -134,10 +134,10 @@ $p_f = p_i \cdot e ^ {r \cdot h}$
  
- ```
--npm install
-+yarn install
- ```
+ Donde:
  
-+2. Ejecutar el comando :
-+```
-+npm start
-+```
-+
-+
- 
-
+--   $p_f$ es la población final
+--   $p_i$ es la población inicial
+--   $r$ es la tasa de crecimiento
+--   $h$ es el tiempo de crecimiento
++*   $p_f$ es la población final
++*   $p_i$ es la población inicial
++*   $r$ es la tasa de crecimiento
++*   $h$ es el tiempo de crecimiento
 ```
 
 
@@ -46,29 +40,22 @@ git diff --staged
 ```
 
 ```{bash eval=F}
-diff --git a/instalaciones.md b/instalaciones.md
-index a7cc8e4..512d0e8 100644
---- a/instalaciones.md
-+++ b/instalaciones.md
-@@ -1,8 +1,14 @@
- # Pasos para instalar
--Seguir estos pasos:
-+1. Seguir estos pasos:
+diff --git a/Demografia.Rmd b/Demografia.Rmd
+index 0d2f647..090d477 100644
+--- a/Demografia.Rmd
++++ b/Demografia.Rmd
+@@ -134,10 +134,10 @@ $p_f = p_i \cdot e ^ {r \cdot h}$
  
- ```
--npm install
-+yarn install
- ```
+ Donde:
  
-+2. Ejecutar el comando :
-+```
-+npm start
-+```
-+
-+
- 
-
-
+--   $p_f$ es la población final
+--   $p_i$ es la población inicial
+--   $r$ es la tasa de crecimiento
+--   $h$ es el tiempo de crecimiento
++*   $p_f$ es la población final
++*   $p_i$ es la población inicial
++*   $r$ es la tasa de crecimiento
++*   $h$ es el tiempo de crecimiento
 ```
 
 
