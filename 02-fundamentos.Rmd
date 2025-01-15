@@ -577,14 +577,11 @@ git status
 
 ```{bash eval=F}
 En la rama main
-Cambios a ser confirmados:
-  (usa "git restore --staged <archivo>..." para sacar del área de stage)
-	nuevos archivos: java/resourse.java
-
 Archivos sin seguimiento:
   (usa "git add <archivo>..." para incluirlo a lo que será confirmado)
-	java/focus.java
-	java/init.java
+	EDOMEX-demo.R
+
+no hay nada agregado al commit pero hay archivos sin seguimiento presentes (usa "git add" para hacerles seguimiento)
 ```
 
 La salida de `s`
@@ -595,9 +592,7 @@ git s
 
 ```{bash eval=F}
 ## main
-A  java/resourse.java
-?? java/focus.java
-?? java/init.java
+?? EDOMEX-demo.R
 ```
 
 Como pueden ver, el uso de alias es muy útil, sobre todo con comandos que se usan repetidamente.
