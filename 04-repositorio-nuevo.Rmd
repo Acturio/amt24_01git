@@ -14,11 +14,11 @@ Primero vamos a preparar el repositorio y haremos que Git rastreé los cambios r
 git init
 ```
 ```{bash eval=F}
-Inicializado repositorio Git vacío en [path]/material-numeros/.git/
+Inicializado repositorio Git vacío en [path]/material-marvel/.git/
 ```
 
 
-2. Uno por uno, vamos a registrar los archivos: `README.md`, `numeros.md`, `caracteristicas.md`, `problemas.md` y el directorio `operaciones/` (haciendo commit); recuerde que debes llevarlos al Satage con 
+2. Uno por uno, vamos a registrar los archivos: `README.md`, `descripciones.md`, `origenes.md`, `debilidades.md` y el directorio `misiones/` (haciendo commit); recuerde que debes llevarlos al Satage con 
 
 ```{bash eval=F}
 git add [elemento]
@@ -30,39 +30,42 @@ para luego poder registrarlos con un mensaje a traves de
 git commit -m "[elemento] agregado"
 ```
 ```{bash eval=F}
-[main (commit-raíz) a4356d4] [elemento] agregado
- 1 file changed, 0 insertions(+), 0 deletions(-)
+[main (commit-raíz) 95403cb] Readme.md agregado
+ 1 file changed, 17 insertions(+)
  create mode 100644 README.md
 ```
 
 
-3. Vamos a cambiar el mensaje de registro que hicimos al guardar el directorio `operaciones/`, para ello usaremos
+3. Vamos a cambiar el mensaje de registro que hicimos al guardar el directorio `misiones/`, para ello usaremos
 
 ```{bash eval=F}
 git commit --amend
 ```
 ```{bash eval=F}
-operaciones/ agregado
+misiones/ agregado
 
-# Por favor ingresa el mensaje del commit para tus cambios. Las
-#  líneas que comiencen con '#' serán ignoradas, y un mensaje
-#  vacío aborta el commit.
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
 #
-# Fecha:     Sun Jul 21 18:00:13 2024 -0600
+# Fecha:     Wed Jan 15 16:29:04 2025 -0600
 #
 # En la rama main
 # Cambios a ser confirmados:
-#	nuevos archivos: operaciones/producto.md
-#	nuevos archivos: operaciones/suma.md
+#       nuevos archivos: misiones/black_widow.md
+#       nuevos archivos: misiones/hulk.md
+#       nuevos archivos: misiones/iron_man.md
+#       nuevos archivos: misiones/spider_man.md
+#       nuevos archivos: misiones/thor.md
 #
+
 ```
 
 
 Este comando abrirá el editor de texto por defecto de cada equipo para mostrar un archivo de registro, el cual vamos a editar de la siguiente manera:
-La primera línea, donde se encuentra escrito `operaciones/ agregado`, cambiaremos ese mensaje por:
+La primera línea, donde se encuentra escrito `misiones/ agregado`, cambiaremos ese mensaje por:
 
 ```{bash eval=F}
-operaciones/suma.md y operaciones/producto.md agregados
+misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man.
 ```
 
 
@@ -74,34 +77,52 @@ Con los registros realizados hasta ahora, tomando en cuenta que se suguió la re
 git lg
 ```
 ```{bash eval=F}
-* f0e5d47 - (hace 9 segundos) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario] (HEAD -> main)
-* d610af4 - (hace 55 segundos) problemas.md agregado - [Nombre de usuario]
-* a54e313 - (hace 2 minutos) caracteristicas.md agregado - [Nombre de usuario]
-* 37d5a5b - (hace 2 minutos) numeros.md agregado - [Nombre de usuario]
-* a4356d4 - (hace 3 minutos) README.md agregado - [Nombre de usuario]
+* 0e01379 - (hace 6 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario] (HEAD -> main)
+* 471d1b7 - (hace 7 minutos) debilidades.md agregado - [Nombre de usuario]
+* f0dddfd - (hace 8 minutos) oringenes.md agregado - [Nombre de usuario]
+* d8a9a76 - (hace 8 minutos) descripciones.md agregado - [Nombre de usuario]
+* 95403cb - (hace 9 minutos) Readme.md agregado - [Nombre de usuario]%
 ```
 
 ## Viajes en los registros 
 
 Ya que Git rastrea todos los elementos involucrados en el proyecto empezamos a hacer cambios para, posteriormente, realizar los viajes en los commits realizados. 
 
-1. Empezando con la edición de archivos, en el archivo `numeros.md` se encontrarán con una lista de clases de números, a la que le agregaremos, al final, el siguiente elemento:
+1. Empezando con la edición de archivos, en el archivo `README.md` se encontrarán con una lista de clases de números, a la que le agregaremos, al final, el siguiente elemento:
 
 ```{bash eval=F}
-* Imaginarios
+- [doctor strange](/misiones/doctor_strange.md)
 ```
 
-Luego, al archivo `caracteristicas.md` le vamos a agregar:
+Luego, al archivo `descripciones.md` le vamos a agregar:
 
 ```{bash eval=F}
-* Unidad imaginaria "i".
+
+## Doctor Strange
+
+- **Nombre real:** Stephen Vincent Strange.
+- **Descripción:** Un neurocirujano convertido en el Hechicero Supremo, protector de la Tierra.
 ```
 
-Después, en el archivo `problemas.md` añadimos:
+Después, en el archivo `origenes.md` añadimos:
 
 ```{bash eval=F}
-* Sin cerradura en producto
+
+## Doctor Strange
+
+- Tras un accidente automovilístico que dañó gravemente sus manos, aprendió las artes místicas y se convirtió en el Hechicero Supremo.
 ```
+
+Por último, en el archivo `debilidades.md` agregamos:
+
+```{bash eval=F}
+
+## Doctor Strange
+
+- Dependencia de artefactos mágicos.
+- Relaciones humanas complejas.
+```
+
 
 Tras los cambios anteriormente realizados, haremos una verificación.
 
@@ -110,17 +131,33 @@ git s
 ```
 ```{bash eval=F}
 ## main
- M caracteristicas.md
- M numeros.md
- M problemas.md
+ M README.md
+ M debilidades.md
+ M descripciones.md
+ M origenes.md
+?? misiones/doctor_strange.md
 ```
 
+Prara darle seguimiento, agregamos al área de preparación el archivo `misiones/doctor_strange.md`
+
+```{bash eval=F}
+git add misiones/doctor_strange.md
+```
+
+Así, de ahora en adelante, git le dará seguimiento a las misiones de `Doctor Strange`.
 
 Ahora haremos un nuevo commit con el siguiente comando.
 
 ```{bash eval=F}
-git commit -am "numeros imaginarios agregados"
+git commit -am "Se une Deoctor Strange"
 ```
+
+```{bash eval=F}
+[main 9d082cd] Se une Deoctor Strange
+ 5 files changed, 33 insertions(+)
+ create mode 100644 misiones/doctor_strange.md
+```
+
 
 2. Comenzaremos con los viajes en el tiempo, primero veamos nuestra línea del tiempo con
 
@@ -128,15 +165,16 @@ git commit -am "numeros imaginarios agregados"
 git lg
 ```
 ```{bash eval=F}
-* f5ef0ba - (hace 3 minutos) numeros imaginarios agregados - [Nombre de usuario] (HEAD -> main)
-* f0e5d47 - (hace 8 minutos) operaciones/ agregado - [Nombre de usuario]
-* d610af4 - (hace 9 minutos) problemas.md agregado - [Nombre de usuario]
-* a54e313 - (hace 10 minutos) caracteristicas.md agregado - [Nombre de usuario]
-* 37d5a5b - (hace 10 minutos) numeros.md agregado - [Nombre de usuario]
-* a4356d4 - (hace 11 minutos) README.md agregado - [Nombre de usuario]
+* 9d082cd - (hace 50 segundos) Se une Deoctor Strange - [Nombre de usuario] (HEAD -> main)
+* 0e01379 - (hace 44 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 471d1b7 - (hace 44 minutos) debilidades.md agregado - [Nombre de usuario]
+* f0dddfd - (hace 45 minutos) oringenes.md agregado - [Nombre de usuario]
+* d8a9a76 - (hace 46 minutos) descripciones.md agregado - [Nombre de usuario]
+* 95403cb - (hace 47 minutos) Readme.md agregado - [Nombre de usuario]%     
 
 ```
-Vemos todos los registros que hemos hecho hasta ahora, pero sabemos que al agregar loe números imaginarios ya podemos considerar a los números complejos, por lo que quermeos agregarlos tambíen, pero en lugar de hacer un nuevo commit, buscamos que sean agregados a la vez. Para ello, vamos a usar de nuevo el comando `git reset --soft`, pero recordemos que este nos permite darle la entrade `HEAD^` o en su lugar el `hash` de registro del commit al que nos vamos a mover; esta vez usaremos esta segunda forma, en este caso el paámetro que usaremos es el penúltimo `[hash]` que mostró el comando `git lg`, por lo que emplearemos
+Vemos todos los registros que hemos hecho hasta ahora, pero supongamos que a la vez se unió `Daredevil` por lo que quermeos agregarlo también, pero en lugar de hacer un nuevo commit, buscamos que sean agregados a la vez. Para ello, vamos a usar
+el comando `git reset --soft`, pero recordemos que este nos permite darle la entrade `HEAD^` o en su lugar el `hash` de registro del commit al que nos vamos a mover; esta vez usaremos esta segunda forma, en este caso el paámetro que usaremos es el penúltimo `[hash]` que mostró el comando `git lg`, por lo que emplearemos
 
 ```{bash eval=F}
 git reset --soft [hash]
@@ -144,22 +182,51 @@ git reset --soft [hash]
 
 Ahora podemos agregar los números complejos para registrarlos junto a los imaginarios, lo que haremos como anteriormente:
 
-Al archivo `numerso.md` le agregaremos:
+Creamos el archivo `misiones/daredevil.md` y le agregamos:
 
 ```{bash eval=F}
-* Complejos
+# Misiones de Daredevil
+
+1. **Desmantelar la operación de Kingpin en Hell´s Kitchen**
+   - **Descripción:** Investigar y recolectar evidencia de las actividades criminales de Kingpin para entregarlas a las autoridades.
+   - **Prioridad:** Alta
+   - **Fecha límite:** 2025-02-15
+
+2. **Proteger a un testigo clave**
+   - **Descripción:** Asegurar la seguridad de un testigo que tiene información vital para un juicio contra una organización criminal.
+   - **Prioridad:** Alta
+   - **Fecha límite:** 2025-02-05
+
+3. **Desmantelar un laboratorio de drogas**
+   - **Descripción:** Localizar y destruir un laboratorio oculto utilizado por una pandilla para fabricar y distribuir drogas en Hell´s Kitchen.
+   - **Prioridad:** Media
+   - **Fecha límite:** 2025-01-30
+
 ```
 
-Luego, al archivo `caracteristicas.md` le vamos a agregar:
+
+Al archivo `README.md` le agregaremos:
 
 ```{bash eval=F}
-* Unión de reales e imaginarios, plano complejo.
+- [daredevil](/misiones/daredevil.md)
 ```
 
-Después, en el archivo `problemas.md` añadimos:
+Luego, al archivo `descripciones.md` le vamos a agregar:
 
 ```{bash eval=F}
-* --------------------------------------------
+##Daredevil
+
+- **Nombre real:** Matthew Michael Murdock.  
+- **Descripción:** Un abogado ciego que combate el crimen en Hell´s Kitchen como Daredevil, usando sus sentidos sobrehumanos y habilidades de combate excepcionales.
+```
+
+Después, en el archivo `origenes.md` añadimos:
+
+```{bash eval=F}
+## Daredevil
+
+- Tras un accidente con químicos tóxicos, Matt Murdock perdió la vista pero desarrolló sentidos sobrehumanos, llevándolo a convertirse en Daredevil.
+
 ```
 
 Por último, tanto a `suma.md` como a `producto.md`, ubicados en el directorio `operaciones`, agregaremos el elemento:
