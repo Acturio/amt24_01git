@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 4 Repositorio nuevo | Introducción a Git</title>
+  <meta name="description" content="Administración de proyectos con Git" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 4 Repositorio nuevo | Introducción a Git" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Administración de proyectos con Git" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 4 Repositorio nuevo | Introducción a Git" />
+  
+  <meta name="twitter:description" content="Administración de proyectos con Git" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="los-cambios-en-git.html"/>
+<link rel="next" href="ramas.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><img src="img/amat-logo.png" width="280"></a></li|
+|:-:|  
+<center>Introducción a Git & Github</center>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>BIENVENIDA</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#objetivo"><i class="fa fa-check"></i>Objetivo</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#instructor"><i class="fa fa-check"></i>Instructor</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#alcances-del-curso"><i class="fa fa-check"></i>Alcances del curso</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#temario"><i class="fa fa-check"></i>Temario:</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#duración-y-evaluación-del-curso"><i class="fa fa-check"></i>Duración y evaluación del curso</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recursos-y-dinámica-de-clase"><i class="fa fa-check"></i>Recursos y dinámica de clase</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#asesorías"><i class="fa fa-check"></i>Asesorías</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introducción-del-curso.html"><a href="introducción-del-curso.html"><i class="fa fa-check"></i><b>1</b> Introducción del curso</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introducción-del-curso.html"><a href="introducción-del-curso.html#objetivos-del-curso"><i class="fa fa-check"></i><b>1.1</b> Objetivos del Curso</a></li>
+<li class="chapter" data-level="1.2" data-path="introducción-del-curso.html"><a href="introducción-del-curso.html#cómo-funciona-el-curso"><i class="fa fa-check"></i><b>1.2</b> ¿Cómo funciona el curso?</a></li>
+<li class="chapter" data-level="1.3" data-path="introducción-del-curso.html"><a href="introducción-del-curso.html#instalaciones"><i class="fa fa-check"></i><b>1.3</b> Instalaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html"><i class="fa fa-check"></i><b>2</b> Fundamentos de Git</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#introducción-a-los-fundamentos-de-git"><i class="fa fa-check"></i><b>2.1</b> Introducción a los fundamentos de Git</a></li>
+<li class="chapter" data-level="2.2" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#importancia-de-git"><i class="fa fa-check"></i><b>2.2</b> Importancia de Git</a></li>
+<li class="chapter" data-level="2.3" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#configuración-inicial-de-git"><i class="fa fa-check"></i><b>2.3</b> Configuración inicial de Git</a></li>
+<li class="chapter" data-level="2.4" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#primeros-comandos-de-git"><i class="fa fa-check"></i><b>2.4</b> Primeros comandos de Git</a></li>
+<li class="chapter" data-level="2.5" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#primer-repositorio-ejercicio"><i class="fa fa-check"></i><b>2.5</b> Primer Repositorio [Ejercicio]</a></li>
+<li class="chapter" data-level="2.6" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#distintas-maneras-de-agregar-elementos-al-stage"><i class="fa fa-check"></i><b>2.6</b> Distintas maneras de agregar elementos al Stage</a></li>
+<li class="chapter" data-level="2.7" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#repaso"><i class="fa fa-check"></i><b>2.7</b> Repaso</a></li>
+<li class="chapter" data-level="2.8" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#alias"><i class="fa fa-check"></i><b>2.8</b> Alias</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="los-cambios-en-git.html"><a href="los-cambios-en-git.html"><i class="fa fa-check"></i><b>3</b> Los cambios en Git</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="los-cambios-en-git.html"><a href="los-cambios-en-git.html#cambios-en-los-archivos"><i class="fa fa-check"></i><b>3.1</b> Cambios en los archivos</a></li>
+<li class="chapter" data-level="3.2" data-path="los-cambios-en-git.html"><a href="los-cambios-en-git.html#correción-de-commits"><i class="fa fa-check"></i><b>3.2</b> Correción de commits</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html"><i class="fa fa-check"></i><b>4</b> Repositorio nuevo</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#preparación-de-repositorio"><i class="fa fa-check"></i><b>4.1</b> Preparación de repositorio</a></li>
+<li class="chapter" data-level="4.2" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#viajes-en-los-registros"><i class="fa fa-check"></i><b>4.2</b> Viajes en los registros</a></li>
+<li class="chapter" data-level="4.3" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#cambiar-de-nombre-y-eliminar-archivos"><i class="fa fa-check"></i><b>4.3</b> Cambiar de nombre y eliminar archivos</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#mediante-git"><i class="fa fa-check"></i><b>4.3.1</b> Mediante Git</a></li>
+<li class="chapter" data-level="4.3.2" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#fuera-de-git"><i class="fa fa-check"></i><b>4.3.2</b> Fuera de Git</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#ignorar-archivos-no-deseados"><i class="fa fa-check"></i><b>4.4</b> Ignorar archivos no deseados</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#archivo-.gitignore"><i class="fa fa-check"></i><b>4.4.1</b> Archivo .gitignore</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#resumen"><i class="fa fa-check"></i><b>4.5</b> Resumen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ramas.html"><a href="ramas.html"><i class="fa fa-check"></i><b>5</b> Ramas</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="ramas.html"><a href="ramas.html#merge-fast-forward"><i class="fa fa-check"></i><b>5.1</b> Merge: Fast-forward</a></li>
+<li class="chapter" data-level="5.2" data-path="ramas.html"><a href="ramas.html#merge-unión-automática"><i class="fa fa-check"></i><b>5.2</b> Merge: Unión automática</a></li>
+<li class="chapter" data-level="5.3" data-path="ramas.html"><a href="ramas.html#merge-uniones-con-conflictos"><i class="fa fa-check"></i><b>5.3</b> Merge: Uniones con conflictos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tags-etiquetas.html"><a href="tags-etiquetas.html"><i class="fa fa-check"></i><b>6</b> Tags (Etiquetas)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tags-etiquetas.html"><a href="tags-etiquetas.html#creando-primeros-tags"><i class="fa fa-check"></i><b>6.1</b> Creando primeros Tags</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="git-stash.html"><a href="git-stash.html"><i class="fa fa-check"></i><b>7</b> Git Stash</a></li>
+<li class="chapter" data-level="8" data-path="estructura-curso.html"><a href="estructura-curso.html"><i class="fa fa-check"></i><b>8</b> Estructura Curso</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="./"><img src="img/amat-logo.png" width="280"></a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a Git</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="repositorio-nuevo" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> Repositorio nuevo<a href="repositorio-nuevo.html#repositorio-nuevo" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>En este capítulo vamos a simular distintos escenarios en los que nos podemos encontrar al desarrollar un proyecto;
+Vamos a trabajar ahora con la carpeta <code>material-numeros</code>, que se proporcionará por los instructores, y pondremos en practica los conocimientos adquiridos hasta ahora a la vez que profundizamos en las distintas opciones que nos proporciona la herramienta Git.
+Con ese propósito vamos a seguir una narrativa en la cual nos encontramos desarrollando un proyecto llamado números.</p>
+<div id="preparación-de-repositorio" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Preparación de repositorio<a href="repositorio-nuevo.html#preparación-de-repositorio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Primero vamos a preparar el repositorio y haremos que Git rastreé los cambios relalizados en el proyecto.</p>
+<ol style="list-style-type: decimal">
+<li>Desde la terminal, nos colocamos en la ubicación de la carpeta <code>material-numeros/</code> e inicializamos un repositorio de Git con</li>
+</ol>
+<div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="repositorio-nuevo.html#cb64-1" tabindex="-1"></a><span class="fu">git</span> init</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb65-1"><a href="repositorio-nuevo.html#cb65-1" tabindex="-1"></a><span class="ex">Inicializado</span> repositorio Git vacío en <span class="pp">[</span><span class="ss">path</span><span class="pp">]</span>/material-marvel/.git/</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Uno por uno, vamos a registrar los archivos: <code>README.md</code>, <code>descripciones.md</code>, <code>origenes.md</code>, <code>debilidades.md</code> y el directorio <code>misiones/</code> (haciendo commit); recuerde que debes llevarlos al Satage con</li>
+</ol>
+<div class="sourceCode" id="cb66"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb66-1"><a href="repositorio-nuevo.html#cb66-1" tabindex="-1"></a><span class="fu">git</span> add <span class="pp">[</span><span class="ss">elemento</span><span class="pp">]</span></span></code></pre></div>
+<p>para luego poder registrarlos con un mensaje a traves de</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb67-1"><a href="repositorio-nuevo.html#cb67-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;[elemento] agregado&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb68-1"><a href="repositorio-nuevo.html#cb68-1" tabindex="-1"></a><span class="ex">[main</span> <span class="er">(</span><span class="ex">commit-raíz</span><span class="kw">)</span> <span class="ex">95403cb]</span> Readme.md agregado</span>
+<span id="cb68-2"><a href="repositorio-nuevo.html#cb68-2" tabindex="-1"></a> <span class="ex">1</span> file changed, 17 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span>
+<span id="cb68-3"><a href="repositorio-nuevo.html#cb68-3" tabindex="-1"></a> <span class="ex">create</span> mode 100644 README.md</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Vamos a cambiar el mensaje de registro que hicimos al guardar el directorio <code>misiones/</code>, para ello usaremos</li>
+</ol>
+<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="repositorio-nuevo.html#cb69-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">--amend</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb70-1"><a href="repositorio-nuevo.html#cb70-1" tabindex="-1"></a><span class="ex">misiones/</span> agregado</span>
+<span id="cb70-2"><a href="repositorio-nuevo.html#cb70-2" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="repositorio-nuevo.html#cb70-3" tabindex="-1"></a><span class="co"># Please enter the commit message for your changes. Lines starting</span></span>
+<span id="cb70-4"><a href="repositorio-nuevo.html#cb70-4" tabindex="-1"></a><span class="co"># with &#39;#&#39; will be ignored, and an empty message aborts the commit.</span></span>
+<span id="cb70-5"><a href="repositorio-nuevo.html#cb70-5" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb70-6"><a href="repositorio-nuevo.html#cb70-6" tabindex="-1"></a><span class="co"># Fecha:     Wed Jan 15 16:29:04 2025 -0600</span></span>
+<span id="cb70-7"><a href="repositorio-nuevo.html#cb70-7" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb70-8"><a href="repositorio-nuevo.html#cb70-8" tabindex="-1"></a><span class="co"># En la rama main</span></span>
+<span id="cb70-9"><a href="repositorio-nuevo.html#cb70-9" tabindex="-1"></a><span class="co"># Cambios a ser confirmados:</span></span>
+<span id="cb70-10"><a href="repositorio-nuevo.html#cb70-10" tabindex="-1"></a><span class="co">#       nuevos archivos: misiones/black_widow.md</span></span>
+<span id="cb70-11"><a href="repositorio-nuevo.html#cb70-11" tabindex="-1"></a><span class="co">#       nuevos archivos: misiones/hulk.md</span></span>
+<span id="cb70-12"><a href="repositorio-nuevo.html#cb70-12" tabindex="-1"></a><span class="co">#       nuevos archivos: misiones/iron_man.md</span></span>
+<span id="cb70-13"><a href="repositorio-nuevo.html#cb70-13" tabindex="-1"></a><span class="co">#       nuevos archivos: misiones/spider_man.md</span></span>
+<span id="cb70-14"><a href="repositorio-nuevo.html#cb70-14" tabindex="-1"></a><span class="co">#       nuevos archivos: misiones/thor.md</span></span>
+<span id="cb70-15"><a href="repositorio-nuevo.html#cb70-15" tabindex="-1"></a><span class="co">#</span></span></code></pre></div>
+<p>Este comando abrirá el editor de texto por defecto de cada equipo para mostrar un archivo de registro, el cual vamos a editar de la siguiente manera:
+La primera línea, donde se encuentra escrito <code>misiones/ agregado</code>, cambiaremos ese mensaje por:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="repositorio-nuevo.html#cb71-1" tabindex="-1"></a><span class="ex">misiones/</span> agregado <span class="at">-</span><span class="op">&gt;</span> misiones de los heroes: iron man, thor, hulk, black widow y spider man.</span></code></pre></div>
+<p>Y guardemos los cambios en el archivo de registro.</p>
+<p>Con los registros realizados hasta ahora, tomando en cuenta que se suguió la recomendación de <code>alias</code> presentada al final del Capítulo 2, usando <code>git lg</code> deberiamos tener una salida como la que sigue</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb72-1"><a href="repositorio-nuevo.html#cb72-1" tabindex="-1"></a><span class="fu">git</span> lg</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb73-1"><a href="repositorio-nuevo.html#cb73-1" tabindex="-1"></a><span class="ex">*</span> 0e01379 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 6 minutos<span class="kw">)</span> <span class="ex">misiones/</span> agregado <span class="at">-</span><span class="op">&gt;</span> misiones de los heroes: iron man, thor, hulk, black widow y spider man. <span class="at">-</span> [Nombre de usuario] <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
+<span id="cb73-2"><a href="repositorio-nuevo.html#cb73-2" tabindex="-1"></a><span class="ex">*</span> 471d1b7 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 7 minutos<span class="kw">)</span> <span class="ex">debilidades.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb73-3"><a href="repositorio-nuevo.html#cb73-3" tabindex="-1"></a><span class="ex">*</span> f0dddfd <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 8 minutos<span class="kw">)</span> <span class="ex">oringenes.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb73-4"><a href="repositorio-nuevo.html#cb73-4" tabindex="-1"></a><span class="ex">*</span> d8a9a76 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 8 minutos<span class="kw">)</span> <span class="ex">descripciones.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb73-5"><a href="repositorio-nuevo.html#cb73-5" tabindex="-1"></a><span class="ex">*</span> 95403cb <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 9 minutos<span class="kw">)</span> <span class="ex">Readme.md</span> agregado <span class="at">-</span> [Nombre de usuario]%</span></code></pre></div>
+</div>
+<div id="viajes-en-los-registros" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Viajes en los registros<a href="repositorio-nuevo.html#viajes-en-los-registros" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ya que Git rastrea todos los elementos involucrados en el proyecto empezamos a hacer cambios para, posteriormente, realizar los viajes en los commits realizados.</p>
+<ol style="list-style-type: decimal">
+<li>Empezando con la edición de archivos, en el archivo <code>README.md</code> se encontrarán con una lista de clases de números, a la que le agregaremos, al final, el siguiente elemento:</li>
+</ol>
+<div class="sourceCode" id="cb74"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb74-1"><a href="repositorio-nuevo.html#cb74-1" tabindex="-1"></a><span class="ex">-</span> [doctor strange]<span class="er">(</span><span class="ex">/misiones/doctor_strange.md</span><span class="kw">)</span></span></code></pre></div>
+<p>Luego, al archivo <code>descripciones.md</code> le vamos a agregar:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb75-1"><a href="repositorio-nuevo.html#cb75-1" tabindex="-1"></a></span>
+<span id="cb75-2"><a href="repositorio-nuevo.html#cb75-2" tabindex="-1"></a><span class="co">## Doctor Strange</span></span>
+<span id="cb75-3"><a href="repositorio-nuevo.html#cb75-3" tabindex="-1"></a></span>
+<span id="cb75-4"><a href="repositorio-nuevo.html#cb75-4" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Nombre real:<span class="pp">**</span> Stephen Vincent Strange.</span>
+<span id="cb75-5"><a href="repositorio-nuevo.html#cb75-5" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Descripción:<span class="pp">**</span> Un neurocirujano convertido en el Hechicero Supremo, protector de la Tierra.</span></code></pre></div>
+<p>Después, en el archivo <code>origenes.md</code> añadimos:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb76-1"><a href="repositorio-nuevo.html#cb76-1" tabindex="-1"></a></span>
+<span id="cb76-2"><a href="repositorio-nuevo.html#cb76-2" tabindex="-1"></a><span class="co">## Doctor Strange</span></span>
+<span id="cb76-3"><a href="repositorio-nuevo.html#cb76-3" tabindex="-1"></a></span>
+<span id="cb76-4"><a href="repositorio-nuevo.html#cb76-4" tabindex="-1"></a><span class="ex">-</span> Tras un accidente automovilístico que dañó gravemente sus manos, aprendió las artes místicas y se convirtió en el Hechicero Supremo.</span></code></pre></div>
+<p>Por último, en el archivo <code>debilidades.md</code> agregamos:</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb77-1"><a href="repositorio-nuevo.html#cb77-1" tabindex="-1"></a></span>
+<span id="cb77-2"><a href="repositorio-nuevo.html#cb77-2" tabindex="-1"></a><span class="co">## Doctor Strange</span></span>
+<span id="cb77-3"><a href="repositorio-nuevo.html#cb77-3" tabindex="-1"></a></span>
+<span id="cb77-4"><a href="repositorio-nuevo.html#cb77-4" tabindex="-1"></a><span class="ex">-</span> Dependencia de artefactos mágicos.</span>
+<span id="cb77-5"><a href="repositorio-nuevo.html#cb77-5" tabindex="-1"></a><span class="ex">-</span> Relaciones humanas complejas.</span></code></pre></div>
+<p>Tras los cambios anteriormente realizados, haremos una verificación.</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb78-1"><a href="repositorio-nuevo.html#cb78-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb79-1"><a href="repositorio-nuevo.html#cb79-1" tabindex="-1"></a><span class="co">## main</span></span>
+<span id="cb79-2"><a href="repositorio-nuevo.html#cb79-2" tabindex="-1"></a> <span class="ex">M</span> README.md</span>
+<span id="cb79-3"><a href="repositorio-nuevo.html#cb79-3" tabindex="-1"></a> <span class="ex">M</span> debilidades.md</span>
+<span id="cb79-4"><a href="repositorio-nuevo.html#cb79-4" tabindex="-1"></a> <span class="ex">M</span> descripciones.md</span>
+<span id="cb79-5"><a href="repositorio-nuevo.html#cb79-5" tabindex="-1"></a> <span class="ex">M</span> origenes.md</span>
+<span id="cb79-6"><a href="repositorio-nuevo.html#cb79-6" tabindex="-1"></a><span class="ex">??</span> misiones/doctor_strange.md</span></code></pre></div>
+<p>Prara darle seguimiento, agregamos al área de preparación el archivo <code>misiones/doctor_strange.md</code></p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb80-1"><a href="repositorio-nuevo.html#cb80-1" tabindex="-1"></a><span class="fu">git</span> add misiones/doctor_strange.md</span></code></pre></div>
+<p>Así, de ahora en adelante, git le dará seguimiento a las misiones de <code>Doctor Strange</code>.</p>
+<p>Ahora haremos un nuevo commit con el siguiente comando.</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb81-1"><a href="repositorio-nuevo.html#cb81-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-am</span> <span class="st">&quot;Se une Deoctor Strange&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb82-1"><a href="repositorio-nuevo.html#cb82-1" tabindex="-1"></a><span class="ex">[main</span> 9d082cd] Se une Deoctor Strange</span>
+<span id="cb82-2"><a href="repositorio-nuevo.html#cb82-2" tabindex="-1"></a> <span class="ex">5</span> files changed, 33 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span>
+<span id="cb82-3"><a href="repositorio-nuevo.html#cb82-3" tabindex="-1"></a> <span class="ex">create</span> mode 100644 misiones/doctor_strange.md</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Comenzaremos con los viajes en el tiempo, primero veamos nuestra línea del tiempo con</li>
+</ol>
+<div class="sourceCode" id="cb83"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb83-1"><a href="repositorio-nuevo.html#cb83-1" tabindex="-1"></a><span class="fu">git</span> lg</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb84-1"><a href="repositorio-nuevo.html#cb84-1" tabindex="-1"></a><span class="ex">*</span> 9d082cd <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 50 segundos<span class="kw">)</span> <span class="ex">Se</span> une Deoctor Strange <span class="at">-</span> [Nombre de usuario] <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
+<span id="cb84-2"><a href="repositorio-nuevo.html#cb84-2" tabindex="-1"></a><span class="ex">*</span> 0e01379 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 44 minutos<span class="kw">)</span> <span class="ex">misiones/</span> agregado <span class="at">-</span><span class="op">&gt;</span> misiones de los heroes: iron man, thor, hulk, black widow y spider man. <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb84-3"><a href="repositorio-nuevo.html#cb84-3" tabindex="-1"></a><span class="ex">*</span> 471d1b7 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 44 minutos<span class="kw">)</span> <span class="ex">debilidades.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb84-4"><a href="repositorio-nuevo.html#cb84-4" tabindex="-1"></a><span class="ex">*</span> f0dddfd <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 45 minutos<span class="kw">)</span> <span class="ex">oringenes.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb84-5"><a href="repositorio-nuevo.html#cb84-5" tabindex="-1"></a><span class="ex">*</span> d8a9a76 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 46 minutos<span class="kw">)</span> <span class="ex">descripciones.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb84-6"><a href="repositorio-nuevo.html#cb84-6" tabindex="-1"></a><span class="ex">*</span> 95403cb <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 47 minutos<span class="kw">)</span> <span class="ex">Readme.md</span> agregado <span class="at">-</span> [Nombre de usuario]%     </span></code></pre></div>
+<p>Vemos todos los registros que hemos hecho hasta ahora, pero supongamos que a la vez se unió <code>Daredevil</code> por lo que quermeos agregarlo también, pero en lugar de hacer un nuevo commit, buscamos que sean agregados a la vez. Para ello, vamos a usar
+el comando <code>git reset --soft</code>, pero recordemos que este nos permite darle la entrade <code>HEAD^</code> o en su lugar el <code>hash</code> de registro del commit al que nos vamos a mover; esta vez usaremos esta segunda forma, en este caso el paámetro que usaremos es el penúltimo <code>[hash]</code> que mostró el comando <code>git lg</code>, por lo que emplearemos</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb85-1"><a href="repositorio-nuevo.html#cb85-1" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> <span class="pp">[</span><span class="ss">hash</span><span class="pp">]</span></span></code></pre></div>
+<p>Ahora podemos agregar los números complejos para registrarlos junto a los imaginarios, lo que haremos como anteriormente:</p>
+<p>Creamos el archivo <code>misiones/daredevil.md</code> y le agregamos:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb86-1"><a href="repositorio-nuevo.html#cb86-1" tabindex="-1"></a><span class="co"># Misiones de Daredevil</span></span>
+<span id="cb86-2"><a href="repositorio-nuevo.html#cb86-2" tabindex="-1"></a></span>
+<span id="cb86-3"><a href="repositorio-nuevo.html#cb86-3" tabindex="-1"></a><span class="ex">1.</span> <span class="pp">**</span>Desmantelar la operación de Kingpin en Hell´s Kitchen<span class="pp">**</span></span>
+<span id="cb86-4"><a href="repositorio-nuevo.html#cb86-4" tabindex="-1"></a>   <span class="ex">-</span> <span class="pp">**</span>Descripción:<span class="pp">**</span> Investigar y recolectar evidencia de las actividades criminales de Kingpin para entregarlas a las autoridades.</span>
+<span id="cb86-5"><a href="repositorio-nuevo.html#cb86-5" tabindex="-1"></a>   <span class="ex">-</span> <span class="pp">**</span>Prioridad:<span class="pp">**</span> Alta</span>
+<span id="cb86-6"><a href="repositorio-nuevo.html#cb86-6" tabindex="-1"></a>   <span class="ex">-</span> <span class="pp">**</span>Fecha límite:<span class="pp">**</span> 2025-02-15</span>
+<span id="cb86-7"><a href="repositorio-nuevo.html#cb86-7" tabindex="-1"></a></span>
+<span id="cb86-8"><a href="repositorio-nuevo.html#cb86-8" tabindex="-1"></a><span class="ex">2.</span> <span class="pp">**</span>Proteger a un testigo clave<span class="pp">**</span></span>
+<span id="cb86-9"><a href="repositorio-nuevo.html#cb86-9" tabindex="-1"></a>   <span class="ex">-</span> <span class="pp">**</span>Descripción:<span class="pp">**</span> Asegurar la seguridad de un testigo que tiene información vital para un juicio contra una organización criminal.</span>
+<span id="cb86-10"><a href="repositorio-nuevo.html#cb86-10" tabindex="-1"></a>   <span class="ex">-</span> <span class="pp">**</span>Prioridad:<span class="pp">**</span> Alta</span>
+<span id="cb86-11"><a href="repositorio-nuevo.html#cb86-11" tabindex="-1"></a>   <span class="ex">-</span> <span class="pp">**</span>Fecha límite:<span class="pp">**</span> 2025-02-05</span>
+<span id="cb86-12"><a href="repositorio-nuevo.html#cb86-12" tabindex="-1"></a></span>
+<span id="cb86-13"><a href="repositorio-nuevo.html#cb86-13" tabindex="-1"></a><span class="ex">3.</span> <span class="pp">**</span>Desmantelar un laboratorio de drogas<span class="pp">**</span></span>
+<span id="cb86-14"><a href="repositorio-nuevo.html#cb86-14" tabindex="-1"></a>   <span class="ex">-</span> <span class="pp">**</span>Descripción:<span class="pp">**</span> Localizar y destruir un laboratorio oculto utilizado por una pandilla para fabricar y distribuir drogas en Hell´s Kitchen.</span>
+<span id="cb86-15"><a href="repositorio-nuevo.html#cb86-15" tabindex="-1"></a>   <span class="ex">-</span> <span class="pp">**</span>Prioridad:<span class="pp">**</span> Media</span>
+<span id="cb86-16"><a href="repositorio-nuevo.html#cb86-16" tabindex="-1"></a>   <span class="ex">-</span> <span class="pp">**</span>Fecha límite:<span class="pp">**</span> 2025-01-30</span></code></pre></div>
+<p>Al archivo <code>README.md</code> le agregaremos:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb87-1"><a href="repositorio-nuevo.html#cb87-1" tabindex="-1"></a><span class="ex">-</span> <span class="pp">[</span><span class="ss">daredevil</span><span class="pp">]</span><span class="er">(</span><span class="ex">/misiones/daredevil.md</span><span class="kw">)</span></span></code></pre></div>
+<p>Luego, al archivo <code>descripciones.md</code> le vamos a agregar:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb88-1"><a href="repositorio-nuevo.html#cb88-1" tabindex="-1"></a></span>
+<span id="cb88-2"><a href="repositorio-nuevo.html#cb88-2" tabindex="-1"></a><span class="co">##Daredevil</span></span>
+<span id="cb88-3"><a href="repositorio-nuevo.html#cb88-3" tabindex="-1"></a></span>
+<span id="cb88-4"><a href="repositorio-nuevo.html#cb88-4" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Nombre real:<span class="pp">**</span> Matthew Michael Murdock.  </span>
+<span id="cb88-5"><a href="repositorio-nuevo.html#cb88-5" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Descripción:<span class="pp">**</span> Un abogado ciego que combate el crimen en Hell´s Kitchen como Daredevil, usando sus sentidos sobrehumanos y habilidades de combate excepcionales.</span></code></pre></div>
+<p>Después, en el archivo <code>origenes.md</code> añadimos:</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb89-1"><a href="repositorio-nuevo.html#cb89-1" tabindex="-1"></a></span>
+<span id="cb89-2"><a href="repositorio-nuevo.html#cb89-2" tabindex="-1"></a><span class="co">## Daredevil</span></span>
+<span id="cb89-3"><a href="repositorio-nuevo.html#cb89-3" tabindex="-1"></a></span>
+<span id="cb89-4"><a href="repositorio-nuevo.html#cb89-4" tabindex="-1"></a><span class="ex">-</span> Tras un accidente con químicos tóxicos, perdió la vista pero desarrolló sentidos sobrehumanos.</span></code></pre></div>
+<p>Por último, en el archivo <code>debilidades</code> agregamos:</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb90-1"><a href="repositorio-nuevo.html#cb90-1" tabindex="-1"></a></span>
+<span id="cb90-2"><a href="repositorio-nuevo.html#cb90-2" tabindex="-1"></a><span class="co">## Daredevil</span></span>
+<span id="cb90-3"><a href="repositorio-nuevo.html#cb90-3" tabindex="-1"></a></span>
+<span id="cb90-4"><a href="repositorio-nuevo.html#cb90-4" tabindex="-1"></a><span class="ex">-</span> Dependencia de los sentidos aumentados.</span>
+<span id="cb90-5"><a href="repositorio-nuevo.html#cb90-5" tabindex="-1"></a><span class="ex">-</span> Falta de protección física.</span></code></pre></div>
+<p>Haciendo una verificación de los cambios.</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb91-1"><a href="repositorio-nuevo.html#cb91-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb92-1"><a href="repositorio-nuevo.html#cb92-1" tabindex="-1"></a><span class="co">## main</span></span>
+<span id="cb92-2"><a href="repositorio-nuevo.html#cb92-2" tabindex="-1"></a><span class="ex">MM</span> README.md</span>
+<span id="cb92-3"><a href="repositorio-nuevo.html#cb92-3" tabindex="-1"></a><span class="ex">MM</span> debilidades.md</span>
+<span id="cb92-4"><a href="repositorio-nuevo.html#cb92-4" tabindex="-1"></a><span class="ex">MM</span> descripciones.md</span>
+<span id="cb92-5"><a href="repositorio-nuevo.html#cb92-5" tabindex="-1"></a><span class="ex">A</span>  misiones/doctor_strange.md</span>
+<span id="cb92-6"><a href="repositorio-nuevo.html#cb92-6" tabindex="-1"></a><span class="ex">MM</span> origenes.md</span>
+<span id="cb92-7"><a href="repositorio-nuevo.html#cb92-7" tabindex="-1"></a><span class="ex">??</span> misiones/daredevil.md</span></code></pre></div>
+<p>Veremos que hay algunos cambios que ya se agregaron al Satge, los referentes a la entrada de números imaginarios, pero también encontramos cambios en el directorio de trabajo, los que se acaban de añadir, junto a la adición de los archivos <code>misiones/doctor_strange.md</code> y <code>misiones/daredevil.md</code>.</p>
+<p>Le daremos seguimiento a las misiones de Daredevil:</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb93-1"><a href="repositorio-nuevo.html#cb93-1" tabindex="-1"></a><span class="fu">git</span> add misiones/daredevil.md</span></code></pre></div>
+<p>Comprovamos que no quede nada mos agregar al stage.</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb94-1"><a href="repositorio-nuevo.html#cb94-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb95-1"><a href="repositorio-nuevo.html#cb95-1" tabindex="-1"></a><span class="co">## main</span></span>
+<span id="cb95-2"><a href="repositorio-nuevo.html#cb95-2" tabindex="-1"></a><span class="ex">MM</span> README.md</span>
+<span id="cb95-3"><a href="repositorio-nuevo.html#cb95-3" tabindex="-1"></a><span class="ex">MM</span> debilidades.md</span>
+<span id="cb95-4"><a href="repositorio-nuevo.html#cb95-4" tabindex="-1"></a><span class="ex">MM</span> descripciones.md</span>
+<span id="cb95-5"><a href="repositorio-nuevo.html#cb95-5" tabindex="-1"></a><span class="ex">A</span>  misiones/daredevil.md</span>
+<span id="cb95-6"><a href="repositorio-nuevo.html#cb95-6" tabindex="-1"></a><span class="ex">A</span>  misiones/doctor_strange.md</span>
+<span id="cb95-7"><a href="repositorio-nuevo.html#cb95-7" tabindex="-1"></a><span class="ex">MM</span> origenes.md</span></code></pre></div>
+<p>Ahora haremos un nuevo commit con el siguiente comando.</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb96-1"><a href="repositorio-nuevo.html#cb96-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-am</span> <span class="st">&quot;se unen Doctor Strange y Daredevil&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb97-1"><a href="repositorio-nuevo.html#cb97-1" tabindex="-1"></a><span class="ex">[main</span> 75009c8] se unen Doctor Strange y Daredevil</span>
+<span id="cb97-2"><a href="repositorio-nuevo.html#cb97-2" tabindex="-1"></a> <span class="ex">6</span> files changed, 66 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span>
+<span id="cb97-3"><a href="repositorio-nuevo.html#cb97-3" tabindex="-1"></a> <span class="ex">create</span> mode 100644 misiones/daredevil.md</span>
+<span id="cb97-4"><a href="repositorio-nuevo.html#cb97-4" tabindex="-1"></a> <span class="ex">create</span> mode 100644 misiones/doctor_strange.md</span></code></pre></div>
+<p>Con esto hemos cambiado el registro que teníamos por uno más completo, en el cuál agregamos tanto a Doctor Strange como a Daredevil.</p>
+<p>Veamos como se reflejan estos cambios en los registros:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb98-1"><a href="repositorio-nuevo.html#cb98-1" tabindex="-1"></a><span class="fu">git</span> lg</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb99-1"><a href="repositorio-nuevo.html#cb99-1" tabindex="-1"></a><span class="ex">*</span> 75009c8 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 46 segundos<span class="kw">)</span> <span class="ex">se</span> unen Doctor Strange y Daredevil <span class="at">-</span> [Nombre de usuario] <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
+<span id="cb99-2"><a href="repositorio-nuevo.html#cb99-2" tabindex="-1"></a><span class="ex">*</span> 0e01379 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 1 hora<span class="kw">)</span> <span class="ex">misiones/</span> agregado <span class="at">-</span><span class="op">&gt;</span> misiones de los heroes: iron man, thor, hulk, black widow y spider man. <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb99-3"><a href="repositorio-nuevo.html#cb99-3" tabindex="-1"></a><span class="ex">*</span> 471d1b7 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 1 hora<span class="kw">)</span> <span class="ex">debilidades.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb99-4"><a href="repositorio-nuevo.html#cb99-4" tabindex="-1"></a><span class="ex">*</span> f0dddfd <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 1 hora<span class="kw">)</span> <span class="ex">oringenes.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb99-5"><a href="repositorio-nuevo.html#cb99-5" tabindex="-1"></a><span class="ex">*</span> d8a9a76 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 1 hora<span class="kw">)</span> <span class="ex">descripciones.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb99-6"><a href="repositorio-nuevo.html#cb99-6" tabindex="-1"></a><span class="ex">*</span> 95403cb <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 1 hora<span class="kw">)</span> <span class="ex">Readme.md</span> agregado <span class="at">-</span> [Nombre de usuario]%    </span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Luego de todo esto notamos que algo <em>anda mal</em> con los registros y que el último punto estable fue tras agregar <code>debilidades.md</code> por lo que vamos a copiar su <code>[hash]</code> de registro y esta vez usaremos:</li>
+</ol>
+<div class="sourceCode" id="cb100"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb100-1"><a href="repositorio-nuevo.html#cb100-1" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--mixed</span> <span class="pp">[</span><span class="ss">hash</span><span class="pp">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb101-1"><a href="repositorio-nuevo.html#cb101-1" tabindex="-1"></a><span class="ex">Cambios</span> fuera del área de stage tras el reset:</span>
+<span id="cb101-2"><a href="repositorio-nuevo.html#cb101-2" tabindex="-1"></a><span class="ex">M</span>   README.md</span>
+<span id="cb101-3"><a href="repositorio-nuevo.html#cb101-3" tabindex="-1"></a><span class="ex">M</span>   debilidades.md</span>
+<span id="cb101-4"><a href="repositorio-nuevo.html#cb101-4" tabindex="-1"></a><span class="ex">M</span>   descripciones.md</span>
+<span id="cb101-5"><a href="repositorio-nuevo.html#cb101-5" tabindex="-1"></a><span class="ex">M</span>   origenes.md</span></code></pre></div>
+<p>Lo que nos regresará al punto que marcamos pero esta vez con los cambios realizados fuera del Stage, así mantenemos los cambios en el directorio de trabajo. Aquí podemos ver el el estado del repositorio.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb102-1"><a href="repositorio-nuevo.html#cb102-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb103-1"><a href="repositorio-nuevo.html#cb103-1" tabindex="-1"></a><span class="co">## main</span></span>
+<span id="cb103-2"><a href="repositorio-nuevo.html#cb103-2" tabindex="-1"></a> <span class="ex">M</span> README.md</span>
+<span id="cb103-3"><a href="repositorio-nuevo.html#cb103-3" tabindex="-1"></a> <span class="ex">M</span> debilidades.md</span>
+<span id="cb103-4"><a href="repositorio-nuevo.html#cb103-4" tabindex="-1"></a> <span class="ex">M</span> descripciones.md</span>
+<span id="cb103-5"><a href="repositorio-nuevo.html#cb103-5" tabindex="-1"></a> <span class="ex">M</span> origenes.md</span>
+<span id="cb103-6"><a href="repositorio-nuevo.html#cb103-6" tabindex="-1"></a><span class="ex">??</span> misiones/</span></code></pre></div>
+<p>También veamos como quedan los registros del repositorio.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb104-1"><a href="repositorio-nuevo.html#cb104-1" tabindex="-1"></a><span class="fu">git</span> lg</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb105-1"><a href="repositorio-nuevo.html#cb105-1" tabindex="-1"></a><span class="ex">*</span> 471d1b7 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">debilidades.md</span> agregado <span class="at">-</span> [Nombre de usuario] <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
+<span id="cb105-2"><a href="repositorio-nuevo.html#cb105-2" tabindex="-1"></a><span class="ex">*</span> f0dddfd <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">oringenes.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb105-3"><a href="repositorio-nuevo.html#cb105-3" tabindex="-1"></a><span class="ex">*</span> d8a9a76 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">descripciones.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb105-4"><a href="repositorio-nuevo.html#cb105-4" tabindex="-1"></a><span class="ex">*</span> 95403cb <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">Readme.md</span> agregado <span class="at">-</span> [Nombre de usuario]%  </span></code></pre></div>
+<p>Como los cambios realizados después de este punto realmente no van a servirnos, haremos un <code>reset</code>, al mismo commit en el que nos ubicamos, pero de una manera distinta.</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb106-1"><a href="repositorio-nuevo.html#cb106-1" tabindex="-1"></a><span class="fu">git</span> resset <span class="at">--hard</span> <span class="pp">[</span><span class="ss">hash</span><span class="pp">]</span></span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb107-1"><a href="repositorio-nuevo.html#cb107-1" tabindex="-1"></a><span class="ex">HEAD</span> está ahora en 471d1b7 debilidades.md agregado</span></code></pre></div>
+<p>Esta vez el repositorio queda tal cual como Git lo registró y los cambios realizados tras este commit han sido removidos.</p>
+<p>Continuamos regresando en el tiempo a los commits donde se agregaron <code>origenes.md</code> y una vez más a donde añadimos <code>descripciones.md</code>, ya que es en este punto donde parece que se originan los problemas que presenta el registro.</p>
+<p>Llegados a este punto resulta que no había nada malo en el registro y hay que volver al punto en el que estábamos originalmente para recuperar toda nustra línea del tiempo; puede parecer imposible ya que eliminamos los registros que ya teníamos y tendremos que hacer cada cambio de nuevo pero Git mantiene un historial con los cambios hechos en los propios registros lo que permite recuperar esa información que se podría considerar perdida.</p>
+<p>Notemos que al acceder al historial de commits no podemos ver mas allá del segundo.</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb108-1"><a href="repositorio-nuevo.html#cb108-1" tabindex="-1"></a><span class="fu">git</span> lg</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb109-1"><a href="repositorio-nuevo.html#cb109-1" tabindex="-1"></a><span class="ex">*</span> d8a9a76 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">descripciones.md</span> agregado <span class="at">-</span> [Nombre de usuario] <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
+<span id="cb109-2"><a href="repositorio-nuevo.html#cb109-2" tabindex="-1"></a><span class="ex">*</span> 95403cb <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">Readme.md</span> agregado <span class="at">-</span> [Nombre de usuario]% </span></code></pre></div>
+<p>Pero Git tiene otro comando para acceder a los registros, uno que rastrea cambios de los propios registros y los movimientos en ellos.</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb110-1"><a href="repositorio-nuevo.html#cb110-1" tabindex="-1"></a><span class="fu">git</span> reflog</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb111-1"><a href="repositorio-nuevo.html#cb111-1" tabindex="-1"></a><span class="ex">d8a9a76</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span> <span class="ex">HEAD@{0}:</span> reset: moving to d8a9a76</span>
+<span id="cb111-2"><a href="repositorio-nuevo.html#cb111-2" tabindex="-1"></a><span class="ex">f0dddfd</span> HEAD@{1}: reset: moving to f0dddfd</span>
+<span id="cb111-3"><a href="repositorio-nuevo.html#cb111-3" tabindex="-1"></a><span class="ex">471d1b7</span> HEAD@{2}: reset: moving to 471d1b7</span>
+<span id="cb111-4"><a href="repositorio-nuevo.html#cb111-4" tabindex="-1"></a><span class="ex">471d1b7</span> HEAD@{3}: reset: moving to 471d1b7</span>
+<span id="cb111-5"><a href="repositorio-nuevo.html#cb111-5" tabindex="-1"></a><span class="ex">75009c8</span> HEAD@{4}: commit: se unen Doctor Strange y Daredevil</span>
+<span id="cb111-6"><a href="repositorio-nuevo.html#cb111-6" tabindex="-1"></a><span class="ex">0e01379</span> HEAD@{5}: reset: moving to 0e01379</span>
+<span id="cb111-7"><a href="repositorio-nuevo.html#cb111-7" tabindex="-1"></a><span class="ex">9d082cd</span> HEAD@{6}: reset: moving to 9d082cd</span>
+<span id="cb111-8"><a href="repositorio-nuevo.html#cb111-8" tabindex="-1"></a><span class="ex">9d082cd</span> HEAD@{7}: commit: Se une Deoctor Strange</span>
+<span id="cb111-9"><a href="repositorio-nuevo.html#cb111-9" tabindex="-1"></a><span class="ex">0e01379</span> HEAD@{8}: commit <span class="er">(</span><span class="ex">amend</span><span class="kw">)</span><span class="bu">:</span> misiones/ agregado <span class="at">-</span><span class="op">&gt;</span> misiones de los heroes: iron man, thor, hulk, black widow y spider man.</span>
+<span id="cb111-10"><a href="repositorio-nuevo.html#cb111-10" tabindex="-1"></a><span class="ex">da953ea</span> HEAD@{9}: commit <span class="er">(</span><span class="ex">amend</span><span class="kw">)</span><span class="bu">:</span> misiones/ agregado <span class="at">-</span><span class="op">&gt;</span> misiones de los heroes: iron man, thor, hulk, black widow y spider man.</span>
+<span id="cb111-11"><a href="repositorio-nuevo.html#cb111-11" tabindex="-1"></a><span class="ex">e91c9e8</span> HEAD@{10}: commit: misiones/ agregado</span>
+<span id="cb111-12"><a href="repositorio-nuevo.html#cb111-12" tabindex="-1"></a><span class="ex">471d1b7</span> HEAD@{11}: commit: debilidades.md agregado</span>
+<span id="cb111-13"><a href="repositorio-nuevo.html#cb111-13" tabindex="-1"></a><span class="ex">f0dddfd</span> HEAD@{12}: commit: oringenes.md agregado</span>
+<span id="cb111-14"><a href="repositorio-nuevo.html#cb111-14" tabindex="-1"></a><span class="ex">d8a9a76</span> <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span> <span class="ex">HEAD@{13}:</span> commit: descripciones.md agregado</span>
+<span id="cb111-15"><a href="repositorio-nuevo.html#cb111-15" tabindex="-1"></a><span class="ex">95403cb</span> HEAD@{14}: commit <span class="er">(</span><span class="ex">initial</span><span class="kw">)</span><span class="bu">:</span> Readme.md agregado</span></code></pre></div>
+<p>Muestra un historial de los movimientos y cambios de referencia en el repositorio.</p>
+<p>En la primer columna se nos muestran los <code>hash</code> correspondientes a cada commit registrado por Git. Vamos a buscar el <code>[hash]</code> correspondiente al commt que debemos recuperar, registrado con el mensaje <code>se unen Doctor Strange y Daredevil</code>, luego utilizamos:</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb112-1"><a href="repositorio-nuevo.html#cb112-1" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--hard</span> <span class="pp">[</span><span class="ss">hash</span><span class="pp">]</span></span></code></pre></div>
+<p>Para recuperar toda la linea de registro hasta ahora, lo que podemos verificar con:</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb113-1"><a href="repositorio-nuevo.html#cb113-1" tabindex="-1"></a><span class="fu">git</span> lg</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb114-1"><a href="repositorio-nuevo.html#cb114-1" tabindex="-1"></a><span class="ex">*</span> 75009c8 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 17 minutos<span class="kw">)</span> <span class="ex">se</span> unen Doctor Strange y Daredevil <span class="at">-</span> [Nombre de usuario] <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
+<span id="cb114-2"><a href="repositorio-nuevo.html#cb114-2" tabindex="-1"></a><span class="ex">*</span> 0e01379 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">misiones/</span> agregado <span class="at">-</span><span class="op">&gt;</span> misiones de los heroes: iron man, thor, hulk, black widow y spider man. <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb114-3"><a href="repositorio-nuevo.html#cb114-3" tabindex="-1"></a><span class="ex">*</span> 471d1b7 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">debilidades.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb114-4"><a href="repositorio-nuevo.html#cb114-4" tabindex="-1"></a><span class="ex">*</span> f0dddfd <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">oringenes.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb114-5"><a href="repositorio-nuevo.html#cb114-5" tabindex="-1"></a><span class="ex">*</span> d8a9a76 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">descripciones.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb114-6"><a href="repositorio-nuevo.html#cb114-6" tabindex="-1"></a><span class="ex">*</span> 95403cb <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">Readme.md</span> agregado <span class="at">-</span> [Nombre de usuario]%     </span></code></pre></div>
+</div>
+<div id="cambiar-de-nombre-y-eliminar-archivos" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Cambiar de nombre y eliminar archivos<a href="repositorio-nuevo.html#cambiar-de-nombre-y-eliminar-archivos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En el desarrollo es muy recurrente la necesidad de cambiarle el nombre a algunos archivos así como eliminarlos por distintas causas, esta vez aprenderemos a hacerlo de manera que Git se mantenga al tando de estos cambios, tanto si fueron realizados mediante Git o fuera del mismo.</p>
+<div id="mediante-git" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Mediante Git<a href="repositorio-nuevo.html#mediante-git" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Empezamos con la creación de un nuevo archivo de nombre:</li>
+</ol>
+<div class="sourceCode" id="cb115"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb115-1"><a href="repositorio-nuevo.html#cb115-1" tabindex="-1"></a><span class="ex">contactos.md</span></span></code></pre></div>
+<p>Al cual le vamos a agregar la siguiente entrada:</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb116-1"><a href="repositorio-nuevo.html#cb116-1" tabindex="-1"></a><span class="co"># Lista de Contactos de Emergencia</span></span>
+<span id="cb116-2"><a href="repositorio-nuevo.html#cb116-2" tabindex="-1"></a></span>
+<span id="cb116-3"><a href="repositorio-nuevo.html#cb116-3" tabindex="-1"></a><span class="co">## Iron Man</span></span>
+<span id="cb116-4"><a href="repositorio-nuevo.html#cb116-4" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Nombre:<span class="pp">**</span> Pepper Potts  </span>
+<span id="cb116-5"><a href="repositorio-nuevo.html#cb116-5" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Relación:<span class="pp">**</span> CEO de Stark Industries y pareja de Tony Stark  </span>
+<span id="cb116-6"><a href="repositorio-nuevo.html#cb116-6" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Contacto:<span class="pp">**</span> pepper.potts@starkindustries.com <span class="kw">|</span> <span class="ex">+1-555-123-4567</span></span>
+<span id="cb116-7"><a href="repositorio-nuevo.html#cb116-7" tabindex="-1"></a></span>
+<span id="cb116-8"><a href="repositorio-nuevo.html#cb116-8" tabindex="-1"></a><span class="co">## Thor</span></span>
+<span id="cb116-9"><a href="repositorio-nuevo.html#cb116-9" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Nombre:<span class="pp">**</span> Jane Foster  </span>
+<span id="cb116-10"><a href="repositorio-nuevo.html#cb116-10" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Relación:<span class="pp">**</span> Astrofísica y expareja sentimental de Thor  </span>
+<span id="cb116-11"><a href="repositorio-nuevo.html#cb116-11" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Contacto:<span class="pp">**</span> jane.foster@astrophysicsuniv.edu <span class="kw">|</span> <span class="ex">+1-555-234-5678</span></span>
+<span id="cb116-12"><a href="repositorio-nuevo.html#cb116-12" tabindex="-1"></a></span>
+<span id="cb116-13"><a href="repositorio-nuevo.html#cb116-13" tabindex="-1"></a><span class="co">## Hulk</span></span>
+<span id="cb116-14"><a href="repositorio-nuevo.html#cb116-14" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Nombre:<span class="pp">**</span> Betty Ross  </span>
+<span id="cb116-15"><a href="repositorio-nuevo.html#cb116-15" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Relación:<span class="pp">**</span> Bióloga celular y expareja de Bruce Banner  </span>
+<span id="cb116-16"><a href="repositorio-nuevo.html#cb116-16" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Contacto:<span class="pp">**</span> bross@researchinstitute.com <span class="kw">|</span> <span class="ex">+1-555-345-6789</span></span>
+<span id="cb116-17"><a href="repositorio-nuevo.html#cb116-17" tabindex="-1"></a></span>
+<span id="cb116-18"><a href="repositorio-nuevo.html#cb116-18" tabindex="-1"></a><span class="co">## Black Widow</span></span>
+<span id="cb116-19"><a href="repositorio-nuevo.html#cb116-19" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Nombre:<span class="pp">**</span> Yelena Belova  </span>
+<span id="cb116-20"><a href="repositorio-nuevo.html#cb116-20" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Relación:<span class="pp">**</span> Hermana adoptiva y compañera en misiones  </span>
+<span id="cb116-21"><a href="repositorio-nuevo.html#cb116-21" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Contacto:<span class="pp">**</span> yelena.b@redroomlegacy.org <span class="kw">|</span> <span class="ex">+1-555-456-7890</span></span>
+<span id="cb116-22"><a href="repositorio-nuevo.html#cb116-22" tabindex="-1"></a></span>
+<span id="cb116-23"><a href="repositorio-nuevo.html#cb116-23" tabindex="-1"></a><span class="co">## Spider-Man</span></span>
+<span id="cb116-24"><a href="repositorio-nuevo.html#cb116-24" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Nombre:<span class="pp">**</span> Aunt May  </span>
+<span id="cb116-25"><a href="repositorio-nuevo.html#cb116-25" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Relación:<span class="pp">**</span> Tía y figura materna de Peter Parker  </span>
+<span id="cb116-26"><a href="repositorio-nuevo.html#cb116-26" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Contacto:<span class="pp">**</span> may.parker@nyccommunitycenter.org <span class="kw">|</span> <span class="ex">+1-555-567-8901</span></span>
+<span id="cb116-27"><a href="repositorio-nuevo.html#cb116-27" tabindex="-1"></a></span>
+<span id="cb116-28"><a href="repositorio-nuevo.html#cb116-28" tabindex="-1"></a><span class="co">## Doctor Strange</span></span>
+<span id="cb116-29"><a href="repositorio-nuevo.html#cb116-29" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Nombre:<span class="pp">**</span> Wong  </span>
+<span id="cb116-30"><a href="repositorio-nuevo.html#cb116-30" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Relación:<span class="pp">**</span> Bibliotecario y compañero Hechicero Supremo adjunto  </span>
+<span id="cb116-31"><a href="repositorio-nuevo.html#cb116-31" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Contacto:<span class="pp">**</span> wong@sorcerersanctum.com <span class="kw">|</span> <span class="ex">+1-555-678-9012</span></span>
+<span id="cb116-32"><a href="repositorio-nuevo.html#cb116-32" tabindex="-1"></a></span>
+<span id="cb116-33"><a href="repositorio-nuevo.html#cb116-33" tabindex="-1"></a><span class="co">## Daredevil</span></span>
+<span id="cb116-34"><a href="repositorio-nuevo.html#cb116-34" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Nombre:<span class="pp">**</span> Foggy Nelson  </span>
+<span id="cb116-35"><a href="repositorio-nuevo.html#cb116-35" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Relación:<span class="pp">**</span> Mejor amigo y socio legal de Matt Murdock  </span>
+<span id="cb116-36"><a href="repositorio-nuevo.html#cb116-36" tabindex="-1"></a><span class="ex">-</span> <span class="pp">**</span>Contacto:<span class="pp">**</span> foggy.nelson@nelsonandmurdock.com <span class="kw">|</span> <span class="ex">+1-555-789-0123</span></span></code></pre></div>
+<p>Agregamos este archivo al area de preparación</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb117-1"><a href="repositorio-nuevo.html#cb117-1" tabindex="-1"></a><span class="fu">git</span> add contactos.md  </span></code></pre></div>
+<p>Hacemos un commit</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb118-1"><a href="repositorio-nuevo.html#cb118-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;contactos de emergencia agregados&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb119-1"><a href="repositorio-nuevo.html#cb119-1" tabindex="-1"></a><span class="ex">[main</span> 3d9bd78] contactos de emergencia agregados</span>
+<span id="cb119-2"><a href="repositorio-nuevo.html#cb119-2" tabindex="-1"></a> <span class="ex">1</span> file changed, 43 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span>
+<span id="cb119-3"><a href="repositorio-nuevo.html#cb119-3" tabindex="-1"></a> <span class="ex">create</span> mode 100644 contactos.md</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Notamos que <code>contactos</code> es un nombre impreciso para la lista, por lo que cambiamos el nombre del archivo:</li>
+</ol>
+<div class="sourceCode" id="cb120"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb120-1"><a href="repositorio-nuevo.html#cb120-1" tabindex="-1"></a><span class="fu">git</span> mv contactos.md contactos-emergencia.md</span></code></pre></div>
+<p>Viemdo el estado del repositorio</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb121-1"><a href="repositorio-nuevo.html#cb121-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb122-1"><a href="repositorio-nuevo.html#cb122-1" tabindex="-1"></a><span class="co">## main</span></span>
+<span id="cb122-2"><a href="repositorio-nuevo.html#cb122-2" tabindex="-1"></a><span class="ex">R</span>  contactos.md <span class="at">-</span><span class="op">&gt;</span> contactos-emergencia.md</span></code></pre></div>
+<p>La <code>R</code> indica que el archivo fue renombrado. Ahora hacemos un nuevo commit del archivo renombrado</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb123-1"><a href="repositorio-nuevo.html#cb123-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;contactos.md renombrado&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb124-1"><a href="repositorio-nuevo.html#cb124-1" tabindex="-1"></a><span class="ex">[main</span> d811152] contactos.md renombrado</span>
+<span id="cb124-2"><a href="repositorio-nuevo.html#cb124-2" tabindex="-1"></a> <span class="ex">1</span> file changed, 0 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 0 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span>
+<span id="cb124-3"><a href="repositorio-nuevo.html#cb124-3" tabindex="-1"></a> <span class="ex">rename</span> contactos.md =<span class="op">&gt;</span> contactos-emergencia.md <span class="er">(</span><span class="ex">100%</span><span class="kw">)</span></span></code></pre></div>
+<p>Veamos el historial de registros</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb125-1"><a href="repositorio-nuevo.html#cb125-1" tabindex="-1"></a><span class="fu">git</span> lg</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb126-1"><a href="repositorio-nuevo.html#cb126-1" tabindex="-1"></a><span class="ex">*</span> d811152 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 17 segundos<span class="kw">)</span> <span class="ex">contactos.md</span> renombrado <span class="at">-</span> [Nombre de usuario] <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
+<span id="cb126-2"><a href="repositorio-nuevo.html#cb126-2" tabindex="-1"></a><span class="ex">*</span> 3d9bd78 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 minutos<span class="kw">)</span> <span class="ex">contactos</span> de emergencia agregados <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb126-3"><a href="repositorio-nuevo.html#cb126-3" tabindex="-1"></a><span class="ex">*</span> 75009c8 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 30 minutos<span class="kw">)</span> <span class="ex">se</span> unen Doctor Strange y Daredevil <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb126-4"><a href="repositorio-nuevo.html#cb126-4" tabindex="-1"></a><span class="ex">*</span> 0e01379 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">misiones/</span> agregado <span class="at">-</span><span class="op">&gt;</span> misiones de los heroes: iron man, thor, hulk, black widow y spider man. <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb126-5"><a href="repositorio-nuevo.html#cb126-5" tabindex="-1"></a><span class="ex">*</span> 471d1b7 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">debilidades.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb126-6"><a href="repositorio-nuevo.html#cb126-6" tabindex="-1"></a><span class="ex">*</span> f0dddfd <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">oringenes.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb126-7"><a href="repositorio-nuevo.html#cb126-7" tabindex="-1"></a><span class="ex">*</span> d8a9a76 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">descripciones.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb126-8"><a href="repositorio-nuevo.html#cb126-8" tabindex="-1"></a><span class="ex">*</span> 95403cb <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 5 horas<span class="kw">)</span> <span class="ex">Readme.md</span> agregado <span class="at">-</span> [Nombre de usuario]%  </span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Dado que es peligroso tener una lista de las personas más cercanas a nuestros héroes, se toma la decisión de eliminal dicha lista.</li>
+</ol>
+<div class="sourceCode" id="cb127"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb127-1"><a href="repositorio-nuevo.html#cb127-1" tabindex="-1"></a><span class="fu">git</span> rm contactos-emergencia.md</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb128-1"><a href="repositorio-nuevo.html#cb128-1" tabindex="-1"></a><span class="fu">rm</span> <span class="st">&#39;contactos-emergencia.md&#39;</span></span></code></pre></div>
+</div>
+<div id="fuera-de-git" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Fuera de Git<a href="repositorio-nuevo.html#fuera-de-git" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Esta es la manera más común de eliminar y renombrar archivos. Para no repetir los pasos anteriores, ahora vamos a trabajar con el subdirectorio <code>misiones</code> en el que encontramos misiones asignadas a cada héroe, resulta que Spider-Man ha terminado sus misione, por lo que cambiaremos el nombre de su archivo por:</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb129-1"><a href="repositorio-nuevo.html#cb129-1" tabindex="-1"></a><span class="ex">spider_man-Completados.md</span></span></code></pre></div>
+<p>Este cambio, al hacer un <code>git s / git status</code>, a diferencia de la vez anterior aparecerá de una forma peculiar</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb130-1"><a href="repositorio-nuevo.html#cb130-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb131-1"><a href="repositorio-nuevo.html#cb131-1" tabindex="-1"></a><span class="co">## main</span></span>
+<span id="cb131-2"><a href="repositorio-nuevo.html#cb131-2" tabindex="-1"></a> <span class="ex">D</span> misiones/spider_man.md</span>
+<span id="cb131-3"><a href="repositorio-nuevo.html#cb131-3" tabindex="-1"></a><span class="ex">??</span> misiones/spider_man-Completados.md</span></code></pre></div>
+<p>Parece que Git no reconoce lo que hicimos como un renombramiento del archivo, sio que hemos eliminado <code>spider_man.md</code> y se ha creado un nuevo archivo, que aún no tiene seguimieto, llamado <code>spider_man-Completados.md</code>. No hay porque alarmarse con esto, utilizando</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb132-1"><a href="repositorio-nuevo.html#cb132-1" tabindex="-1"></a><span class="fu">git</span> add .</span></code></pre></div>
+<p>Git, al ver que el contenido de los archivos es idéntico, cambiará el tipo de registro a “renombrado” y podemos verificarlo usando</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb133-1"><a href="repositorio-nuevo.html#cb133-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb134-1"><a href="repositorio-nuevo.html#cb134-1" tabindex="-1"></a><span class="co">## HEAD (sin rama)</span></span>
+<span id="cb134-2"><a href="repositorio-nuevo.html#cb134-2" tabindex="-1"></a><span class="ex">R</span>  misiones/spider_man.md <span class="at">-</span><span class="op">&gt;</span> misiones/spider_man-Completados.md</span></code></pre></div>
+<p>En este caso la <code>R</code> indica que Git ha registrado el cambio como renombramiento, casi siempre funciona así, si en algún caso Git no registra este cmbio como “renombrado” hay que volver un paso atras, empleando <code>git restore --staged</code> y hacer este renombramiento mediante Git.
+Ahora, queda hacer el commit</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb135-1"><a href="repositorio-nuevo.html#cb135-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;misiones de Spider-Man completadas&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb136-1"><a href="repositorio-nuevo.html#cb136-1" tabindex="-1"></a><span class="ex">[main</span> fd86e2e] misiones de Spider-Man completadas</span>
+<span id="cb136-2"><a href="repositorio-nuevo.html#cb136-2" tabindex="-1"></a> <span class="ex">1</span> file changed, 0 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 0 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span>
+<span id="cb136-3"><a href="repositorio-nuevo.html#cb136-3" tabindex="-1"></a> <span class="ex">rename</span> misiones/{spider_man.md =<span class="op">&gt;</span> spider_man-Completados.md} <span class="er">(</span><span class="ex">100%</span><span class="kw">)</span></span></code></pre></div>
+<p>viendo como queda el registro</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb137-1"><a href="repositorio-nuevo.html#cb137-1" tabindex="-1"></a><span class="fu">git</span> lg</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb138-1"><a href="repositorio-nuevo.html#cb138-1" tabindex="-1"></a><span class="ex">*</span> fd86e2e <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 35 segundos<span class="kw">)</span> <span class="ex">misiones</span> de Spider-Man completadas <span class="at">-</span> [Nombre de usuario] <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
+<span id="cb138-2"><a href="repositorio-nuevo.html#cb138-2" tabindex="-1"></a><span class="ex">*</span> 2e25e59 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 3 minutos<span class="kw">)</span> <span class="ex">contactos-emergencia.md</span> eliminado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb138-3"><a href="repositorio-nuevo.html#cb138-3" tabindex="-1"></a><span class="ex">*</span> d811152 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 28 minutos<span class="kw">)</span> <span class="ex">contactos.md</span> renombrado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb138-4"><a href="repositorio-nuevo.html#cb138-4" tabindex="-1"></a><span class="ex">*</span> 3d9bd78 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 33 minutos<span class="kw">)</span> <span class="ex">contactos</span> de emergencia agregados <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb138-5"><a href="repositorio-nuevo.html#cb138-5" tabindex="-1"></a><span class="ex">*</span> 75009c8 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 58 minutos<span class="kw">)</span> <span class="ex">se</span> unen Doctor Strange y Daredevil <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb138-6"><a href="repositorio-nuevo.html#cb138-6" tabindex="-1"></a><span class="ex">*</span> 0e01379 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 6 horas<span class="kw">)</span> <span class="ex">misiones/</span> agregado <span class="at">-</span><span class="op">&gt;</span> misiones de los heroes: iron man, thor, hulk, black widow y spider man. <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb138-7"><a href="repositorio-nuevo.html#cb138-7" tabindex="-1"></a><span class="ex">*</span> 471d1b7 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 6 horas<span class="kw">)</span> <span class="ex">debilidades.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb138-8"><a href="repositorio-nuevo.html#cb138-8" tabindex="-1"></a><span class="ex">*</span> f0dddfd <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 6 horas<span class="kw">)</span> <span class="ex">oringenes.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb138-9"><a href="repositorio-nuevo.html#cb138-9" tabindex="-1"></a><span class="ex">*</span> d8a9a76 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 6 horas<span class="kw">)</span> <span class="ex">descripciones.md</span> agregado <span class="at">-</span> [Nombre de usuario]</span>
+<span id="cb138-10"><a href="repositorio-nuevo.html#cb138-10" tabindex="-1"></a><span class="ex">*</span> 95403cb <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 6 horas<span class="kw">)</span> <span class="ex">Readme.md</span> agregado <span class="at">-</span> [Nombre de usuario]%  </span></code></pre></div>
+<p>como las misiones del archivo <code>spider_man-Completados.md</code> ya no se encuentran activas, se elimina tal archivo, despues de hacer el registro crearemos un nuevo archivo de asignaciones para Spider-Man.</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb139-1"><a href="repositorio-nuevo.html#cb139-1" tabindex="-1"></a><span class="fu">git</span> lg</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb140-1"><a href="repositorio-nuevo.html#cb140-1" tabindex="-1"></a><span class="co">## main</span></span>
+<span id="cb140-2"><a href="repositorio-nuevo.html#cb140-2" tabindex="-1"></a> <span class="ex">D</span> misiones/</span></code></pre></div>
+<p>Veamos que Git ha registrado lo que hicimos como una eliminación del archivo <code>spider_man-Completados.md</code>, continuamos creando un archivo limpio de asignaciones para Spider-Man y agregando los cambios al Stage</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb141-1"><a href="repositorio-nuevo.html#cb141-1" tabindex="-1"></a><span class="fu">git</span> add .</span></code></pre></div>
+<p>y hacemos el correspondiente commit</p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb142-1"><a href="repositorio-nuevo.html#cb142-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;sin saignaciones para Spider-Man&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb143-1"><a href="repositorio-nuevo.html#cb143-1" tabindex="-1"></a><span class="ex">[main</span> 7540e1a] sin saignaciones para Spider-Man</span>
+<span id="cb143-2"><a href="repositorio-nuevo.html#cb143-2" tabindex="-1"></a> <span class="ex">2</span> files changed, 1 insertion<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 18 deletions<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span>
+<span id="cb143-3"><a href="repositorio-nuevo.html#cb143-3" tabindex="-1"></a> <span class="ex">delete</span> mode 100644 misiones/spider_man-Completados.md</span>
+<span id="cb143-4"><a href="repositorio-nuevo.html#cb143-4" tabindex="-1"></a> <span class="ex">create</span> mode 100644 misiones/spider_man.md</span></code></pre></div>
+<p>Así es como se eliminan y renombran archivos tanto mediante como fuera de Git.</p>
+</div>
+</div>
+<div id="ignorar-archivos-no-deseados" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Ignorar archivos no deseados<a href="repositorio-nuevo.html#ignorar-archivos-no-deseados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En muchas ocaciones, dentro del proceso de desarrollo, tenemos archivos e incluso directorios a los que no nos interesa darles seguimiento; vamos a crear unos cuantos archivos y directorios de ejemplo con el objetivo de hacer que git ignore estos elementos y no regstre los cambios pesentes en ellos.</p>
+<p>Vamos a crear los siguientes directorios:</p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb144-1"><a href="repositorio-nuevo.html#cb144-1" tabindex="-1"></a><span class="ex">dist</span></span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb145-1"><a href="repositorio-nuevo.html#cb145-1" tabindex="-1"></a><span class="ex">node_modules</span></span></code></pre></div>
+<p>Dentro de <code>node_modules</code> vamos a crear el directorio</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb146-1"><a href="repositorio-nuevo.html#cb146-1" tabindex="-1"></a><span class="ex">vue</span></span></code></pre></div>
+<p>Ahora crearemos los archivos:</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb147-1"><a href="repositorio-nuevo.html#cb147-1" tabindex="-1"></a><span class="ex">server.log</span></span></code></pre></div>
+<p>Aquí vamos a meter como entrada, arbitrariamente, los diguientes logs</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb148-1"><a href="repositorio-nuevo.html#cb148-1" tabindex="-1"></a><span class="ex">012038239123:</span> Exploto el equipo...</span>
+<span id="cb148-2"><a href="repositorio-nuevo.html#cb148-2" tabindex="-1"></a><span class="ex">012038239123:</span> Exploto el equipo...</span>
+<span id="cb148-3"><a href="repositorio-nuevo.html#cb148-3" tabindex="-1"></a><span class="ex">012038239123:</span> Exploto el equipo...</span>
+<span id="cb148-4"><a href="repositorio-nuevo.html#cb148-4" tabindex="-1"></a><span class="ex">012038239123:</span> Exploto el equipo...</span>
+<span id="cb148-5"><a href="repositorio-nuevo.html#cb148-5" tabindex="-1"></a><span class="ex">012038239123:</span> Exploto el equipo...</span>
+<span id="cb148-6"><a href="repositorio-nuevo.html#cb148-6" tabindex="-1"></a><span class="ex">012038239123:</span> Exploto el equipo...</span></code></pre></div>
+<p>dentro de <code>dist</code> creamos</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb149-1"><a href="repositorio-nuevo.html#cb149-1" tabindex="-1"></a><span class="ex">index.html</span></span></code></pre></div>
+<p>Que estará vacío.
+Por último dentro de <code>vue</code>, subdirectorio de <code>node_modules</code> creamos</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb150-1"><a href="repositorio-nuevo.html#cb150-1" tabindex="-1"></a><span class="ex">app.module.ts</span></span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb151-1"><a href="repositorio-nuevo.html#cb151-1" tabindex="-1"></a><span class="ex">react.jsx</span></span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb152-1"><a href="repositorio-nuevo.html#cb152-1" tabindex="-1"></a><span class="ex">vue.vue</span></span></code></pre></div>
+<p>Estos archivos y directorios no necesitan tener sentido, y no lo tienen en este contexto pero son ejemplos de directorios o archivos comunes en proyectos que no requieren un seguimiento de los cambios presentes en ellos por diversas razones, están aqui simplemente para aprender a hacer que gir ignore los elementos que no nesesitamos que tengan ub rastreo.
+Veamos primero el estado del repositorio</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb153-1"><a href="repositorio-nuevo.html#cb153-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb154-1"><a href="repositorio-nuevo.html#cb154-1" tabindex="-1"></a><span class="co">## main</span></span>
+<span id="cb154-2"><a href="repositorio-nuevo.html#cb154-2" tabindex="-1"></a><span class="ex">??</span> dist/</span>
+<span id="cb154-3"><a href="repositorio-nuevo.html#cb154-3" tabindex="-1"></a><span class="ex">??</span> node_modules/</span>
+<span id="cb154-4"><a href="repositorio-nuevo.html#cb154-4" tabindex="-1"></a><span class="ex">??</span> server.log</span></code></pre></div>
+<div id="archivo-.gitignore" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Archivo .gitignore<a href="repositorio-nuevo.html#archivo-.gitignore" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Vamos a presentar el archivo <code>.gitignore</code>, que nos premitirá enlistar archivos y directorios que Git va a ignorar, muy útil para facilitar esta tarea.</p>
+<p>Veamos como funciona. Vamos a crear el archivo <code>.gitignore</code> y en este vamos a agregar la siguiente entrada:</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb155-1"><a href="repositorio-nuevo.html#cb155-1" tabindex="-1"></a><span class="ex">dist/</span></span>
+<span id="cb155-2"><a href="repositorio-nuevo.html#cb155-2" tabindex="-1"></a><span class="ex">node_modules/</span></span>
+<span id="cb155-3"><a href="repositorio-nuevo.html#cb155-3" tabindex="-1"></a></span>
+<span id="cb155-4"><a href="repositorio-nuevo.html#cb155-4" tabindex="-1"></a><span class="ex">server.log</span></span></code></pre></div>
+<p>Una vez creado el archivo, al revisar el estado del repositorio veremos que tenemos una respuesta muy distinta a la última que tuvimos</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb156-1"><a href="repositorio-nuevo.html#cb156-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb157-1"><a href="repositorio-nuevo.html#cb157-1" tabindex="-1"></a><span class="co">## main</span></span>
+<span id="cb157-2"><a href="repositorio-nuevo.html#cb157-2" tabindex="-1"></a><span class="ex">??</span> .gitignore</span></code></pre></div>
+<p>Ahora no aparecen lo elementos creados anteriormente y simplemente nos encontramos con el archivo <code>.gitignore</code> al que si es necesario darle seguimiento por lo que haremos su correspondiente registro.</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb158-1"><a href="repositorio-nuevo.html#cb158-1" tabindex="-1"></a><span class="fu">git</span> add .gitignore</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb159-1"><a href="repositorio-nuevo.html#cb159-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;.gitignore agregado&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb160-1"><a href="repositorio-nuevo.html#cb160-1" tabindex="-1"></a><span class="ex">[main</span> 09054e2] .gitignore agregado</span>
+<span id="cb160-2"><a href="repositorio-nuevo.html#cb160-2" tabindex="-1"></a> <span class="ex">1</span> file changed, 4 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span>
+<span id="cb160-3"><a href="repositorio-nuevo.html#cb160-3" tabindex="-1"></a> <span class="ex">create</span> mode 100644 .gitignore</span></code></pre></div>
+<p>Ahora, para ver un poco de la sintaxis dentro de <code>.gitignore</code> vamos a crear un par de nuevos archivos a los que no se les va a dar seguimiento:</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb161-1"><a href="repositorio-nuevo.html#cb161-1" tabindex="-1"></a><span class="ex">application.log</span></span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb162-1"><a href="repositorio-nuevo.html#cb162-1" tabindex="-1"></a><span class="ex">system.log</span></span></code></pre></div>
+<p>Como no queremos que se les de seguimiento a estos archivos, hay que agregarlo al <code>.gitignore</code>, pero esta vez en vez de agregarlos uno por unlo cambiaremos la línea <code>server.log</code> por <code>*.log</code> de forma que el contenideo de <code>.gitignore</code> quedaría así:</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb163-1"><a href="repositorio-nuevo.html#cb163-1" tabindex="-1"></a><span class="ex">dist/</span></span>
+<span id="cb163-2"><a href="repositorio-nuevo.html#cb163-2" tabindex="-1"></a><span class="ex">node_modules/</span></span>
+<span id="cb163-3"><a href="repositorio-nuevo.html#cb163-3" tabindex="-1"></a></span>
+<span id="cb163-4"><a href="repositorio-nuevo.html#cb163-4" tabindex="-1"></a><span class="ex">*.log</span></span></code></pre></div>
+<p>Con este cambio le decimos a git que ignore a todos los archivos con extension <code>log</code> sin extender el contenido del archivo <code>.gitignore</code> veamos como percibe estos cambios Git:</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb164-1"><a href="repositorio-nuevo.html#cb164-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb165-1"><a href="repositorio-nuevo.html#cb165-1" tabindex="-1"></a><span class="co">## main</span></span>
+<span id="cb165-2"><a href="repositorio-nuevo.html#cb165-2" tabindex="-1"></a> <span class="ex">M</span> .gitignore</span></code></pre></div>
+<p>Notemos que, aunque creamos dos archivos nuevos, Git solamente rastreó el cambio realizado en el archivo <code>.gitignore</code>. Vamos hacer un commit sobre estos cambios.</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb166-1"><a href="repositorio-nuevo.html#cb166-1" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-am</span> <span class="st">&quot;.gitignore actualizado (extension .log)&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb167-1"><a href="repositorio-nuevo.html#cb167-1" tabindex="-1"></a><span class="ex">[main</span> 6cbd0da] .gitignore actualizado <span class="er">(</span><span class="ex">extension</span> .log<span class="kw">)</span></span>
+<span id="cb167-2"><a href="repositorio-nuevo.html#cb167-2" tabindex="-1"></a> <span class="ex">1</span> file changed, 1 insertion<span class="er">(</span><span class="ex">+</span><span class="kw">)</span><span class="ex">,</span> 1 deletion<span class="er">(</span><span class="ex">-</span><span class="kw">)</span></span></code></pre></div>
+<p>Ahora vamos a crear un par de archivos nuevos con la extensión <code>.log</code> para ver como afecta al registro del repositorio; esta vez crearemos los archivos:</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb168-1"><a href="repositorio-nuevo.html#cb168-1" tabindex="-1"></a><span class="ex">error.log</span></span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb169-1"><a href="repositorio-nuevo.html#cb169-1" tabindex="-1"></a><span class="ex">access.log</span></span></code></pre></div>
+<p>Y para continuar empleamos:</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb170-1"><a href="repositorio-nuevo.html#cb170-1" tabindex="-1"></a><span class="fu">git</span> s</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb171-1"><a href="repositorio-nuevo.html#cb171-1" tabindex="-1"></a><span class="co">## main</span></span></code></pre></div>
+<p>Podemos notar que esta vez no se ha registrado ningún cambio realizado en el repositorio, ya que Git ignora cualquier cambio realizado a archivos con extensión <code>.log</code>, esto incluye la cración de nuevos archivos con dicha exensión.</p>
+</div>
+</div>
+<div id="resumen" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Resumen<a href="repositorio-nuevo.html#resumen" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Creamos un repositorio y lo preparamos para que Git haga un rastreo de los cambios presentes en sus elementos.</p></li>
+<li><p>Viajamos en los registros realizados anteriormente, hicimos algunos cambios y recuperamos todo el avance que se tenía en un principio.</p></li>
+<li><p>Aprendimos a renombrar y eliminar archivos y directorios de manera que Git pueda rastrear estos cambios de la manera adecuada.</p></li>
+<li><p>Hicimos que Git ignorara archivos a los que no nos interesa darles seguimiento.</p></li>
+</ol>
+
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+$('.pipehover_incremental tr').hover(function() {
+  $(this).removeClass()
+  $(this).prevAll().removeClass()
+  $(this).nextAll().removeClass()
+  $(this).addClass('hover');
+  $(this).prevAll().addClass('hover');
+  $(this).closest('div').next().find('img').attr("src", $(this).attr("link"));
+});
+
+
+$('.pipehover_select_one_row tr').hover(function() {
+  $(this).removeClass()
+  $(this).prevAll().removeClass()
+  $(this).nextAll().removeClass()
+  $(this).addClass('hover');
+  $(this).closest('div').next().find('img').attr("src", $(this).attr("link"));
+});
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="los-cambios-en-git.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ramas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["amt24_01git.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
