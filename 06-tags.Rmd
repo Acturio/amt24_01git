@@ -12,10 +12,10 @@ La creación de Tags es realmente sencilla, para crear un Tag o etiqueta en el c
 git tag [nombre de la etiqueta]
 ```
 
-Por ejemplo, supongamos que el proyecto `numeros` se encuentra en el punto en que puede salir a produccion y el último commit está listo para sel la primera versión de producción, por lo que debemos darle una etiqueta que nos indique el pundo correspondiente a la salida a producción:
+Por ejemplo, supongamos que el registro se considera comprometido por el conflicto que se generó anteriormente, en este caso podemos grear la etiqueta que indique este evento.
 
 ```{bash eval=F}
-git tag primera-version
+git tag registro-comprometido
 ```
 
 Una vez creada la etiqueta, podemos encontrarla al ver los registros del repositorio:
@@ -24,13 +24,13 @@ Una vez creada la etiqueta, podemos encontrarla al ver los registros del reposit
 git lg
 ```
 ```{bash eval=F}
-*   5414405 - (hace 5 minutos) union de main con numero-4 - [Nombre de usuario] (HEAD -> main, tag: primera-version)
+*   7e666cc - (hace 30 minutos) incorporacion de Nova y Spider-Gwen (T-65) al registro principal - [Nombre de usuario] (HEAD -> main, tag: registro-comprometido)
 |\  
-| * 3447252 - (hace 9 minutos) problemas.md modificado (numeros-2) - [Nombre de usuario] (numeros-4)
-* | 74aca37 - (hace 12 minutos) problemas.md modificado - [Nombre de usuario]
+| * edf50e5 - (hace 2 semanas) se unen Spider-Gwen y Nova del Tierra-65 - [Nombre de usuario]
+* | 5ae8eb6 - (hace 73 minutos) se une Scarlet Witch - [Nombre de usuario]
+* | 815d1e1 - (hace 2 semanas) se retiran los heroes de Tierra-99999 - [Nombre de usuario]
 |/  
-*   bb296da - (hace 17 minutos) implementacion de numeros abundantes en rama 'numeros-3' - [Nombre de usuario]
-
+*   5f7eb20 - (hace 2 semanas) incorporacion de Black Panther (T-7642) al equipo principal - [Nombre de usuario]
 ```
 
 Podemos listar las etiquetas que tenemos con:
@@ -39,17 +39,17 @@ Podemos listar las etiquetas que tenemos con:
 git tag
 ```
 ```{bash eval=F}
-primera-version
+registro-comprometido
 ```
 
 Es aconsejable tener un orden en nuestras etiquetas para mejorar la administracion de las mismas.  
-Para eliminar la unaeqiqueta, en este caso la única que hemos creado:
+Para eliminar una eqiqueta, en este caso la única que hemos creado:
 
 ```{bash eval=F}
-git tag -d primera-version
+git tag -d registro-comprometido
 ```
 ```{bash eval=F}
-Etiqueta primera-version eliminada (era 5414405)
+Etiqueta 'registro-comprometido' eliminada (era 7e666cc)
 ```
 
 Una forma de llamar a las etiquetas muy común y bastante útil, llamado versionamiento semantico, a la hora de identificarlas es utilizar una sintaxis de versiones, como por ejemplo:
@@ -58,46 +58,50 @@ Una forma de llamar a las etiquetas muy común y bastante útil, llamado version
 git tag  -a v-1.0.0 -m "Version 1.0.0 lista"
 ```
 
-En este caso el parámetro `-a` indica que la etiqueta es anorada, lo que significa que almacena más informacion como el nombre del creador, la fecha de creación y un mensaje, opcional, que se agrega con el parámetro -m seguido del mensaje que deseamos guardar.
+En este caso el parámetro `-a` indica que la etiqueta es anotada, lo que significa que almacena más información como el nombre del creador, la fecha de creación y un mensaje, opcional, que se agrega con el parámetro -m seguido del mensaje que deseamos guardar.
 
-Si deseamos crear etiquetas en puntos de registro distintos a donde nos encontramos, simplemente hay que utilizar el `hash` de registro del commit que deseamos etiquetar, por ejemplo, supongamos que quuiero etiquetar como `v-0.1.0` al punto en el que se eliminó `restriccion-division.md``. Primero listamos los registros
+Si deseamos crear etiquetas en puntos de registro distintos a donde nos encontramos, simplemente hay que utilizar el `hash` de registro del commit que deseamos etiquetar, por ejemplo, supongamos que quiero etiquetar como `v-0.1.0` al punto en el que se retiraron los héroes de `Tierra-99999` y al registro actial lo queremos etiquetar como `v-1.0.0`. Primero listamos los registros
 
 ```{bash eval=F}
 git lg
 ```
 ```{bash eval=F}
-*   5414405 - (hace 33 segundos) union de main con numero-4 - [Nombre de usuario] (HEAD -> main, tag: v-1.0.0)
+*   7e666cc - (hace 36 minutos) incorporacion de Nova y Spider-Gwen (T-65) al registro principal - [Nombre de usuario] (HEAD -> main)
 |\  
-| * 3447252 - (hace 4 minutos) problemas.md modificado (numeros-2) - [Nombre de usuario] (numeros-4)
-* | 74aca37 - (hace 7 minutos) problemas.md modificado - [Nombre de usuario]
+| * edf50e5 - (hace 2 semanas) se unen Spider-Gwen y Nova del Tierra-65 - [Nombre de usuario]
+* | 5ae8eb6 - (hace 79 minutos) se une Scarlet Witch - [Nombre de usuario]
+* | 815d1e1 - (hace 2 semanas) se retiran los heroes de Tierra-99999 - [Nombre de usuario]
 |/  
-*   bb296da - (hace 12 minutos) implementacion de numeros abundantes en rama 'numeros-3' - [Nombre de usuario]
+*   5f7eb20 - (hace 2 semanas) incorporacion de Black Panther (T-7642) al equipo principal - [Nombre de usuario]
 |\  
-| * e26e013 - (hace 18 minutos) caracteristicas-2 modificado (numeros abundantes agregados) - [Nombre de usuario]
-| * 5886d1b - (hace 20 minutos) numeros-2.md modificado (numeros abundantes agregados) - [Nombre de usuario]
-* | 9556c19 - (hace 13 minutos) se retiran los numeros imaginarios y complejos - [Nombre de usuario]
+| * 347dd3f - (hace 2 semanas) se une Black Panther de Tierra-7642; registro completo - [Nombre de usuario]
+* | bd81998 - (hace 2 semanas) se le asignan nuevas misiones a Spider-Man - [Nombre de usuario]
 |/  
-* 01e1562 - (hace 21 minuto) caracteristicas-2.md agregado - [Nombre de usuario]
-* 34238c5 - (hace 22 minutos) numeros-2.md agregado - [Nombre de usuario]
-* 62b4657 - (hace 28 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario]
-* ae676b5 - (hace 30 minutos) .gitignore agregado - [Nombre de usuario]
-* c32cdc0 - (hace 32 minutos) producto.md eliminado - [Nombre de usuario]
-* 8d867e7 - (hace 35 minutos) suma.md renombrado~ - [Nombre de usuario] 
-* 8606014 - (hace 36 minutos) restriccion-division.md eliminado - [Nombre de usuario]
-* f67c77c - (hace 37 minutos) division-cero.md renombrado - [Nombre de usuario]
-* 3741b68 - (hace 42 minutos) division-cero.md agregado - [Nombre de usuario]
-* 451e900 - (hace 4 horas) numeros imaginarios y complejos agregados - [Nombre de usuario]
-* f0e5d47 - (hace 5 horas) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario]
-* d610af4 - (hace 5 horas) problemas.md agregado - [Nombre de usuario]
-* a54e313 - (hace 5 horas) caracteristicas.md agregado - [Nombre de usuario]
-* 37d5a5b - (hace 5 horas) numeros.md agregado - [Nombre de usuario]
-* a4356d4 - (hace 5 horas) README.md agregado - [Nombre de usuario]
+* f5907d1 - (hace 2 semanas) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - [Nombre de usuario]
+* 6976c5a - (hace 2 semanas) se unen Captain marvel y Doctor Doom de Tierra-99999 - [Nombre de usuario]
+* c20b80d - (hace 2 semanas) .gitignore actualizado (extension .log) - [Nombre de usuario]
+* 2ed8cf4 - (hace 2 semanas) .gitignore agregado - [Nombre de usuario]
+* c9ffd15 - (hace 2 semanas) sin saignaciones para Spider-Man - [Nombre de usuario]
+* e31eae6 - (hace 2 semanas) misiones de Spider-Man completadas - [Nombre de usuario]
+* 0059540 - (hace 2 semanas) contactos.md eliminado - [Nombre de usuario]
+* 2d05f6e - (hace 2 semanas) contactos.md renombrado - [Nombre de usuario]
+* 1c7fe32 - (hace 2 semanas) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 2 semanas) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 2 semanas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 2 semanas) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 2 semanas) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 2 semanas) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 2 semanas) README.md agregado - [Nombre de usuario]% 
 ```
 
-Luego identificamos el `hash` de registro, en este caso es `8606014` y lo colocamos al final del comando que crea la etiqueta:
+Luego identificamos el `hash` de registro, en este caso es `815d1e1` y lo colocamos al final del comando que crea la etiqueta:
 
 ```{bash eval=F}
 git tag -a v-0.1.0 -m "Version 0.1.0: alpha" [hash] 
+```
+
+```{bash eval=F}
+git tag v-1.0.0 
 ```
 
 Ahora encontraremos la etiqueta al ver los registros del repositorio:
@@ -106,32 +110,32 @@ Ahora encontraremos la etiqueta al ver los registros del repositorio:
 git lg
 ```
 ```{bash eval=F}
-*   5414405 - (hace 33 segundos) union de main con numero-4 - [Nombre de usuario] (HEAD -> main, tag: v-1.0.0)
+*   7e666cc - (hace 38 minutos) incorporacion de Nova y Spider-Gwen (T-65) al registro principal - [Nombre de usuario] (HEAD -> main, tag: v-1.0.0)
 |\  
-| * 3447252 - (hace 4 minutos) problemas.md modificado (numeros-2) - [Nombre de usuario] (numeros-4)
-* | 74aca37 - (hace 7 minutos) problemas.md modificado - [Nombre de usuario]
+| * edf50e5 - (hace 2 semanas) se unen Spider-Gwen y Nova del Tierra-65 - [Nombre de usuario]
+* | 5ae8eb6 - (hace 82 minutos) se une Scarlet Witch - [Nombre de usuario]
+* | 815d1e1 - (hace 2 semanas) se retiran los heroes de Tierra-99999 - [Nombre de usuario] (tag: v-0.1.0)
 |/  
-*   bb296da - (hace 12 minutos) implementacion de numeros abundantes en rama 'numeros-3' - [Nombre de usuario]
+*   5f7eb20 - (hace 2 semanas) incorporacion de Black Panther (T-7642) al equipo principal - [Nombre de usuario]
 |\  
-| * e26e013 - (hace 18 minutos) caracteristicas-2 modificado (numeros abundantes agregados) - [Nombre de usuario]
-| * 5886d1b - (hace 20 minutos) numeros-2.md modificado (numeros abundantes agregados) - [Nombre de usuario]
-* | 9556c19 - (hace 13 minutos) se retiran los numeros imaginarios y complejos - [Nombre de usuario]
+| * 347dd3f - (hace 2 semanas) se une Black Panther de Tierra-7642; registro completo - [Nombre de usuario]
+* | bd81998 - (hace 2 semanas) se le asignan nuevas misiones a Spider-Man - [Nombre de usuario]
 |/  
-* 01e1562 - (hace 21 minuto) caracteristicas-2.md agregado - [Nombre de usuario]
-* 34238c5 - (hace 22 minutos) numeros-2.md agregado - [Nombre de usuario]
-* 62b4657 - (hace 28 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario]
-* ae676b5 - (hace 30 minutos) .gitignore agregado - [Nombre de usuario]
-* c32cdc0 - (hace 32 minutos) producto.md eliminado - [Nombre de usuario]
-* 8d867e7 - (hace 35 minutos) suma.md renombrado~ - [Nombre de usuario] 
-* 8606014 - (hace 36 minutos) restriccion-division.md eliminado - [Nombre de usuario] (tag: v-0.1.0)
-* f67c77c - (hace 37 minutos) division-cero.md renombrado - [Nombre de usuario]
-* 3741b68 - (hace 42 minutos) division-cero.md agregado - [Nombre de usuario]
-* 451e900 - (hace 4 horas) numeros imaginarios y complejos agregados - [Nombre de usuario]
-* f0e5d47 - (hace 5 horas) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario]
-* d610af4 - (hace 5 horas) problemas.md agregado - [Nombre de usuario]
-* a54e313 - (hace 5 horas) caracteristicas.md agregado - [Nombre de usuario]
-* 37d5a5b - (hace 5 horas) numeros.md agregado - [Nombre de usuario]
-* a4356d4 - (hace 5 horas) README.md agregado - [Nombre de usuario]
+* f5907d1 - (hace 2 semanas) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - [Nombre de usuario]
+* 6976c5a - (hace 2 semanas) se unen Captain marvel y Doctor Doom de Tierra-99999 - [Nombre de usuario]
+* c20b80d - (hace 2 semanas) .gitignore actualizado (extension .log) - [Nombre de usuario]
+* 2ed8cf4 - (hace 2 semanas) .gitignore agregado - [Nombre de usuario]
+* c9ffd15 - (hace 2 semanas) sin saignaciones para Spider-Man - [Nombre de usuario]
+* e31eae6 - (hace 2 semanas) misiones de Spider-Man completadas - [Nombre de usuario]
+* 0059540 - (hace 2 semanas) contactos.md eliminado - [Nombre de usuario]
+* 2d05f6e - (hace 2 semanas) contactos.md renombrado - [Nombre de usuario]
+* 1c7fe32 - (hace 2 semanas) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 2 semanas) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 2 semanas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 2 semanas) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 2 semanas) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 2 semanas) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 2 semanas) README.md agregado - [Nombre de usuario]%       
 ```
 
 Al listar las etiquetas que tenemos:
@@ -151,34 +155,50 @@ git show [tag]
 ```
 ```{bash eval=F}
 tag v-0.1.0
-Tagger: [nombre de usuario] <[Direccion de correo]>
-Date:   Sat Aug 3 23:14:33 2024 -0600
+Tagger: [Nombre de usuario] <anthony_byron@ciencias.unam.mx>
+Date:   Thu Jan 30 22:02:30 2025 -0600
 
 Version 0.1.0: alpha
 
-commit 8606014249972136e73e4d02e258c1c847b13740 (tag: v-0.1.0)
-Author: [nombre de usuario] <[Direccion de correo]>
-Date:   Sun Jul 21 20:38:09 2024 -0600
+commit 815d1e19e55b78110b62e2ff58433678f568c11c (tag: v-0.1.0)
+Author: [Nombre de usuario] <anthony_byron@ciencias.unam.mx>
+Date:   Fri Jan 17 03:49:20 2025 -0600
 
-    restriccion-division.md eliminado
+    se retiran los heroes de Tierra-99999
 
-diff --git a/restriccion-division.md b/restriccion-division.md
-deleted file mode 100644
-index a0c00a9..0000000
---- a/restriccion-division.md
-+++ /dev/null
-@@ -1,2 +0,0 @@
--# Esta es la implementacion de:
--Division entre cero
+diff --git a/README.md b/README.md
+index 8744659..a0d5337 100644
+--- a/README.md
++++ b/README.md
+@@ -11,9 +11,6 @@ Este repositorio contiene información sobre los héroes de Marvel para practica
+   - [spider man](/misiones/spider_man.md)
+   - [doctor strange](/misiones/doctor_strange.md)
+   - [daredevil](/misiones/daredevil.md)
+-  - [captain marvel (T-99999)](/misiones/captain_marvel_t-99999.md)
+-  - [doctor doom (T-99999)](/misiones/doctor_doom_t-99999.md)
+-  - [scarlet witch (T-99999)](/misiones/scarlet_witch_t-99999.md)
+   - [black panther (T-7642)](/misiones/black_panther_t-7642.md)
+ 
+ - **Descripciones:** [descripciones.md](descripciones.md)
+diff --git a/debilidades.md b/debilidades.md
+index dc60220..01f162f 100644
+--- a/debilidades.md
++++ b/debilidades.md
+@@ -35,21 +35,6 @@
+ - Dependencia de los sentidos aumentados.
+ - Falta de protección física.
+ 
+-## Captain Marvel
+-
+-- Vulnerabilidad a la magia
+-- Su conexión con el poder de la Fuerza Kree puede ser inestable.
+-
+-## Doctor Doom
+-
+-- Vulnerable a la magia y al control mental.
+-- Su obsesión con el control absoluto lo hace susceptible a tomar decisiones que pueden llevar a su caída.
 ```
 
 Aquí encontramos más información como autor, fecha, información del commit al que apunta y el mensaje con el que se guardó.
-
-
-
-
-
-
-
 
 
