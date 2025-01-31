@@ -170,19 +170,19 @@ Ahora, si listamos los cambios de nuestro repositorio, notaremos algo interesant
 git lg
 ```
 ```{bash eval=F}
-* c20b80d - (hace 4 minutos) .gitignore actualizado (extension .log) - Byron Ornelas (HEAD -> tierra-99999, main)
-* 2ed8cf4 - (hace 5 minutos) .gitignore agregado - Byron Ornelas
-* c9ffd15 - (hace 10 minutos) sin saignaciones para Spider-Man - Byron Ornelas
-* e31eae6 - (hace 14 minutos) misiones de Spider-Man completadas - Byron Ornelas
-* 0059540 - (hace 15 minutos) contactos.md eliminado - Byron Ornelas
-* 2d05f6e - (hace 18 minutos) contactos.md renombrado - Byron Ornelas
-* 1c7fe32 - (hace 19 minutos) contactos de emergencia agregados - Byron Ornelas
-* 8727c32 - (hace 26 minutos) se unen Doctor Strange y Daredevil - Byron Ornelas
-* a2427e8 - (hace 43 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - Byron Ornelas
-* 43b3a69 - (hace 44 minutos) debilidades.md agregado - Byron Ornelas
-* c691147 - (hace 44 minutos) origenes.md agregado - Byron Ornelas
-* ec89c02 - (hace 45 minutos) descripciones.md agregado - Byron Ornelas
-* ac02fe0 - (hace 45 minutos) README.md agregado - Byron Ornelas%
+* c20b80d - (hace 4 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario] (HEAD -> tierra-99999, main)
+* 2ed8cf4 - (hace 5 minutos) .gitignore agregado - [Nombre de usuario]
+* c9ffd15 - (hace 10 minutos) sin saignaciones para Spider-Man - [Nombre de usuario]
+* e31eae6 - (hace 14 minutos) misiones de Spider-Man completadas - [Nombre de usuario]
+* 0059540 - (hace 15 minutos) contactos.md eliminado - [Nombre de usuario]
+* 2d05f6e - (hace 18 minutos) contactos.md renombrado - [Nombre de usuario]
+* 1c7fe32 - (hace 19 minutos) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 26 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 43 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 44 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 44 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 45 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 45 minutos) README.md agregado - [Nombre de usuario]%
 ```
 
 Además de aparecer los nuevos commits que realizamos, podemos notar que al final de la primer línea, tenemos `(HEAD -> tierra-99999, main)`, lo que nos indica que el último commit registrado por las ramas `main` y `tierra-99999` es el mismo, es decir, ambas estan en el mismo punto del repositorio, tambien podemos notar que no ha cambiado nada en los archivos o directorios.
@@ -326,20 +326,20 @@ git commit -m "se unen Captain marvel y Doctor Doom de Tierra-99999"
 git lg
 ```
 ```{bash eval=F}
-* 6976c5a - (hace 26 segundos) se unen Captain marvel y Doctor Doom de Tierra-99999 - Byron Ornelas (HEAD -> tierra-99999)
-* c20b80d - (hace 8 minutos) .gitignore actualizado (extension .log) - Byron Ornelas (main)
-* 2ed8cf4 - (hace 10 minutos) .gitignore agregado - Byron Ornelas
-* c9ffd15 - (hace 14 minutos) sin saignaciones para Spider-Man - Byron Ornelas
-* e31eae6 - (hace 19 minutos) misiones de Spider-Man completadas - Byron Ornelas
-* 0059540 - (hace 19 minutos) contactos.md eliminado - Byron Ornelas
-* 2d05f6e - (hace 22 minutos) contactos.md renombrado - Byron Ornelas
-* 1c7fe32 - (hace 23 minutos) contactos de emergencia agregados - Byron Ornelas
-* 8727c32 - (hace 30 minutos) se unen Doctor Strange y Daredevil - Byron Ornelas
-* a2427e8 - (hace 48 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - Byron Ornelas
-* 43b3a69 - (hace 48 minutos) debilidades.md agregado - Byron Ornelas
-* c691147 - (hace 49 minutos) origenes.md agregado - Byron Ornelas
-* ec89c02 - (hace 49 minutos) descripciones.md agregado - Byron Ornelas
-* ac02fe0 - (hace 50 minutos) README.md agregado - Byron Ornelas%        
+* 6976c5a - (hace 26 segundos) se unen Captain marvel y Doctor Doom de Tierra-99999 - [Nombre de usuario] (HEAD -> tierra-99999)
+* c20b80d - (hace 8 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario] (main)
+* 2ed8cf4 - (hace 10 minutos) .gitignore agregado - [Nombre de usuario]
+* c9ffd15 - (hace 14 minutos) sin saignaciones para Spider-Man - [Nombre de usuario]
+* e31eae6 - (hace 19 minutos) misiones de Spider-Man completadas - [Nombre de usuario]
+* 0059540 - (hace 19 minutos) contactos.md eliminado - [Nombre de usuario]
+* 2d05f6e - (hace 22 minutos) contactos.md renombrado - [Nombre de usuario]
+* 1c7fe32 - (hace 23 minutos) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 30 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 48 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 48 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 49 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 49 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 50 minutos) README.md agregado - [Nombre de usuario]%        
 ```
 
 Podemos notar que la rama `main` se queda un commit por debajo de `tierra-99999`, que ahora es el `HEAD`, esto porque los cambios que registramos solo afectan a la rama actual, `tierra-99999`.
@@ -448,21 +448,21 @@ git commit -m "se une Scarlet Witch de Tierra-99999; se termina el registro de T
 git lg
 ```
 ```{bash eval=F}
-* f5907d1 - (hace 18 segundos) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - Byron Ornelas (HEAD -> tierra-99999)
-* 6976c5a - (hace 5 minutos) se unen Captain marvel y Doctor Doom de Tierra-99999 - Byron Ornelas
-* c20b80d - (hace 12 minutos) .gitignore actualizado (extension .log) - Byron Ornelas (main)
-* 2ed8cf4 - (hace 14 minutos) .gitignore agregado - Byron Ornelas
-* c9ffd15 - (hace 18 minutos) sin saignaciones para Spider-Man - Byron Ornelas
-* e31eae6 - (hace 23 minutos) misiones de Spider-Man completadas - Byron Ornelas
-* 0059540 - (hace 23 minutos) contactos.md eliminado - Byron Ornelas
-* 2d05f6e - (hace 26 minutos) contactos.md renombrado - Byron Ornelas
-* 1c7fe32 - (hace 27 minutos) contactos de emergencia agregados - Byron Ornelas
-* 8727c32 - (hace 34 minutos) se unen Doctor Strange y Daredevil - Byron Ornelas
-* a2427e8 - (hace 52 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - Byron Ornelas
-* 43b3a69 - (hace 52 minutos) debilidades.md agregado - Byron Ornelas
-* c691147 - (hace 53 minutos) origenes.md agregado - Byron Ornelas
-* ec89c02 - (hace 53 minutos) descripciones.md agregado - Byron Ornelas
-* ac02fe0 - (hace 54 minutos) README.md agregado - Byron Ornelas%   
+* f5907d1 - (hace 18 segundos) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - [Nombre de usuario] (HEAD -> tierra-99999)
+* 6976c5a - (hace 5 minutos) se unen Captain marvel y Doctor Doom de Tierra-99999 - [Nombre de usuario]
+* c20b80d - (hace 12 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario] (main)
+* 2ed8cf4 - (hace 14 minutos) .gitignore agregado - [Nombre de usuario]
+* c9ffd15 - (hace 18 minutos) sin saignaciones para Spider-Man - [Nombre de usuario]
+* e31eae6 - (hace 23 minutos) misiones de Spider-Man completadas - [Nombre de usuario]
+* 0059540 - (hace 23 minutos) contactos.md eliminado - [Nombre de usuario]
+* 2d05f6e - (hace 26 minutos) contactos.md renombrado - [Nombre de usuario]
+* 1c7fe32 - (hace 27 minutos) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 34 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 52 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 52 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 53 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 53 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 54 minutos) README.md agregado - [Nombre de usuario]%   
 ```
 
 Ahora tenemos la rama `tierra-99999` dos commits por delante de `main`.
@@ -514,21 +514,21 @@ Si revisamos los registros:
 git lg
 ```
 ```{bash eval=F}
-* f5907d1 - (hace 85 segundos) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - Byron Ornelas (HEAD -> main, tierra-99999)
-* 6976c5a - (hace 6 minutos) se unen Captain marvel y Doctor Doom de Tierra-99999 - Byron Ornelas
-* c20b80d - (hace 13 minutos) .gitignore actualizado (extension .log) - Byron Ornelas
-* 2ed8cf4 - (hace 15 minutos) .gitignore agregado - Byron Ornelas
-* c9ffd15 - (hace 19 minutos) sin saignaciones para Spider-Man - Byron Ornelas
-* e31eae6 - (hace 24 minutos) misiones de Spider-Man completadas - Byron Ornelas
-* 0059540 - (hace 24 minutos) contactos.md eliminado - Byron Ornelas
-* 2d05f6e - (hace 28 minutos) contactos.md renombrado - Byron Ornelas
-* 1c7fe32 - (hace 28 minutos) contactos de emergencia agregados - Byron Ornelas
-* 8727c32 - (hace 36 minutos) se unen Doctor Strange y Daredevil - Byron Ornelas
-* a2427e8 - (hace 53 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - Byron Ornelas
-* 43b3a69 - (hace 53 minutos) debilidades.md agregado - Byron Ornelas
-* c691147 - (hace 54 minutos) origenes.md agregado - Byron Ornelas
-* ec89c02 - (hace 54 minutos) descripciones.md agregado - Byron Ornelas
-* ac02fe0 - (hace 55 minutos) README.md agregado - Byron Ornelas%   
+* f5907d1 - (hace 85 segundos) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - [Nombre de usuario] (HEAD -> main, tierra-99999)
+* 6976c5a - (hace 6 minutos) se unen Captain marvel y Doctor Doom de Tierra-99999 - [Nombre de usuario]
+* c20b80d - (hace 13 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario]
+* 2ed8cf4 - (hace 15 minutos) .gitignore agregado - [Nombre de usuario]
+* c9ffd15 - (hace 19 minutos) sin saignaciones para Spider-Man - [Nombre de usuario]
+* e31eae6 - (hace 24 minutos) misiones de Spider-Man completadas - [Nombre de usuario]
+* 0059540 - (hace 24 minutos) contactos.md eliminado - [Nombre de usuario]
+* 2d05f6e - (hace 28 minutos) contactos.md renombrado - [Nombre de usuario]
+* 1c7fe32 - (hace 28 minutos) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 36 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 53 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 53 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 54 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 54 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 55 minutos) README.md agregado - [Nombre de usuario]%   
 ```
 
 Vemos que la ramam `main` y la rama `tierra-99999` se encuentran en el mismo commit, lo que significa que ambas estan en el mismo punto o que estan actualizadas.
@@ -759,26 +759,26 @@ Merge made by the 'ort' strategy.
 git lg
 ```
 ```{bash eval=F}
-*   5f7eb20 - (hace 3 minutos) incorporacion de Black Panther (T-7642) al equipo principal - Byron Ornelas (HEAD -> main)
+*   5f7eb20 - (hace 3 minutos) incorporacion de Black Panther (T-7642) al equipo principal - [Nombre de usuario] (HEAD -> main)
 |\  
-| * 347dd3f - (hace 16 minutos) se une Black Panther de Tierra-7642; registro completo - Byron Ornelas (tierra-7642)
-* | bd81998 - (hace 4 minutos) se le asignan nuevas misiones a Spider-Man - Byron Ornelas
+| * 347dd3f - (hace 16 minutos) se une Black Panther de Tierra-7642; registro completo - [Nombre de usuario] (tierra-7642)
+* | bd81998 - (hace 4 minutos) se le asignan nuevas misiones a Spider-Man - [Nombre de usuario]
 |/  
-* f5907d1 - (hace 23 minutos) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - Byron Ornelas
-* 6976c5a - (hace 27 minutos) se unen Captain marvel y Doctor Doom de Tierra-99999 - Byron Ornelas
-* c20b80d - (hace 35 minutos) .gitignore actualizado (extension .log) - Byron Ornelas
-* 2ed8cf4 - (hace 36 minutos) .gitignore agregado - Byron Ornelas
-* c9ffd15 - (hace 41 minutos) sin saignaciones para Spider-Man - Byron Ornelas
-* e31eae6 - (hace 45 minutos) misiones de Spider-Man completadas - Byron Ornelas
-* 0059540 - (hace 46 minutos) contactos.md eliminado - Byron Ornelas
-* 2d05f6e - (hace 49 minutos) contactos.md renombrado - Byron Ornelas
-* 1c7fe32 - (hace 50 minutos) contactos de emergencia agregados - Byron Ornelas
-* 8727c32 - (hace 57 minutos) se unen Doctor Strange y Daredevil - Byron Ornelas
-* a2427e8 - (hace 74 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - Byron Ornelas
-* 43b3a69 - (hace 75 minutos) debilidades.md agregado - Byron Ornelas
-* c691147 - (hace 75 minutos) origenes.md agregado - Byron Ornelas
-* ec89c02 - (hace 76 minutos) descripciones.md agregado - Byron Ornelas
-* ac02fe0 - (hace 76 minutos) README.md agregado - Byron Ornelas%     
+* f5907d1 - (hace 23 minutos) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - [Nombre de usuario]
+* 6976c5a - (hace 27 minutos) se unen Captain marvel y Doctor Doom de Tierra-99999 - [Nombre de usuario]
+* c20b80d - (hace 35 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario]
+* 2ed8cf4 - (hace 36 minutos) .gitignore agregado - [Nombre de usuario]
+* c9ffd15 - (hace 41 minutos) sin saignaciones para Spider-Man - [Nombre de usuario]
+* e31eae6 - (hace 45 minutos) misiones de Spider-Man completadas - [Nombre de usuario]
+* 0059540 - (hace 46 minutos) contactos.md eliminado - [Nombre de usuario]
+* 2d05f6e - (hace 49 minutos) contactos.md renombrado - [Nombre de usuario]
+* 1c7fe32 - (hace 50 minutos) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 57 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 74 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 75 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 75 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 76 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 76 minutos) README.md agregado - [Nombre de usuario]%     
 ```
 
 Vemos que se nos muestra de uma manera muy visual la separación y unión de las ramas `main` y `tierra-7642`.
@@ -1052,30 +1052,30 @@ git lg
 ```
 
 ```{bash eval=F}
-* 5ae8eb6 - (hace 4 minutos) se une Scarlet Witch - Byron Ornelas (HEAD -> main)
-* 815d1e1 - (hace 2 semanas) se retiran los heroes de Tierra-99999 - Byron Ornelas
-| * edf50e5 - (hace 2 semanas) se unen Spider-Gwen y Nova del Tierra-65 - Byron Ornelas (tierra-65)
+* 5ae8eb6 - (hace 4 minutos) se une Scarlet Witch - [Nombre de usuario] (HEAD -> main)
+* 815d1e1 - (hace 2 semanas) se retiran los heroes de Tierra-99999 - [Nombre de usuario]
+| * edf50e5 - (hace 2 semanas) se unen Spider-Gwen y Nova del Tierra-65 - [Nombre de usuario] (tierra-65)
 |/  
-*   5f7eb20 - (hace 2 semanas) incorporacion de Black Panther (T-7642) al equipo principal - Byron Ornelas
+*   5f7eb20 - (hace 2 semanas) incorporacion de Black Panther (T-7642) al equipo principal - [Nombre de usuario]
 |\  
-| * 347dd3f - (hace 2 semanas) se une Black Panther de Tierra-7642; registro completo - Byron Ornelas
-* | bd81998 - (hace 2 semanas) se le asignan nuevas misiones a Spider-Man - Byron Ornelas
+| * 347dd3f - (hace 2 semanas) se une Black Panther de Tierra-7642; registro completo - [Nombre de usuario]
+* | bd81998 - (hace 2 semanas) se le asignan nuevas misiones a Spider-Man - [Nombre de usuario]
 |/  
-* f5907d1 - (hace 2 semanas) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - Byron Ornelas
-* 6976c5a - (hace 2 semanas) se unen Captain marvel y Doctor Doom de Tierra-99999 - Byron Ornelas
-* c20b80d - (hace 2 semanas) .gitignore actualizado (extension .log) - Byron Ornelas
-* 2ed8cf4 - (hace 2 semanas) .gitignore agregado - Byron Ornelas
-* c9ffd15 - (hace 2 semanas) sin saignaciones para Spider-Man - Byron Ornelas
-* e31eae6 - (hace 2 semanas) misiones de Spider-Man completadas - Byron Ornelas
-* 0059540 - (hace 2 semanas) contactos.md eliminado - Byron Ornelas
-* 2d05f6e - (hace 2 semanas) contactos.md renombrado - Byron Ornelas
-* 1c7fe32 - (hace 2 semanas) contactos de emergencia agregados - Byron Ornelas
-* 8727c32 - (hace 2 semanas) se unen Doctor Strange y Daredevil - Byron Ornelas
-* a2427e8 - (hace 2 semanas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - Byron Ornelas
-* 43b3a69 - (hace 2 semanas) debilidades.md agregado - Byron Ornelas
-* c691147 - (hace 2 semanas) origenes.md agregado - Byron Ornelas
-* ec89c02 - (hace 2 semanas) descripciones.md agregado - Byron Ornelas
-* ac02fe0 - (hace 2 semanas) README.md agregado - Byron Ornelas% 
+* f5907d1 - (hace 2 semanas) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - [Nombre de usuario]
+* 6976c5a - (hace 2 semanas) se unen Captain marvel y Doctor Doom de Tierra-99999 - [Nombre de usuario]
+* c20b80d - (hace 2 semanas) .gitignore actualizado (extension .log) - [Nombre de usuario]
+* 2ed8cf4 - (hace 2 semanas) .gitignore agregado - [Nombre de usuario]
+* c9ffd15 - (hace 2 semanas) sin saignaciones para Spider-Man - [Nombre de usuario]
+* e31eae6 - (hace 2 semanas) misiones de Spider-Man completadas - [Nombre de usuario]
+* 0059540 - (hace 2 semanas) contactos.md eliminado - [Nombre de usuario]
+* 2d05f6e - (hace 2 semanas) contactos.md renombrado - [Nombre de usuario]
+* 1c7fe32 - (hace 2 semanas) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 2 semanas) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 2 semanas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 2 semanas) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 2 semanas) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 2 semanas) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 2 semanas) README.md agregado - [Nombre de usuario]% 
 ```
 
 6. Ahora, al unir la rama `tierra-65` a la rama `main`, se va a exponer un conflicto al tener cambios distintos en los mismos archivos, este conflicto debe arreglarse de manera manual.
@@ -1194,32 +1194,32 @@ git lg
 
 
 ```{bash eval=F}
-*   7e666cc - (hace 3 minutos) incorporacion de Nova y Spider-Gwen (T-65) al registro principal - Byron Ornelas (HEAD -> main)
+*   7e666cc - (hace 3 minutos) incorporacion de Nova y Spider-Gwen (T-65) al registro principal - [Nombre de usuario] (HEAD -> main)
 |\  
-| * edf50e5 - (hace 2 semanas) se unen Spider-Gwen y Nova del Tierra-65 - Byron Ornelas (tierra-65)
-* | 5ae8eb6 - (hace 46 minutos) se une Scarlet Witch - Byron Ornelas
-* | 815d1e1 - (hace 2 semanas) se retiran los heroes de Tierra-99999 - Byron Ornelas
+| * edf50e5 - (hace 2 semanas) se unen Spider-Gwen y Nova del Tierra-65 - [Nombre de usuario] (tierra-65)
+* | 5ae8eb6 - (hace 46 minutos) se une Scarlet Witch - [Nombre de usuario]
+* | 815d1e1 - (hace 2 semanas) se retiran los heroes de Tierra-99999 - [Nombre de usuario]
 |/  
-*   5f7eb20 - (hace 2 semanas) incorporacion de Black Panther (T-7642) al equipo principal - Byron Ornelas
+*   5f7eb20 - (hace 2 semanas) incorporacion de Black Panther (T-7642) al equipo principal - [Nombre de usuario]
 |\  
-| * 347dd3f - (hace 2 semanas) se une Black Panther de Tierra-7642; registro completo - Byron Ornelas
-* | bd81998 - (hace 2 semanas) se le asignan nuevas misiones a Spider-Man - Byron Ornelas
+| * 347dd3f - (hace 2 semanas) se une Black Panther de Tierra-7642; registro completo - [Nombre de usuario]
+* | bd81998 - (hace 2 semanas) se le asignan nuevas misiones a Spider-Man - [Nombre de usuario]
 |/  
-* f5907d1 - (hace 2 semanas) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - Byron Ornelas
-* 6976c5a - (hace 2 semanas) se unen Captain marvel y Doctor Doom de Tierra-99999 - Byron Ornelas
-* c20b80d - (hace 2 semanas) .gitignore actualizado (extension .log) - Byron Ornelas
-* 2ed8cf4 - (hace 2 semanas) .gitignore agregado - Byron Ornelas
-* c9ffd15 - (hace 2 semanas) sin saignaciones para Spider-Man - Byron Ornelas
-* e31eae6 - (hace 2 semanas) misiones de Spider-Man completadas - Byron Ornelas
-* 0059540 - (hace 2 semanas) contactos.md eliminado - Byron Ornelas
-* 2d05f6e - (hace 2 semanas) contactos.md renombrado - Byron Ornelas
-* 1c7fe32 - (hace 2 semanas) contactos de emergencia agregados - Byron Ornelas
-* 8727c32 - (hace 2 semanas) se unen Doctor Strange y Daredevil - Byron Ornelas
-* a2427e8 - (hace 2 semanas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - Byron Ornelas
-* 43b3a69 - (hace 2 semanas) debilidades.md agregado - Byron Ornelas
-* c691147 - (hace 2 semanas) origenes.md agregado - Byron Ornelas
-* ec89c02 - (hace 2 semanas) descripciones.md agregado - Byron Ornelas
-* ac02fe0 - (hace 2 semanas) README.md agregado - Byron Ornelas% 
+* f5907d1 - (hace 2 semanas) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - [Nombre de usuario]
+* 6976c5a - (hace 2 semanas) se unen Captain marvel y Doctor Doom de Tierra-99999 - [Nombre de usuario]
+* c20b80d - (hace 2 semanas) .gitignore actualizado (extension .log) - [Nombre de usuario]
+* 2ed8cf4 - (hace 2 semanas) .gitignore agregado - [Nombre de usuario]
+* c9ffd15 - (hace 2 semanas) sin saignaciones para Spider-Man - [Nombre de usuario]
+* e31eae6 - (hace 2 semanas) misiones de Spider-Man completadas - [Nombre de usuario]
+* 0059540 - (hace 2 semanas) contactos.md eliminado - [Nombre de usuario]
+* 2d05f6e - (hace 2 semanas) contactos.md renombrado - [Nombre de usuario]
+* 1c7fe32 - (hace 2 semanas) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 2 semanas) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 2 semanas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 2 semanas) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 2 semanas) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 2 semanas) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 2 semanas) README.md agregado - [Nombre de usuario]% 
 ```
 
 10. Por último, eliminamos la rama `tierra-65`
