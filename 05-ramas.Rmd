@@ -1179,187 +1179,56 @@ Hay que realizar el mismo procedimiento para los archivos `origgenes.md`, `debil
 git commit -am "incorporacion de Nova y Spider-Gwen (T-65) al registro principal"
 ```
 
-
-
 ```{bash eval=F}
 [main 7e666cc] incorporacion de Nova y Spider-Gwen (T-65) al registro principal
 ```
- 
- 
- Modificamos `problemas.md` dejando el siguiente contenido:
 
-```{bash eval=F}
-# Problemas
+9. verificamos los registros.
 
 
-* Restar
-* Dividir
-* No abarca todos los números de la recta real
-* Sin cerradura en suma
-* Raíces de negativos
-
-* La factorización de grandes números en sus factores primos.
-* Se desconoce si existen infinitos números perfectos.
-* Encontrar todas las soluciones algebraicas de una ecuación polinómica dada.
-* Clasificar y encontrar patrones en los números abundantes.
-```
-
-6. hacemos el registro:
-
-```{bash eval=F}
-git commi -am "problemas.md modificado"
-```
-```{bash eval=F}
-[main 74aca37] problemas.md modificado
- 1 file changed, 5 insertions(+)
-```
-
-7. Verificamos el estado del repositorio
 
 ```{bash eval=F}
 git lg
 ```
+
+
+
 ```{bash eval=F}
-* 74aca37 - (hace 28 segundos) problemas.md modificado - [Nombre de usuario] (HEAD -> main)
-| * 3447252 - (hace 3 minutos) problemas.md modificado (numeros-2) - [Nombre de usuario] (tierra-65)
-|/  
-*   bb296da - (hace 10 minutos) implementacion de numeros abundantes en rama 'tierra-65' - [Nombre de usuario] 
+*   7e666cc - (hace 3 minutos) incorporacion de Nova y Spider-Gwen (T-65) al registro principal - Byron Ornelas (HEAD -> main)
 |\  
-| * e26e013 - (hace 16 minutos) caracteristicas-2 modificado (numeros abundantes agregados) - [Nombre de usuario] (tierra-65)
-| * 5886d1b - (hace 18 minutos) numeros-2.md modificado (numeros abundantes agregados) - [Nombre de usuario]
-* | 9556c19 - (hace 11 minutos) se retiran los numeros imaginarios y complejos - [Nombre de usuario]
+| * edf50e5 - (hace 2 semanas) se unen Spider-Gwen y Nova del Tierra-65 - Byron Ornelas (tierra-65)
+* | 5ae8eb6 - (hace 46 minutos) se une Scarlet Witch - Byron Ornelas
+* | 815d1e1 - (hace 2 semanas) se retiran los heroes de Tierra-99999 - Byron Ornelas
 |/  
-* 01e1562 - (hace 19 minuto) caracteristicas-2.md agregado - [Nombre de usuario]
-* 34238c5 - (hace 20 minutos) numeros-2.md agregado - [Nombre de usuario]
-* 62b4657 - (hace 36 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario]
-* ae676b5 - (hace 28 minutos) .gitignore agregado - [Nombre de usuario]
-* c32cdc0 - (hace 30 minutos) producto.md eliminado - [Nombre de usuario]
-* 8d867e7 - (hace 33 minutos) suma.md renombrado~ - [Nombre de usuario]
-* 8606014 - (hace 34 minutos) restriccion-division.md eliminado - [Nombre de usuario]
-* f67c77c - (hace 35 minutos) division-cero.md renombrado - [Nombre de usuario]
-* 3741b68 - (hace 40 minutos) division-cero.md agregado - [Nombre de usuario]
-* 451e900 - (hace 3 horas) numeros imaginarios y complejos agregados - [Nombre de usuario]
-* f0e5d47 - (hace 4 horas) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario]
-* d610af4 - (hace 4 horas) problemas.md agregado - [Nombre de usuario]
-* a54e313 - (hace 4 horas) caracteristicas.md agregado - [Nombre de usuario]
-* 37d5a5b - (hace 4 horas) numeros.md agregado - [Nombre de usuario]
-* a4356d4 - (hace 4 horas) README.md agregado - [Nombre de usuario]
-```
-
-Ya hemos generado el conflicto, ahora veremos como es que Git nos informa sobre este y como solucionarlo
-
-8. Desde la rama `main` tratamos de hacer el `merge`:
-
-```{bash eval=F}
-git merge numero-4
-```
-```{bash eval=F}
-Auto-fusionando problemas.md
-CONFLICTO (contenido): Conflicto de fusión en problemas.md
-Fusión automática falló; arregle los conflictos y luego realice un commit con el resultado.
-```
-
-Recibimos este mensaje de error por lo que debemos resolver el conflicto.
-
-9. entramos al archivo `problemas.md` pra editarlo, nos encontraremos el siguiente contenido:
-
-```{bash eval=F}
-# Problemas en los números
-
-
-* Restar
-* Dividir
-* No abarca todos los números de la recta real
-* Sin cerradura en suma
-* Raíces de negativos
-
-<<<<<<< HEAD
-=======
-
-# Problemas en los números alternos
-
->>>>>>> tierra-65
-* La factorización de grandes números en sus factores primos.
-* Se desconoce si existen infinitos números perfectos.
-* Encontrar todas las soluciones algebraicas de una ecuación polinómica dada.
-* Clasificar y encontrar patrones en los números abundantes.
-```
-
-Aqui Git modificó el contenido del archivo `problemas.md` incorporando los cambios realizados desde ambas ramas, para arreglar el conflicto.
-
-10. Eliminamos primero las lineas que agregó Git para indicar el conflicto, de forma que nos queda algo así:
-
-```{bash eval=F}
-# Problemas en los números
-
-
-* Restar
-* Dividir
-* No abarca todos los números de la recta real
-* Sin cerradura en suma
-* Raíces de negativos
-
-
-# Problemas en los números alternos
-
-* La factorización de grandes números en sus factores primos.
-* Se desconoce si existen infinitos números perfectos.
-* Encontrar todas las soluciones algebraicas de una ecuación polinómica dada.
-* Clasificar y encontrar patrones en los números abundantes.
-```
-
-11. Seleccionamos el contenido con el que nos vamos a quedar y el resto lo descartamos, en este caso nos quedamos con el contenido que resultó del paso anterior, pero en otros casos hay seleccionar cambios realizados pr una o ambas ramas.
-
-12. Hacemos un commit de la unión
-
-```{bash eval=F}
-git commit -am "union de main con numero-4"
-```
-```{bash eval=F}
-[main 5414405] union de main con numero-4
-```
-
-13. Verificamos el registro:
-
-```{bash eval=F}
-git lg
-```
-```{bash eval=F}
-*   5414405 - (hace 33 segundos) union de main con numero-4 - [Nombre de usuario] (HEAD -> main)
+*   5f7eb20 - (hace 2 semanas) incorporacion de Black Panther (T-7642) al equipo principal - Byron Ornelas
 |\  
-| * 3447252 - (hace 4 minutos) problemas.md modificado (numeros-2) - [Nombre de usuario] (tierra-65)
-* | 74aca37 - (hace 7 minutos) problemas.md modificado - [Nombre de usuario]
+| * 347dd3f - (hace 2 semanas) se une Black Panther de Tierra-7642; registro completo - Byron Ornelas
+* | bd81998 - (hace 2 semanas) se le asignan nuevas misiones a Spider-Man - Byron Ornelas
 |/  
-*   bb296da - (hace 12 minutos) implementacion de numeros abundantes en rama 'tierra-65' - [Nombre de usuario]
-|\  
-| * e26e013 - (hace 18 minutos) caracteristicas-2 modificado (numeros abundantes agregados) - [Nombre de usuario]
-| * 5886d1b - (hace 20 minutos) numeros-2.md modificado (numeros abundantes agregados) - [Nombre de usuario]
-* | 9556c19 - (hace 13 minutos) se retiran los numeros imaginarios y complejos - [Nombre de usuario]
-|/  
-* 01e1562 - (hace 21 minuto) caracteristicas-2.md agregado - [Nombre de usuario]
-* 34238c5 - (hace 22 minutos) numeros-2.md agregado - [Nombre de usuario]
-* 62b4657 - (hace 28 minutos) .gitignore actualizado (extension .log) - [Nombre de usuario]
-* ae676b5 - (hace 30 minutos) .gitignore agregado - [Nombre de usuario]
-* c32cdc0 - (hace 32 minutos) producto.md eliminado - [Nombre de usuario]
-* 8d867e7 - (hace 35 minutos) suma.md renombrado~ - [Nombre de usuario]
-* 8606014 - (hace 36 minutos) restriccion-division.md eliminado - [Nombre de usuario]
-* f67c77c - (hace 37 minutos) division-cero.md renombrado - [Nombre de usuario]
-* 3741b68 - (hace 42 minutos) division-cero.md agregado - [Nombre de usuario]
-* 451e900 - (hace 4 horas) numeros imaginarios y complejos agregados - [Nombre de usuario]
-* f0e5d47 - (hace 5 horas) operaciones/suma.md y operaciones/producto.md agregados - [Nombre de usuario]
-* d610af4 - (hace 5 horas) problemas.md agregado - [Nombre de usuario]
-* a54e313 - (hace 5 horas) caracteristicas.md agregado - [Nombre de usuario]
-* 37d5a5b - (hace 5 horas) numeros.md agregado - [Nombre de usuario]
-* a4356d4 - (hace 5 horas) README.md agregado - [Nombre de usuario]
+* f5907d1 - (hace 2 semanas) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - Byron Ornelas
+* 6976c5a - (hace 2 semanas) se unen Captain marvel y Doctor Doom de Tierra-99999 - Byron Ornelas
+* c20b80d - (hace 2 semanas) .gitignore actualizado (extension .log) - Byron Ornelas
+* 2ed8cf4 - (hace 2 semanas) .gitignore agregado - Byron Ornelas
+* c9ffd15 - (hace 2 semanas) sin saignaciones para Spider-Man - Byron Ornelas
+* e31eae6 - (hace 2 semanas) misiones de Spider-Man completadas - Byron Ornelas
+* 0059540 - (hace 2 semanas) contactos.md eliminado - Byron Ornelas
+* 2d05f6e - (hace 2 semanas) contactos.md renombrado - Byron Ornelas
+* 1c7fe32 - (hace 2 semanas) contactos de emergencia agregados - Byron Ornelas
+* 8727c32 - (hace 2 semanas) se unen Doctor Strange y Daredevil - Byron Ornelas
+* a2427e8 - (hace 2 semanas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - Byron Ornelas
+* 43b3a69 - (hace 2 semanas) debilidades.md agregado - Byron Ornelas
+* c691147 - (hace 2 semanas) origenes.md agregado - Byron Ornelas
+* ec89c02 - (hace 2 semanas) descripciones.md agregado - Byron Ornelas
+* ac02fe0 - (hace 2 semanas) README.md agregado - Byron Ornelas% 
 ```
 
-14. Por último, eliminamos la rama `tierra-65`
+10. Por último, eliminamos la rama `tierra-65`
 
 ```{bash eval=F}
 git branch -d tierra-65
 ```
 ```{bash eval=F}
-Eliminada la rama tierra-65 (era 3447252).
+<!-- Eliminada la rama tierra-65 (era edf50e5). -->
 ```
 
 ## Rebase
