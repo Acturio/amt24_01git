@@ -573,3 +573,219 @@ git commit -am "nuevas misiones asignadas: Iron Man, Thor, Hulk, Black Widow"
 [main 1db9966] nuevas misiones asignadas: Iron Man, Thor, Hulk, Black Widow
  4 files changed, 51 insertions(+), 2 deletions(-)
 ```
+
+## Stash avanzado
+
+En esta sección veremos más opciones que nos ofrece git al usar el `stash`.
+
+Aún después de reslover los conflictos del `stash`, el trabajo se mantiene almacenado en el mismo, podemos comprobarlo de distintas maneras.
+
+```{bash eval=F}
+git stash list
+```
+
+```{bash eval=F}
+stash@{0}: WIP on main: 5319e68 se une Capitan America
+```
+
+Aquí git nos muestra que tenemos trabajo almacenado en el `stash`; otra manera es:
+
+```{bash eval=F}
+git lg
+```
+
+```{bash eval=F}
+* 1db9966 - (hace 10 horas) nuevas misiones asignadas: Iron Man, Thor, Hulk, Black Widow - Byron Ornelas (HEAD -> main)
+* b307d16 - (hace 11 horas) asignacion de emergencia para Iron Man - Byron Ornelas
+* 8531ef2 - (hace 11 horas) se une Vision - Byron Ornelas
+| * b63a2df - (hace 11 horas) WIP on main: 5319e68 se une Capitan America - Byron Ornelas (refs/stash)
+|/| 
+| * 25aa2fa - (hace 11 horas) index on main: 5319e68 se une Capitan America - Byron Ornelas
+|/  
+* 5319e68 - (hace 12 horas) se une Capitan America - Byron Ornelas
+* e4c626a - (hace 13 horas) cumplimiento misiones alta prioridad: Iron Man, Thor, Hulk, Black Widow - Byron Ornelas
+*   7e666cc - (hace 14 horas) incorporacion de Nova y Spider-Gwen (T-65) al registro principal - Byron Ornelas (tag: v-1.0.0)
+|\  
+| * edf50e5 - (hace 2 semanas) se unen Spider-Gwen y Nova del Tierra-65 - Byron Ornelas
+* | 5ae8eb6 - (hace 15 horas) se une Scarlet Witch - Byron Ornelas
+* | 815d1e1 - (hace 2 semanas) se retiran los heroes de Tierra-99999 - Byron Ornelas (tag: v-0.1.0)
+|/  
+*   5f7eb20 - (hace 2 semanas) incorporacion de Black Panther (T-7642) al equipo principal - Byron Ornelas
+|\  
+| * 347dd3f - (hace 2 semanas) se une Black Panther de Tierra-7642; registro completo - Byron Ornelas
+* | bd81998 - (hace 2 semanas) se le asignan nuevas misiones a Spider-Man - Byron Ornelas
+|/  
+* f5907d1 - (hace 2 semanas) se une Scarlet Witch de Tierra-99999; se termina el registro de T-99999 - Byron Ornelas
+* 6976c5a - (hace 2 semanas) se unen Captain marvel y Doctor Doom de Tierra-99999 - Byron Ornelas
+* c20b80d - (hace 2 semanas) .gitignore actualizado (extension .log) - Byron Ornelas
+* 2ed8cf4 - (hace 2 semanas) .gitignore agregado - Byron Ornelas
+* c9ffd15 - (hace 2 semanas) sin saignaciones para Spider-Man - Byron Ornelas
+* e31eae6 - (hace 2 semanas) misiones de Spider-Man completadas - Byron Ornelas
+* 0059540 - (hace 2 semanas) contactos.md eliminado - Byron Ornelas
+* 2d05f6e - (hace 2 semanas) contactos.md renombrado - Byron Ornelas
+* 1c7fe32 - (hace 2 semanas) contactos de emergencia agregados - Byron Ornelas
+* 8727c32 - (hace 2 semanas) se unen Doctor Strange y Daredevil - Byron Ornelas
+* a2427e8 - (hace 2 semanas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - Byron Ornelas
+* 43b3a69 - (hace 2 semanas) debilidades.md agregado - Byron Ornelas
+* c691147 - (hace 2 semanas) origenes.md agregado - Byron Ornelas
+* ec89c02 - (hace 2 semanas) descripciones.md agregado - Byron Ornelas
+* ac02fe0 - (hace 2 semanas) README.md agregado - Byron Ornelas%  
+```
+
+Podemos ver en la línea `| * b63a2df - (hace 11 horas) WIP on main: 5319e68 se une Capitan America - Byron Ornelas (refs/stash)` que se mantiene el registro del trabajo almacenado en el `stash`. 
+
+Para eliminar todos los trabajos pendientes almacenados en el `stash`.
+
+```{bash eval=F}
+git stash clear
+```
+
+Esto, borra todo lo que git había movido al `stash`, pero aun podemos recuperar el material perdido, así como los commits que recuperamos anteriormente con el comando `git reflog`.
+
+
+Spider-Man, termina con todas sus misiones y se encuentra en espera de nuevas asignaciones, por lo que limpiamos su registro y le asignamos misiones nuevas:
+
+* `misiones/spider_man.md`
+
+```{bash eval=F}
+# Misiones de Spider-Man
+
+```
+
+```{bash eval=F}
+git commit -am "Spider-Man termina sus misiones, en espera de nuevas asignaciones"
+```
+
+```{bash eval=F}
+[main 8051202] Spider-Man termina sus misiones, en espera de nuevas asignaciones
+ 1 file changed, 18 deletions(-)
+```
+
+Ahora, se le asignan nuevas misiones:
+
+* `misiones/spider_man.md`
+
+```{bash eval=F}
+# Misiones de Spider-Man
+
+1. **Detener un atraco al Banco Central de Nueva York**
+   - Descripción: Un grupo de criminales con tecnología avanzada ha irrumpido en el Banco Central. Deben ser detenidos antes de que escapen.
+   - Prioridad: Alta
+   - Fecha límite: 2025-02-18
+
+2. **Investigar una nueva droga en las calles**
+   - Descripción: Una nueva sustancia está otorgando habilidades temporales a criminales. Se debe rastrear su origen y eliminar su producción.
+   - Prioridad: Alta
+   - Fecha límite: 2025-02-22
+
+3. **Rescatar rehenes en un ferry secuestrado**
+   - Descripción: Un grupo de mercenarios ha tomado el control de un ferry con civiles. La situación debe resolverse sin bajas.
+   - Prioridad: Alta
+   - Fecha límite: 2025-02-25
+```
+
+Ocurre un problema en la base central y no se puede proceder con la asignación de estas misiones por el momento, estas se envían al `stash`.
+
+```{bash eval=F}
+git stash
+```
+
+```{bash eval=F}
+Directorio de trabajo y estado de índice WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones guardados
+```
+
+Esto ocurre un par de veces más el mismo día con las misiones:
+
+```{bash eval=F}
+# Misiones de Spider-Man
+
+1. **Neutralizar un grupo de asaltantes con equipo de Hammer Industries**
+   - Descripción: Unos criminales han conseguido armas avanzadas de Hammer Industries. Se deben desactivar y recuperar.
+   - Prioridad: Alta
+   - Fecha límite: 2025-03-01
+
+2. **Capturar a un imitador de Spider-Man**
+   - Descripción: Un criminal ha robado un traje de Spider-Man y está cometiendo delitos en su nombre. Debe ser detenido antes de que dañe su reputación.
+   - Prioridad: Alta
+   - Fecha límite: 2025-03-05
+
+3. **Proteger a Mary Jane de un intento de secuestro**
+   - Descripción: Un grupo criminal ha puesto a Mary Jane como objetivo. Se debe garantizar su seguridad.
+   - Prioridad: Alta
+   - Fecha límite: 2025-03-08
+```
+
+```{bash eval=F}
+git stash
+```
+
+```{bash eval=F}
+Directorio de trabajo y estado de índice WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones guardados
+```
+
+y también con:
+
+```{bash eval=F}
+# Misiones de Spider-Man
+
+1. **Detener a Rhino antes de que destruya un centro comercial**
+   - Descripción: Rhino está causando estragos en un centro comercial. Debe ser neutralizado antes de que haya víctimas.
+   - Prioridad: Alta
+   - Fecha límite: 2025-03-12
+
+2. **Evitar el colapso de un edificio en Queens**
+   - Descripción: Un edificio ha sido dañado por una explosión. Se debe evitar su colapso y rescatar a los atrapados.
+   - Prioridad: Alta
+   - Fecha límite: 2025-03-15
+
+3. **Rastrear y capturar a Black Cat**
+   - Descripción: Black Cat ha robado un artefacto valioso. Se debe encontrar y recuperar el objeto sin causar daños colaterales.
+   - Prioridad: Alta
+   - Fecha límite: 2025-03-18
+```
+
+```{bash eval=F}
+git stash
+```
+
+```{bash eval=F}
+Directorio de trabajo y estado de índice WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones guardados
+```
+
+
+Se intenta una última vez asignarle misiones a Spider-Man.
+
+* `misiones/spider_man.md`
+
+```{bash eval=F}
+# Misiones de Spider-Man
+
+1. **Detener un atraco al Banco Central de Nueva York**
+   - Descripción: Un grupo de criminales con tecnología avanzada ha irrumpido en el Banco Central. Deben ser detenidos antes de que escapen.
+   - Prioridad: Alta
+   - Fecha límite: 2025-02-18
+
+2. **Investigar una nueva droga en las calles**
+   - Descripción: Una nueva sustancia está otorgando habilidades temporales a criminales. Se debe rastrear su origen y eliminar su producción.
+   - Prioridad: Alta
+   - Fecha límite: 2025-02-22
+
+3. **Rescatar rehenes en un ferry secuestrado**
+   - Descripción: Un grupo de mercenarios ha tomado el control de un ferry con civiles. La situación debe resolverse sin bajas.
+   - Prioridad: Alta
+   - Fecha límite: 2025-02-25
+```
+
+```{bash eval=F}
+git stash
+```
+
+```{bash eval=F}
+Directorio de trabajo y estado de índice WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones guardados
+```
+
+Tras estabilizarse la base, se revisa el material almacenado en el `stash`.
+
+```{bash eval=F}
+git stash list
+```
