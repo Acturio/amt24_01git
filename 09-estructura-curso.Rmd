@@ -49,8 +49,8 @@
 
 -   ~~Introducción a la sección~~
 -   ~~Introducción al Stash~~
--   Git Stash
--   Conflictos con el Stash
+-   ~~Git Stash~~
+-   ~~Conflictos con el Stash~~
 -   Stash avanzado
 -   Introducción al Git Rebase
 -   Rebase: Actualizando una rama
