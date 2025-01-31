@@ -1144,7 +1144,7 @@ Veamos que cambios se hicieron en los archivos, como interpretar tales cambios y
 
 * La marca `>>>>>>> tierra-65` indica la rama que se trató de unir al `HEAD` y le precede el registro de dicha rama.
 
-En resumen lo que se encuentra entre `<<<<<<< HEAD` y `=======` es el registro de la rama actual, mientras que entre `=======` y `>>>>>>> tierra-65` se encuentre el registro de la rama que entró en conflicto.
+En resumen lo que se encuentra entre `<<<<<<< HEAD` y `=======` es el registro de la rama actual, mientras que entre `=======` y `>>>>>>> tierra-65` se encuentra el registro de la rama que entró en conflicto.
 
 Como en este caso abos registros deben conservarse, únicamente removeremos las marcas. **En caso de que se deseara conservar solo uno de los registros habría que remover el registro no deseado también.**
 
