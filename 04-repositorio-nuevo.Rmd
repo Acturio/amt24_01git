@@ -1,14 +1,14 @@
 # Repositorio nuevo
 
 En este capítulo vamos a simular distintos escenarios en los que nos podemos encontrar al desarrollar un proyecto;
-Vamos a trabajar ahora con la carpeta `material-numeros`, que se proporcionará por los instructores, y pondremos en practica los conocimientos adquiridos hasta ahora a la vez que profundizamos en las distintas opciones que nos proporciona la herramienta Git.
+Vamos a trabajar ahora con la carpeta `material-marvel`, que se proporcionará por los instructores, y pondremos en practica los conocimientos adquiridos hasta ahora a la vez que profundizamos en las distintas opciones que nos proporciona la herramienta Git.
 Con ese propósito vamos a seguir una narrativa en la cual nos encontramos desarrollando un proyecto llamado números.
 
 ## Preparación de repositorio
 
 Primero vamos a preparar el repositorio y haremos que Git rastreé los cambios relalizados en el proyecto.
 
-1. Desde la terminal, nos colocamos en la ubicación de la carpeta `material-numeros/` e inicializamos un repositorio de Git con
+1. Desde la terminal, nos colocamos en la ubicación de la carpeta `material-marvel/` e inicializamos un repositorio de Git con
 
 ```{bash eval=F}
 git init
@@ -30,9 +30,9 @@ para luego poder registrarlos con un mensaje a traves de
 git commit -m "[elemento] agregado"
 ```
 ```{bash eval=F}
-[main (commit-raíz) 95403cb] Readme.md agregado
+[main (commit-raíz) ac02fe0] [elemento] agregado
  1 file changed, 17 insertions(+)
- create mode 100644 README.md
+ create mode 100644 [elemento]
 ```
 
 
@@ -77,11 +77,11 @@ Con los registros realizados hasta ahora, tomando en cuenta que se suguió la re
 git lg
 ```
 ```{bash eval=F}
-* 0e01379 - (hace 6 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario] (HEAD -> main)
-* 471d1b7 - (hace 7 minutos) debilidades.md agregado - [Nombre de usuario]
-* f0dddfd - (hace 8 minutos) oringenes.md agregado - [Nombre de usuario]
-* d8a9a76 - (hace 8 minutos) descripciones.md agregado - [Nombre de usuario]
-* 95403cb - (hace 9 minutos) Readme.md agregado - [Nombre de usuario]%
+* a2427e8 - (hace 2 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario] (HEAD -> main)
+* 43b3a69 - (hace 3 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 3 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 4 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 4 minutos) README.md agregado - [Nombre de usuario]%  
 ```
 
 ## Viajes en los registros 
@@ -123,6 +123,27 @@ Por último, en el archivo `debilidades.md` agregamos:
 - Relaciones humanas complejas.
 ```
 
+Ahora, agregamos las misiones de Doctor Strange en el archivo `misiones/doctor_strange.md`:
+
+```{bash eval=F}
+# Misiones de Doctor Strange
+
+1. **Recuperar la Gema del Tiempo**
+   - **Descripción:** Investigar el paradero de la Gema del Tiempo tras los eventos en Kamar-Taj y recuperarla antes de que caiga en manos equivocadas.
+   - **Prioridad:** Alta
+   - **Fecha límite:** 2025-02-10
+
+2. **Sellar un portal a la Dimensión Oscura**
+   - **Descripción:** Viajar a Hong Kong para cerrar un portal que amenaza con desestabilizar el equilibrio entre dimensiones.
+   - **Prioridad:** Alta
+   - **Fecha límite:** 2025-01-28
+
+3. **Reclutar un nuevo aprendiz**
+   - **Descripción:** Encontrar a un nuevo candidato prometedor en el mundo y entrenarlo en las artes místicas.
+   - **Prioridad:** Media
+   - **Fecha límite:** 2025-03-15
+```
+
 
 Tras los cambios anteriormente realizados, haremos una verificación.
 
@@ -153,7 +174,7 @@ git commit -am "Se une Deoctor Strange"
 ```
 
 ```{bash eval=F}
-[main 9d082cd] Se une Deoctor Strange
+[main 9c59afe] Se une Deoctor Strange
  5 files changed, 33 insertions(+)
  create mode 100644 misiones/doctor_strange.md
 ```
@@ -165,16 +186,16 @@ git commit -am "Se une Deoctor Strange"
 git lg
 ```
 ```{bash eval=F}
-* 9d082cd - (hace 50 segundos) Se une Deoctor Strange - [Nombre de usuario] (HEAD -> main)
-* 0e01379 - (hace 44 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
-* 471d1b7 - (hace 44 minutos) debilidades.md agregado - [Nombre de usuario]
-* f0dddfd - (hace 45 minutos) oringenes.md agregado - [Nombre de usuario]
-* d8a9a76 - (hace 46 minutos) descripciones.md agregado - [Nombre de usuario]
-* 95403cb - (hace 47 minutos) Readme.md agregado - [Nombre de usuario]%     
+* 9c59afe - (hace 31 segundos) Se une Deoctor Strange - [Nombre de usuario] (HEAD -> main)
+* a2427e8 - (hace 10 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 11 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 12 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 12 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 12 minutos) README.md agregado - [Nombre de usuario]%     
 
 ```
 Vemos todos los registros que hemos hecho hasta ahora, pero supongamos que a la vez se unió `Daredevil` por lo que quermeos agregarlo también, pero en lugar de hacer un nuevo commit, buscamos que sean agregados a la vez. Para ello, vamos a usar
-el comando `git reset --soft`, pero recordemos que este nos permite darle la entrade `HEAD^` o en su lugar el `hash` de registro del commit al que nos vamos a mover; esta vez usaremos esta segunda forma, en este caso el paámetro que usaremos es el penúltimo `[hash]` que mostró el comando `git lg`, por lo que emplearemos
+el comando `git reset --soft`, pero recordemos que este nos permite darle la entrade `HEAD^` o en su lugar el `hash` de registro del commit al que nos vamos a mover; esta vez usaremos esta segunda forma, en este caso el parámetro que usaremos es el penúltimo `[hash]` que mostró el comando `git lg`, por lo que emplearemos
 
 ```{bash eval=F}
 git reset --soft [hash]
@@ -215,7 +236,7 @@ Luego, al archivo `descripciones.md` le vamos a agregar:
 
 ```{bash eval=F}
 
-##Daredevil
+## Daredevil
 
 - **Nombre real:** Matthew Michael Murdock.  
 - **Descripción:** Un abogado ciego que combate el crimen en Hell´s Kitchen como Daredevil, usando sus sentidos sobrehumanos y habilidades de combate excepcionales.
@@ -286,7 +307,7 @@ Ahora haremos un nuevo commit con el siguiente comando.
 git commit -am "se unen Doctor Strange y Daredevil"
 ```
 ```{bash eval=F}
-[main 75009c8] se unen Doctor Strange y Daredevil
+[main 8727c32] se unen Doctor Strange y Daredevil
  6 files changed, 66 insertions(+)
  create mode 100644 misiones/daredevil.md
  create mode 100644 misiones/doctor_strange.md
@@ -301,12 +322,12 @@ git lg
 ```
 
 ```{bash eval=F}
-* 75009c8 - (hace 46 segundos) se unen Doctor Strange y Daredevil - [Nombre de usuario] (HEAD -> main)
-* 0e01379 - (hace 1 hora) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
-* 471d1b7 - (hace 1 hora) debilidades.md agregado - [Nombre de usuario]
-* f0dddfd - (hace 1 hora) oringenes.md agregado - [Nombre de usuario]
-* d8a9a76 - (hace 1 hora) descripciones.md agregado - [Nombre de usuario]
-* 95403cb - (hace 1 hora) Readme.md agregado - [Nombre de usuario]%    
+* 8727c32 - (hace 38 segundos) se unen Doctor Strange y Daredevil - [Nombre de usuario] (HEAD -> main)
+* a2427e8 - (hace 18 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 19 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 19 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 19 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 20 minutos) README.md agregado - [Nombre de usuario]%       
 ```
 
 3. Luego de todo esto notamos que algo _anda mal_ con los registros y que el último punto estable fue tras agregar `debilidades.md` por lo que vamos a copiar su `[hash]` de registro y esta vez usaremos:
@@ -342,10 +363,10 @@ También veamos como quedan los registros del repositorio.
 git lg
 ```
 ```{bash eval=F}
-* 471d1b7 - (hace 5 horas) debilidades.md agregado - [Nombre de usuario] (HEAD -> main)
-* f0dddfd - (hace 5 horas) oringenes.md agregado - [Nombre de usuario]
-* d8a9a76 - (hace 5 horas) descripciones.md agregado - [Nombre de usuario]
-* 95403cb - (hace 5 horas) Readme.md agregado - [Nombre de usuario]%  
+* 43b3a69 - (hace 20 minutos) debilidades.md agregado - [Nombre de usuario] (HEAD -> main)
+* c691147 - (hace 20 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 21 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 21 minutos) README.md agregado - [Nombre de usuario]%   
 ```
 
 Como los cambios realizados después de este punto realmente no van a servirnos, haremos un `reset`, al mismo commit en el que nos ubicamos, pero de una manera distinta.
@@ -355,7 +376,7 @@ git resset --hard [hash]
 ```
 
 ```{bash eval=F}
-HEAD está ahora en 471d1b7 debilidades.md agregado
+HEAD está ahora en 43b3a69 debilidades.md agregado
 ```
 
 Esta vez el repositorio queda tal cual como Git lo registró y los cambios realizados tras este commit han sido removidos.
@@ -370,8 +391,8 @@ Notemos que al acceder al historial de commits no podemos ver mas allá del segu
 git lg
 ```
 ```{bash eval=F}
-* d8a9a76 - (hace 5 horas) descripciones.md agregado - [Nombre de usuario] (HEAD -> main)
-* 95403cb - (hace 5 horas) Readme.md agregado - [Nombre de usuario]% 
+* ec89c02 - (hace 23 minutos) descripciones.md agregado - [Nombre de usuario] (HEAD -> main)
+* ac02fe0 - (hace 23 minutos) README.md agregado - [Nombre de usuario]%  
 ```
 
 Pero Git tiene otro comando para acceder a los registros, uno que rastrea cambios de los propios registros y los movimientos en ellos.
@@ -380,21 +401,19 @@ Pero Git tiene otro comando para acceder a los registros, uno que rastrea cambio
 git reflog
 ```
 ```{bash eval=F}
-d8a9a76 (HEAD -> main) HEAD@{0}: reset: moving to d8a9a76
-f0dddfd HEAD@{1}: reset: moving to f0dddfd
-471d1b7 HEAD@{2}: reset: moving to 471d1b7
-471d1b7 HEAD@{3}: reset: moving to 471d1b7
-75009c8 HEAD@{4}: commit: se unen Doctor Strange y Daredevil
-0e01379 HEAD@{5}: reset: moving to 0e01379
-9d082cd HEAD@{6}: reset: moving to 9d082cd
-9d082cd HEAD@{7}: commit: Se une Deoctor Strange
-0e01379 HEAD@{8}: commit (amend): misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man.
-da953ea HEAD@{9}: commit (amend): misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man.
-e91c9e8 HEAD@{10}: commit: misiones/ agregado
-471d1b7 HEAD@{11}: commit: debilidades.md agregado
-f0dddfd HEAD@{12}: commit: oringenes.md agregado
-d8a9a76 (HEAD -> main) HEAD@{13}: commit: descripciones.md agregado
-95403cb HEAD@{14}: commit (initial): Readme.md agregado
+ec89c02 (HEAD -> main) HEAD@{0}: reset: moving to ec89c02
+c691147 HEAD@{1}: reset: moving to c691147
+43b3a69 HEAD@{2}: reset: moving to 43b3a69
+43b3a69 HEAD@{3}: reset: moving to 43b3a69
+8727c32 HEAD@{4}: commit: se unen Doctor Strange y Daredevil
+a2427e8 HEAD@{5}: reset: moving to a2427e8
+9c59afe HEAD@{6}: commit: Se une Deoctor Strange
+a2427e8 HEAD@{7}: commit (amend): misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man.
+ec9ece0 HEAD@{8}: commit: misiones/ agregado
+43b3a69 HEAD@{9}: commit: debilidades.md agregado
+c691147 HEAD@{10}: commit: origenes.md agregado
+ec89c02 (HEAD -> main) HEAD@{11}: commit: descripciones.md agregado
+ac02fe0 HEAD@{12}: commit (initial): README.md agregado
 ```
 
 Muestra un historial de los movimientos y cambios de referencia en el repositorio.
@@ -411,12 +430,12 @@ Para recuperar toda la linea de registro hasta ahora, lo que podemos verificar c
 git lg
 ```
 ```{bash eval=F}
-* 75009c8 - (hace 17 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario] (HEAD -> main)
-* 0e01379 - (hace 5 horas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
-* 471d1b7 - (hace 5 horas) debilidades.md agregado - [Nombre de usuario]
-* f0dddfd - (hace 5 horas) oringenes.md agregado - [Nombre de usuario]
-* d8a9a76 - (hace 5 horas) descripciones.md agregado - [Nombre de usuario]
-* 95403cb - (hace 5 horas) Readme.md agregado - [Nombre de usuario]%     
+* 8727c32 - (hace 6 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario] (HEAD -> main)
+* a2427e8 - (hace 23 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 24 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 24 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 24 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 25 minutos) README.md agregado - [Nombre de usuario]%     
 ```
 
 
@@ -486,7 +505,7 @@ Hacemos un commit
 git commit -m "contactos de emergencia agregados"
 ```
 ```{bash eval=F}
-[main 3d9bd78] contactos de emergencia agregados
+[main 1c7fe32] contactos de emergencia agregados
  1 file changed, 43 insertions(+)
  create mode 100644 contactos.md
 ```
@@ -513,7 +532,7 @@ La `R` indica que el archivo fue renombrado. Ahora hacemos un nuevo commit del a
 git commit -m "contactos.md renombrado"
 ```
 ```{bash eval=F}
-[main d811152] contactos.md renombrado
+[main 2d05f6e] contactos.md renombrado
  1 file changed, 0 insertions(+), 0 deletions(-)
  rename contactos.md => contactos-emergencia.md (100%)
 ```
@@ -524,14 +543,14 @@ Veamos el historial de registros
 git lg
 ```
 ```{bash eval=F}
-* d811152 - (hace 17 segundos) contactos.md renombrado - [Nombre de usuario] (HEAD -> main)
-* 3d9bd78 - (hace 5 minutos) contactos de emergencia agregados - [Nombre de usuario]
-* 75009c8 - (hace 30 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario]
-* 0e01379 - (hace 5 horas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
-* 471d1b7 - (hace 5 horas) debilidades.md agregado - [Nombre de usuario]
-* f0dddfd - (hace 5 horas) oringenes.md agregado - [Nombre de usuario]
-* d8a9a76 - (hace 5 horas) descripciones.md agregado - [Nombre de usuario]
-* 95403cb - (hace 5 horas) Readme.md agregado - [Nombre de usuario]%  
+* 2d05f6e - (hace 18 segundos) contactos.md renombrado - [Nombre de usuario] (HEAD -> main)
+* 1c7fe32 - (hace 57 segundos) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 8 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 26 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 26 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 27 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 27 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 28 minutos) README.md agregado - [Nombre de usuario]%   
 ```
 
 3. Dado que es peligroso tener una lista de las personas más cercanas a nuestros héroes, se toma la decisión de eliminal dicha lista.
@@ -586,7 +605,7 @@ git commit -m "misiones de Spider-Man completadas"
 ```
 
 ```{bash eval=F}
-[main fd86e2e] misiones de Spider-Man completadas
+[main e31eae6] misiones de Spider-Man completadas
  1 file changed, 0 insertions(+), 0 deletions(-)
  rename misiones/{spider_man.md => spider_man-Completados.md} (100%)
 ```
@@ -599,26 +618,26 @@ git lg
 ```
 
 ```{bash eval=F}
-* fd86e2e - (hace 35 segundos) misiones de Spider-Man completadas - [Nombre de usuario] (HEAD -> main)
-* 2e25e59 - (hace 3 minutos) contactos-emergencia.md eliminado - [Nombre de usuario]
-* d811152 - (hace 28 minutos) contactos.md renombrado - [Nombre de usuario]
-* 3d9bd78 - (hace 33 minutos) contactos de emergencia agregados - [Nombre de usuario]
-* 75009c8 - (hace 58 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario]
-* 0e01379 - (hace 6 horas) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
-* 471d1b7 - (hace 6 horas) debilidades.md agregado - [Nombre de usuario]
-* f0dddfd - (hace 6 horas) oringenes.md agregado - [Nombre de usuario]
-* d8a9a76 - (hace 6 horas) descripciones.md agregado - [Nombre de usuario]
-* 95403cb - (hace 6 horas) Readme.md agregado - [Nombre de usuario]%  
+* e31eae6 - (hace 21 segundos) misiones de Spider-Man completadas - [Nombre de usuario] (HEAD -> main)
+* 0059540 - (hace 52 segundos) contactos.md eliminado - [Nombre de usuario]
+* 2d05f6e - (hace 4 minutos) contactos.md renombrado - [Nombre de usuario]
+* 1c7fe32 - (hace 5 minutos) contactos de emergencia agregados - [Nombre de usuario]
+* 8727c32 - (hace 12 minutos) se unen Doctor Strange y Daredevil - [Nombre de usuario]
+* a2427e8 - (hace 29 minutos) misiones/ agregado -> misiones de los heroes: iron man, thor, hulk, black widow y spider man. - [Nombre de usuario]
+* 43b3a69 - (hace 30 minutos) debilidades.md agregado - [Nombre de usuario]
+* c691147 - (hace 31 minutos) origenes.md agregado - [Nombre de usuario]
+* ec89c02 - (hace 31 minutos) descripciones.md agregado - [Nombre de usuario]
+* ac02fe0 - (hace 31 minutos) README.md agregado - [Nombre de usuario]%    
 ```
 
 como las misiones del archivo `spider_man-Completados.md` ya no se encuentran activas, se elimina tal archivo, despues de hacer el registro crearemos un nuevo archivo de asignaciones para Spider-Man.
 
 ```{bash eval=F}
-git lg
+git s
 ```
 ```{bash eval=F}
 ## main
- D misiones/
+ D misiones/spider_man-Completados.md
 ```
 
 Veamos que Git ha registrado lo que hicimos como una eliminación del archivo `spider_man-Completados.md`, continuamos creando un archivo limpio de asignaciones para Spider-Man y agregando los cambios al Stage
@@ -634,7 +653,7 @@ y hacemos el correspondiente commit
 git commit -m "sin saignaciones para Spider-Man"
 ```
 ```{bash eval=F}
-[main 7540e1a] sin saignaciones para Spider-Man
+[main c9ffd15] sin saignaciones para Spider-Man
  2 files changed, 1 insertion(+), 18 deletions(-)
  delete mode 100644 misiones/spider_man-Completados.md
  create mode 100644 misiones/spider_man.md
@@ -747,7 +766,7 @@ git add .gitignore
 git commit -m ".gitignore agregado"
 ```
 ```{bash eval=F}
-[main 09054e2] .gitignore agregado
+[main 2ed8cf4] .gitignore agregado
  1 file changed, 4 insertions(+)
  create mode 100644 .gitignore
 ```
@@ -786,7 +805,7 @@ Notemos que, aunque creamos dos archivos nuevos, Git solamente rastreó el cambi
 git commit -am ".gitignore actualizado (extension .log)"
 ```
 ```{bash eval=F}
-[main 6cbd0da] .gitignore actualizado (extension .log)
+[main c20b80d] .gitignore actualizado (extension .log)
  1 file changed, 1 insertion(+), 1 deletion(-)
 ```
 
