@@ -32,3 +32,6 @@ creando-primeros-tags
 git-stash
 estructura-curso
 rebase
+el-stash
+conflictos-en-el-stash
+stash-avanzado
