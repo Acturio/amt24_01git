@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 7 Git Stash | Introducción a Git</title>
   <meta name="description" content="Administración de proyectos con Git" />
-  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 7 Git Stash | Introducción a Git" />
   <meta property="og:type" content="book" />
@@ -148,21 +148,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#temario"><i class="fa fa-check"></i>Temario:</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#duración-y-evaluación-del-curso"><i class="fa fa-check"></i>Duración y evaluación del curso</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#recursos-y-dinámica-de-clase"><i class="fa fa-check"></i>Recursos y dinámica de clase</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#asesorías"><i class="fa fa-check"></i>Asesorías</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#duraci%C3%B3n-y-evaluaci%C3%B3n-del-curso"><i class="fa fa-check"></i>Duración y evaluación del curso</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#recursos-y-din%C3%A1mica-de-clase"><i class="fa fa-check"></i>Recursos y dinámica de clase</a></li>
+<li class="chapter" data-level="" data-path=""><a href="#asesor%C3%ADas"><i class="fa fa-check"></i>Asesorías</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="introducción-del-curso.html"><a href="introducción-del-curso.html"><i class="fa fa-check"></i><b>1</b> Introducción del curso</a>
+<li class="chapter" data-level="1" data-path="07-stash.html"><a href="#introducci%C3%B3n-del-curso"><i class="fa fa-check"></i><b>1</b> Introducción del curso</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="introducción-del-curso.html"><a href="introducción-del-curso.html#objetivos-del-curso"><i class="fa fa-check"></i><b>1.1</b> Objetivos del Curso</a></li>
-<li class="chapter" data-level="1.2" data-path="introducción-del-curso.html"><a href="introducción-del-curso.html#cómo-funciona-el-curso"><i class="fa fa-check"></i><b>1.2</b> ¿Cómo funciona el curso?</a></li>
+<li class="chapter" data-level="1.1" data-path="introducción-del-curso.html"><a href="introducción-del-curso.html"><i class="fa fa-check"></i><b>1.1</b> Objetivos del Curso</a></li>
+<li class="chapter" data-level="1.2" data-path="07-stash.html"><a href="#c%C3%B3mo-funciona-el-curso"><i class="fa fa-check"></i><b>1.2</b> ¿Cómo funciona el curso?</a></li>
 <li class="chapter" data-level="1.3" data-path="introducción-del-curso.html"><a href="introducción-del-curso.html#instalaciones"><i class="fa fa-check"></i><b>1.3</b> Instalaciones</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html"><i class="fa fa-check"></i><b>2</b> Fundamentos de Git</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#introducción-a-los-fundamentos-de-git"><i class="fa fa-check"></i><b>2.1</b> Introducción a los fundamentos de Git</a></li>
+<li class="chapter" data-level="2.1" data-path="07-stash.html"><a href="#introducci%C3%B3n-a-los-fundamentos-de-git"><i class="fa fa-check"></i><b>2.1</b> Introducción a los fundamentos de Git</a></li>
 <li class="chapter" data-level="2.2" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#importancia-de-git"><i class="fa fa-check"></i><b>2.2</b> Importancia de Git</a></li>
-<li class="chapter" data-level="2.3" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#configuración-inicial-de-git"><i class="fa fa-check"></i><b>2.3</b> Configuración inicial de Git</a></li>
+<li class="chapter" data-level="2.3" data-path="07-stash.html"><a href="#configuraci%C3%B3n-inicial-de-git"><i class="fa fa-check"></i><b>2.3</b> Configuración inicial de Git</a></li>
 <li class="chapter" data-level="2.4" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#primeros-comandos-de-git"><i class="fa fa-check"></i><b>2.4</b> Primeros comandos de Git</a></li>
 <li class="chapter" data-level="2.5" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#primer-repositorio-ejercicio"><i class="fa fa-check"></i><b>2.5</b> Primer Repositorio [Ejercicio]</a></li>
 <li class="chapter" data-level="2.6" data-path="fundamentos-de-git.html"><a href="fundamentos-de-git.html#distintas-maneras-de-agregar-elementos-al-stage"><i class="fa fa-check"></i><b>2.6</b> Distintas maneras de agregar elementos al Stage</a></li>
@@ -172,11 +172,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="los-cambios-en-git.html"><a href="los-cambios-en-git.html"><i class="fa fa-check"></i><b>3</b> Los cambios en Git</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="los-cambios-en-git.html"><a href="los-cambios-en-git.html#cambios-en-los-archivos"><i class="fa fa-check"></i><b>3.1</b> Cambios en los archivos</a></li>
-<li class="chapter" data-level="3.2" data-path="los-cambios-en-git.html"><a href="los-cambios-en-git.html#correción-de-commits"><i class="fa fa-check"></i><b>3.2</b> Correción de commits</a></li>
+<li class="chapter" data-level="3.2" data-path="07-stash.html"><a href="#correci%C3%B3n-de-commits"><i class="fa fa-check"></i><b>3.2</b> Correción de commits</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html"><i class="fa fa-check"></i><b>4</b> Repositorio nuevo</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#preparación-de-repositorio"><i class="fa fa-check"></i><b>4.1</b> Preparación de repositorio</a></li>
+<li class="chapter" data-level="4.1" data-path="07-stash.html"><a href="#preparaci%C3%B3n-de-repositorio"><i class="fa fa-check"></i><b>4.1</b> Preparación de repositorio</a></li>
 <li class="chapter" data-level="4.2" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#viajes-en-los-registros"><i class="fa fa-check"></i><b>4.2</b> Viajes en los registros</a></li>
 <li class="chapter" data-level="4.3" data-path="repositorio-nuevo.html"><a href="repositorio-nuevo.html#cambiar-de-nombre-y-eliminar-archivos"><i class="fa fa-check"></i><b>4.3</b> Cambiar de nombre y eliminar archivos</a>
 <ul>
@@ -192,7 +192,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5" data-path="ramas.html"><a href="ramas.html"><i class="fa fa-check"></i><b>5</b> Ramas</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="ramas.html"><a href="ramas.html#merge-fast-forward"><i class="fa fa-check"></i><b>5.1</b> Merge: Fast-forward</a></li>
-<li class="chapter" data-level="5.2" data-path="ramas.html"><a href="ramas.html#merge-unión-automática"><i class="fa fa-check"></i><b>5.2</b> Merge: Unión automática</a></li>
+<li class="chapter" data-level="5.2" data-path="07-stash.html"><a href="#merge-uni%C3%B3n-autom%C3%A1tica"><i class="fa fa-check"></i><b>5.2</b> Merge: Unión automática</a></li>
 <li class="chapter" data-level="5.3" data-path="ramas.html"><a href="ramas.html#merge-uniones-con-conflictos"><i class="fa fa-check"></i><b>5.3</b> Merge: Uniones con conflictos</a></li>
 <li class="chapter" data-level="5.4" data-path="ramas.html"><a href="ramas.html#rebase"><i class="fa fa-check"></i><b>5.4</b> Rebase</a></li>
 </ul></li>
@@ -449,7 +449,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><code>e4c626a cumplimiento misiones alta prioridad: Iron Man, Thor, Hulk, Black Widow</code> indica el registro sobre el que se estaba trabajando.</p></li>
 </ul>
 <p>Para recuperar nuestro trabajo pendiente, la asignación de nuevas misiones, empleamos el siguiente comando.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="git-stash.html#cb24-1" tabindex="-1"></a><span class="fu">git</span> stash pop stash@<span class="dt">\{</span>0<span class="dt">\}</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="git-stash.html#cb24-1" tabindex="-1"></a><span class="fu">git</span> stash pop stash@{0}</span></code></pre></div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="git-stash.html#cb25-1" tabindex="-1"></a><span class="ex">En</span> la rama main</span>
 <span id="cb25-2"><a href="git-stash.html#cb25-2" tabindex="-1"></a><span class="ex">Cambios</span> no rastreados para el commit:</span>
 <span id="cb25-3"><a href="git-stash.html#cb25-3" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">usa</span> <span class="st">&quot;git add &lt;archivo&gt;...&quot;</span> para actualizar lo que será confirmado<span class="kw">)</span></span>
@@ -671,7 +671,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Aún después de reslover los conflictos del <code>stash</code>, el trabajo se mantiene almacenado en el mismo, podemos comprobarlo de distintas maneras.</p>
 <div class="sourceCode" id="cb48"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="git-stash.html#cb48-1" tabindex="-1"></a><span class="fu">git</span> stash list</span></code></pre></div>
 <div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="git-stash.html#cb49-1" tabindex="-1"></a><span class="ex">stash@{0}:</span> WIP on main: 5319e68 se une Capitan America</span></code></pre></div>
-<p>Aquí git nos muestra que tenemos trabajo almacenado en el <code>stash</code>; otra manera es:</p>
+<p>Aquí git nos muestra que tenemos trabajo almacenado en el <code>stash</code>, otra manera en que podemos hacerlo:</p>
 <div class="sourceCode" id="cb50"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb50-1"><a href="git-stash.html#cb50-1" tabindex="-1"></a><span class="fu">git</span> lg</span></code></pre></div>
 <div class="sourceCode" id="cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="git-stash.html#cb51-1" tabindex="-1"></a><span class="ex">*</span> 1db9966 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 10 horas<span class="kw">)</span> <span class="ex">nuevas</span> misiones asignadas: Iron Man, Thor, Hulk, Black Widow <span class="at">-</span> Byron Ornelas <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span></span>
 <span id="cb51-2"><a href="git-stash.html#cb51-2" tabindex="-1"></a><span class="ex">*</span> b307d16 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 11 horas<span class="kw">)</span> <span class="ex">asignacion</span> de emergencia para Iron Man <span class="at">-</span> Byron Ornelas</span>
@@ -708,11 +708,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb51-33"><a href="git-stash.html#cb51-33" tabindex="-1"></a><span class="ex">*</span> c691147 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 2 semanas<span class="kw">)</span> <span class="ex">origenes.md</span> agregado <span class="at">-</span> Byron Ornelas</span>
 <span id="cb51-34"><a href="git-stash.html#cb51-34" tabindex="-1"></a><span class="ex">*</span> ec89c02 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 2 semanas<span class="kw">)</span> <span class="ex">descripciones.md</span> agregado <span class="at">-</span> Byron Ornelas</span>
 <span id="cb51-35"><a href="git-stash.html#cb51-35" tabindex="-1"></a><span class="ex">*</span> ac02fe0 <span class="at">-</span> <span class="er">(</span><span class="ex">hace</span> 2 semanas<span class="kw">)</span> <span class="ex">README.md</span> agregado <span class="at">-</span> Byron Ornelas%  </span></code></pre></div>
-<p>Podemos ver en la línea <code>| * b63a2df - (hace 11 horas) WIP on main: 5319e68 se une Capitan America - Byron Ornelas (refs/stash)</code> que se mantiene el registro del trabajo almacenado en el <code>stash</code>.</p>
+<p>Podemos ver en la línea: <code>| * b63a2df - (hace 11 horas) WIP on main: 5319e68 se une Capitan America - Byron Ornelas (refs/stash)</code> que se mantiene el registro del trabajo almacenado en el <code>stash</code>.</p>
 <p>Para eliminar todos los trabajos pendientes almacenados en el <code>stash</code>.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="git-stash.html#cb52-1" tabindex="-1"></a><span class="fu">git</span> stash clear</span></code></pre></div>
-<p>Esto, borra todo lo que git había movido al <code>stash</code>, pero aun podemos recuperar el material perdido, así como los commits que recuperamos anteriormente con el comando <code>git reflog</code>.</p>
-<p>Spider-Man, termina con todas sus misiones y se encuentra en espera de nuevas asignaciones, por lo que limpiamos su registro y le asignamos misiones nuevas:</p>
+<p>Esto, borra todo lo que se había movido al <code>stash</code>, aunque este material se puede recuperar, así como lo hemos hacho con los commits anteriormente.</p>
+<p>Siguiendo con nuestro ejemplo.<br />
+Spider-Man, termina con todas sus misiones y se encuentra en espera de nuevas asignaciones, por lo que limpiamos su registro y le asignamos misiones nuevas:</p>
 <ul>
 <li><code>misiones/spider_man.md</code></li>
 </ul>
@@ -781,7 +782,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb62-16"><a href="git-stash.html#cb62-16" tabindex="-1"></a>   <span class="ex">-</span> Fecha límite: 2025-03-18</span></code></pre></div>
 <div class="sourceCode" id="cb63"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb63-1"><a href="git-stash.html#cb63-1" tabindex="-1"></a><span class="fu">git</span> stash</span></code></pre></div>
 <div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="git-stash.html#cb64-1" tabindex="-1"></a><span class="ex">Directorio</span> de trabajo y estado de índice WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones guardados</span></code></pre></div>
-<p>Se intenta una última vez asignarle misiones a Spider-Man.</p>
+<p>Se intenta una última vez asignar misiones para Spider-Man.</p>
 <ul>
 <li><code>misiones/spider_man.md</code></li>
 </ul>
@@ -803,13 +804,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb65-16"><a href="git-stash.html#cb65-16" tabindex="-1"></a>   <span class="ex">-</span> Fecha límite: 2025-02-25</span></code></pre></div>
 <div class="sourceCode" id="cb66"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb66-1"><a href="git-stash.html#cb66-1" tabindex="-1"></a><span class="fu">git</span> stash</span></code></pre></div>
 <div class="sourceCode" id="cb67"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb67-1"><a href="git-stash.html#cb67-1" tabindex="-1"></a><span class="ex">Directorio</span> de trabajo y estado de índice WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones guardados</span></code></pre></div>
-<p>Tras estabilizarse la base, se revisa el material almacenado en el <code>stash</code>.</p>
+<p>Tras una recuperar los sistemas de la base, se hace una revisión del material almacenado en el <code>stash</code>.</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb68-1"><a href="git-stash.html#cb68-1" tabindex="-1"></a><span class="fu">git</span> stash list</span></code></pre></div>
 <div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="git-stash.html#cb69-1" tabindex="-1"></a><span class="ex">stash@{0}:</span> WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones</span>
 <span id="cb69-2"><a href="git-stash.html#cb69-2" tabindex="-1"></a><span class="ex">stash@{1}:</span> WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones</span>
 <span id="cb69-3"><a href="git-stash.html#cb69-3" tabindex="-1"></a><span class="ex">stash@{2}:</span> WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones</span></code></pre></div>
 <p>Para poder recuperar la primer versión,</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb70-1"><a href="git-stash.html#cb70-1" tabindex="-1"></a><span class="fu">git</span> stash apply stash@<span class="dt">\{</span>2<span class="dt">\}</span>                                           </span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb70-1"><a href="git-stash.html#cb70-1" tabindex="-1"></a><span class="fu">git</span> stash apply stash@{2}                                           </span></code></pre></div>
 <div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="git-stash.html#cb71-1" tabindex="-1"></a><span class="ex">En</span> la rama main</span>
 <span id="cb71-2"><a href="git-stash.html#cb71-2" tabindex="-1"></a><span class="ex">Cambios</span> no rastreados para el commit:</span>
 <span id="cb71-3"><a href="git-stash.html#cb71-3" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">usa</span> <span class="st">&quot;git add &lt;archivo&gt;...&quot;</span> para actualizar lo que será confirmado<span class="kw">)</span></span>
@@ -826,19 +827,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb75-3"><a href="git-stash.html#cb75-3" tabindex="-1"></a><span class="ex">stash@{2}:</span> WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones</span>
 <span id="cb75-4"><a href="git-stash.html#cb75-4" tabindex="-1"></a><span class="ex">stash@{3}:</span> WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones</span></code></pre></div>
 <p>Sabemos que el <code>0</code> y el <code>3</code> tienen la misma información, si queremos deshacernos del registro <code>0</code>:</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb76-1"><a href="git-stash.html#cb76-1" tabindex="-1"></a><span class="fu">git</span> stash drop stash@<span class="dt">\{</span>0<span class="dt">\}</span></span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb76-1"><a href="git-stash.html#cb76-1" tabindex="-1"></a><span class="fu">git</span> stash drop stash@{0}</span></code></pre></div>
 <div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb77-1"><a href="git-stash.html#cb77-1" tabindex="-1"></a><span class="ex">Descartado</span> stash@{0} <span class="er">(</span><span class="ex">bcd534be4a8527dcaf147d9fbc4da98e25cacac2</span><span class="kw">)</span></span></code></pre></div>
 <p>Al volver a listar los stash</p>
 <div class="sourceCode" id="cb78"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb78-1"><a href="git-stash.html#cb78-1" tabindex="-1"></a><span class="fu">git</span> stash list</span></code></pre></div>
 <div class="sourceCode" id="cb79"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb79-1"><a href="git-stash.html#cb79-1" tabindex="-1"></a><span class="ex">stash@{0}:</span> WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones</span>
 <span id="cb79-2"><a href="git-stash.html#cb79-2" tabindex="-1"></a><span class="ex">stash@{1}:</span> WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones</span>
 <span id="cb79-3"><a href="git-stash.html#cb79-3" tabindex="-1"></a><span class="ex">stash@{2}:</span> WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones</span></code></pre></div>
-<p>Si queremos obtener mas información sobre un stash como el <code>1</code>, podemos emplear</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb80-1"><a href="git-stash.html#cb80-1" tabindex="-1"></a><span class="fu">git</span> stash show stash@<span class="dt">\{</span>1<span class="dt">\}</span></span></code></pre></div>
+<p>Si queremos obtener mas información sobre un stash como el <code>1</code>, podemos emplear:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb80-1"><a href="git-stash.html#cb80-1" tabindex="-1"></a><span class="fu">git</span> stash show stash@{1}</span></code></pre></div>
 <div class="sourceCode" id="cb81"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb81-1"><a href="git-stash.html#cb81-1" tabindex="-1"></a> <span class="ex">misiones/spider_man.md</span> <span class="kw">|</span> <span class="ex">17</span> +++++++++++++++++</span>
 <span id="cb81-2"><a href="git-stash.html#cb81-2" tabindex="-1"></a> <span class="ex">1</span> file changed, 17 insertions<span class="er">(</span><span class="ex">+</span><span class="kw">)</span></span></code></pre></div>
 <p>No brinda tanta información como podríamos desear, por lo que es mas recomendable distinguir los stashes con mensajes como <code>Misiones Spider-Man 1</code> que permitan identificar el contenido del stash</p>
-<div class="sourceCode" id="cb82"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb82-1"><a href="git-stash.html#cb82-1" tabindex="-1"></a><span class="fu">git</span> stash pop stash@<span class="dt">\{</span>2<span class="dt">\}</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb82-1"><a href="git-stash.html#cb82-1" tabindex="-1"></a><span class="fu">git</span> stash pop stash@{2}</span></code></pre></div>
 <div class="sourceCode" id="cb83"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb83-1"><a href="git-stash.html#cb83-1" tabindex="-1"></a><span class="ex">En</span> la rama main</span>
 <span id="cb83-2"><a href="git-stash.html#cb83-2" tabindex="-1"></a><span class="ex">Cambios</span> no rastreados para el commit:</span>
 <span id="cb83-3"><a href="git-stash.html#cb83-3" tabindex="-1"></a>  <span class="kw">(</span><span class="ex">usa</span> <span class="st">&quot;git add &lt;archivo&gt;...&quot;</span> para actualizar lo que será confirmado<span class="kw">)</span></span>
@@ -884,7 +885,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb92-2"><a href="git-stash.html#cb92-2" tabindex="-1"></a><span class="ex">stash@{1}:</span> WIP on main: 8051202 Spider-Man termina sus misiones, en espera de nuevas asignaciones</span></code></pre></div>
 <p>Por último, si queremos borrar todos los stash, podemos emplear:</p>
 <div class="sourceCode" id="cb93"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb93-1"><a href="git-stash.html#cb93-1" tabindex="-1"></a><span class="fu">git</span> stash clear</span></code></pre></div>
-<p>Para eliminar todos los stash que no usaremos.</p>
 
 </div>
 </div>
@@ -930,42 +930,42 @@ $('.pipehover_select_one_row tr').hover(function() {
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["amt24_01git.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["amt24_01git.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
