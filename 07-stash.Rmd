@@ -954,3 +954,6 @@ Por último, si queremos borrar todos los stash, podemos emplear:
 ```{bash eval=F}
 git stash clear
 ```
+
+Para eliminar todos los stash que no usaremos.
+Con esto, eliminamos todos los stash que ya no se van a utilizar, lo que nos permite tener un entorno más limpio y ordenado
