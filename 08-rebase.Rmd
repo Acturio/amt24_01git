@@ -1,0 +1,16 @@
+# Rebase
+
+Un rebase en Git es un proceso que permite integrar cambios de una rama a otra reescribiendo el historial de la rama de destino. Esto se logra aplicando los cambios de una rama sobre otra, lo que genera una secuencia de commits lineales, sin crear un merge commit.
+
+::: {.infobox}
+
+**Rebase**
+
+Hacer un rebase es como **reescribir la historia del multiverso** para que los eventos de una rama alternativa se vean como si siempre hubieran sido parte de la sagrada línea del tiempo.
+
+* **Ejemplo:**
+
+En *Avengers: Endgame*, cuando los héroes viajan al pasado, alteran eventos para alinear el presente con sus objetivos.
+
+:::
+

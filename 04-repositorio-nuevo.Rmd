@@ -2,7 +2,7 @@
 
 En este capítulo vamos a simular distintos escenarios en los que nos podemos encontrar al desarrollar un proyecto;
 Vamos a trabajar ahora con la carpeta `material-marvel`, que se proporcionará por los instructores, y pondremos en practica los conocimientos adquiridos hasta ahora a la vez que profundizamos en las distintas opciones que nos proporciona la herramienta Git.
-Con ese propósito vamos a seguir una narrativa en la cual nos encontramos desarrollando un proyecto llamado números.
+Con ese propósito vamos a seguir una narrativa en la cual nos encontramos desarrollando un proyecto de Marvel.
 
 ## Preparación de repositorio
 

@@ -35,3 +35,4 @@ rebase
 el-stash
 conflictos-en-el-stash
 stash-avanzado
+rebase-1
