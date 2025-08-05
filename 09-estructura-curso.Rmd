@@ -51,8 +51,8 @@
 -   ~~Introducción al Stash~~
 -   ~~Git Stash~~
 -   ~~Conflictos con el Stash~~
--   Stash avanzado
--   Introducción al Git Rebase
+-   ~~Stash avanzado~~
+-   ~~Introducción al Git Rebase~~
 -   Rebase: Actualizando una rama
 -   Rebase: Squash
 -   Rebase: Reword
